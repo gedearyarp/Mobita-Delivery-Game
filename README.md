@@ -15,3 +15,4 @@ Nama | Link
 Olympia | https://olympia.id/course/view.php?id=101#section-2  
 Laporan Tubes | https://docs.google.com/document/d/1IvEI2jyQcwUwPL1SW3IiQymsRt1lKr02ppNrqrMn3sM/edit?usp=sharing 
 Form Asistensi | https://docs.google.com/document/d/19bcCRAmqtb4Ipg7mcIXh14-tcRTG_fDHHcaHCf7VgxI/edit?usp=sharing 
+Drive General | https://drive.google.com/drive/folders/1F9ZMJkwp6CqOKKLyZvfg7MpT1Xmx2UxH?usp=sharing
