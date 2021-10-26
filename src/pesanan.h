@@ -25,4 +25,8 @@ typedef struct {
 Pesanan createPesanan(int t0, int xP, int yP, char pick, int xD, int yD, char drop, char type, int tP);
 /* Membentuk sebuah data pesanan dari komponen-komponennya */
 
+/* Fungsi Boolean */
+boolean isEqual(Pesanan P1, Pesanan P2);
+/* Menghasilkan true jika P1 = P2 */
+
 #endif
