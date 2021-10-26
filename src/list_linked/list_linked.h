@@ -7,8 +7,8 @@
 #define LIST_H
 
 #include <stdlib.h>
-#include "boolean.h"
-#include "pesanan.h"
+#include "../boolean.h"
+#include "../pesanan/pesanan.h"
 
 typedef Pesanan ElType;
 typedef struct node* Address;

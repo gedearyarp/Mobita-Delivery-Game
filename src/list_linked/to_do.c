@@ -3,7 +3,7 @@
 #include <stdio.h>
 #include "pesanan.h"
 #include "list_linked.h"
-#include "boolean.h"
+#include "../boolean.h"
 
 void printToDo(List to_do_list, int curr_time) {
 /* Mencetak daftar to do list */
