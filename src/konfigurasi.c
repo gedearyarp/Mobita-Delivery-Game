@@ -43,11 +43,11 @@ int LengthMAP(MAP m){
 }	
 
 
-int ConvertInt(){
+int ConvertInt(char angka[50],int length){
 	/*Mengkonvert input char dari mesin kata menjadi int*/
 	int val =0,i;
-	for(i=0;i<currentWord.length;i++) {
-		val = val*10 + (currentWord.contents[i]-48);
+	for(i=0;i<length;i++) {
+		val = val*10 + ((int)angka[i]-48);
 	}
 	return val;
 }
@@ -67,55 +67,59 @@ void BacaKoordinat(MAP *m){
 	int i,x,y;
 	//algoritma
 	startWord();
-	int val = ConvertInt();
+//	int val = ConvertInt();
+//	advWord();
+	int N = ConvertInt(currentWord.contents,currentWord.length);
 	advWord();
-	int N = ConvertInt();
-	advWord();
-	int M = ConvertInt();
+	int M = ConvertInt(currentWord.contents,currentWord.length);
 	CreatePeta(m,N,M);
-	advWord();
 	NAMA(*m,0) = '8';
+//	printf("%d %d\n",N,M);
 	advWord();
-	ABSIS(*m,0) = ConvertInt();
+	ABSIS(*m,0) = ConvertInt(currentWord.contents,currentWord.length);
 	x = ABSIS(*m,0);
 	advWord();
-	ORDINAT(*m,0) = ConvertInt();
+	ORDINAT(*m,0) = ConvertInt(currentWord.contents,currentWord.length);
 	y= ORDINAT(*m,0);
-	PETA(*m,x,y) = '/';
+	PETA(*m,x,y) = '8';
+//	printf("%d %d\n",x,y);
 	advWord();
-	nEff(*m) = ConvertInt();
+	nEff(*m) = ConvertInt(currentWord.contents,currentWord.length);
+//	printf("%d\n",ConvertInt(currentWord.contents,currentWord.length));
 	for(i=0;i<nEff(*m);i++){
 		advWord();
 		NAMA(*m,i) = currentWord.contents[0];
 		advWord();
-		ABSIS(*m,i) = ConvertInt();
-		x = ABSIS(*m,0);
+		ABSIS(*m,i) = ConvertInt(currentWord.contents,currentWord.length);
+		x = ABSIS(*m,i);
 		advWord();
-		ORDINAT(*m,i) = ConvertInt();
-		y= ORDINAT(*m,0);
+		ORDINAT(*m,i) = ConvertInt(currentWord.contents,currentWord.length);
+		y= ORDINAT(*m,i);
 		PETA(*m,x,y) = NAMA(*m,i);
+//		printf("%d %d %c \n",x,y,NAMA(*m,i));
 	}
 }
 	
 void BacaAdjMatrix(MAP *m){
 	/*Membaca adjency matrix*/
 	int i,j;
-	startWord();
-	for(i=0;i<nEff(*m);i++){
-		for(j=0;j<nEff(*m);j++){
-			ELMT_M(*m, i, j) = ConvertInt();
-			advWord;
+	for(i=0;i<=nEff(*m);i++){
+		for(j=0;j<=nEff(*m);j++){
+			advWord();
+			ELMT_M(*m, i, j) = ConvertInt(currentWord.contents,currentWord.length);
+			
 		}
 	}
 }
 
 void BacaPesanan(MAP *m){
 	/*Membaca pesanan*/
-	startWord();
-	int i,x,n = ConvertInt();
+	advWord();
+	int i,x,n = ConvertInt(currentWord.contents,currentWord.length);
+//	printf("%d\n",n);
 	for(i=0;i<n;i++){
 		advWord();
-		O_MASUK(*m,i) = ConvertInt();
+		O_MASUK(*m,i) = ConvertInt(currentWord.contents,currentWord.length);
 		advWord();
 		O_PICK_LABEL(*m,i) = currentWord.contents[0];
 		x=0;
@@ -126,6 +130,7 @@ void BacaPesanan(MAP *m){
 		}
 		advWord();
 		O_DROP_LABEL(*m,i) = currentWord.contents[0];
+		x=0;
 		while(NAMA(*m,x) != currentWord.contents[0] &&NAMA(*m,x)!= 'y')x++;
 		if(NAMA(*m,x)==currentWord.contents[0]){
 			O_DROP_X(*m,i) = ABSIS(*m,x);
@@ -137,6 +142,7 @@ void BacaPesanan(MAP *m){
 			advWord();
 			O_T_PERISH(*m,i) = currentWord.contents[0];;
 		}
+//		printf("%d %c %c %c\n",O_MASUK(*m,i),O_PICK_LABEL(*m,i),O_DROP_LABEL(*m,i),O_TYPE(*m,i));
 	}
 	
 }
