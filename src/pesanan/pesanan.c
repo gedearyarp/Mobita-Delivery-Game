@@ -1,7 +1,6 @@
 /* File: pesanan.c */
 
 #include "pesanan.h"
-#include "point.h"
 
 /* *** Implementasi Fungsi createPesanan *** */
 Pesanan createPesanan(int t0, int xP, int yP, char pick, int xD, int yD, char drop, char type, int tP) {
