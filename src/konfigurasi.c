@@ -112,14 +112,25 @@ void BacaAdjMatrix(MAP *m){
 void BacaPesanan(MAP *m){
 	/*Membaca pesanan*/
 	startWord();
-	int i,n = ConvertInt();
+	int i,x,n = ConvertInt();
 	for(i=0;i<n;i++){
 		advWord();
 		O_MASUK(*m,i) = ConvertInt();
 		advWord();
-		O_PICK_P(*m,i) = currentWord.contents[0];
+		O_PICK_LABEL(*m,i) = currentWord.contents[0];
+		x=0;
+		while(NAMA(*m,x) != currentWord.contents[0] &&NAMA(*m,x)!= 'y')x++;
+		if(NAMA(*m,x)==currentWord.contents[0]){
+			O_PICK_X(*m,i) = ABSIS(*m,x);
+			O_PICK_Y(*m,i) = ORDINAT(*m,x); 
+		}
 		advWord();
-		O_DROP_P(*m,i) = currentWord.contents[0];
+		O_DROP_LABEL(*m,i) = currentWord.contents[0];
+		while(NAMA(*m,x) != currentWord.contents[0] &&NAMA(*m,x)!= 'y')x++;
+		if(NAMA(*m,x)==currentWord.contents[0]){
+			O_DROP_X(*m,i) = ABSIS(*m,x);
+			O_DROP_Y(*m,i) = ORDINAT(*m,x); 
+		}
 		advWord();
 		O_TYPE(*m,i) =  currentWord.contents[0];
 		if(O_TYPE(*m,i)=='P'){
