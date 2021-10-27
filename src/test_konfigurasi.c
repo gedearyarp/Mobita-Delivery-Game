@@ -9,5 +9,10 @@
 
 
 int main(){
-	printf("hello world");
+	MAP M;
+	CreateMap (&M);
+	BacaKoordinat(&M);
+	BacaAdjMatrix(&M);
+	BacaPesanan(&M);
+	
 }
