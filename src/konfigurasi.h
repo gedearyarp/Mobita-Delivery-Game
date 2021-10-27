@@ -4,7 +4,7 @@
 #ifndef KONFIGURASI_H
 #define KONFIGURASI_H
 
-#define CAPACITY 100
+#define CAPACITY 50
 #define VAL_UNDEF -999
 
 #include "boolean.h"
@@ -70,7 +70,7 @@ void BacaAdjMatrix(MAP *m);
 int LengthMAP(MAP m);
 	/*Membaca panjang map*/
 
-void BacaPesanan();
+void BacaPesanan(MAP *m);
 	/*Membaca pesanan*/
 
 
