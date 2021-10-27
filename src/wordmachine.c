@@ -9,7 +9,7 @@ void ignoreBlank(){
 	/* Mengabaikan satu atau beberapa BLANK
    I.S. : currentChar sembarang 
    F.S. : currentChar ≠ BLANK atau currentChar = MARK */
-   while(currentChar == BLANK && currentChar != MARK){
+   while(currentChar == BLANK || currentChar =='\n'&& currentChar != MARK ){
    		adv();
    }
 }
@@ -55,7 +55,7 @@ void copyWord(){
           Jika panjang kata melebihi CAPACITY, maka sisa kata terpotong */
 	int x;
 	x = 0;
-	while ((currentChar != MARK) && (currentChar != BLANK) ){
+	while ((currentChar != MARK) && (currentChar != BLANK) && (currentChar !='\n')){
 		if (x<CAPACITY){
 			currentWord.contents[x] = currentChar;
 		}
