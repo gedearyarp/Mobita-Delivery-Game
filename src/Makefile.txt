@@ -1,0 +1,2 @@
+test_konfigurasi: test_konfigurasi.c
+	gcc konfigurasi.c matrix.c wordmachine.c charmachine.c point.c pesanan.c test_konfigurasi.c -o test_konfigurasi
