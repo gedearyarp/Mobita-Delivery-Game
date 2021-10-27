@@ -30,8 +30,12 @@ typedef struct {
 #define nEff(M) (M).nEff
 #define ORDER(M,i) (M).pesan[(i)]
 #define O_MASUK(M,i) (M).pesan[(i)].tMasuk
-#define O_PICK_P(M,i) (M).pesan[(i)].pickUpPoint
-#define O_DROP_P(M,i) (M).pesan[(i)].dropOffPoint
+#define O_PICK_X(M,i) (M).pesan[(i)].pickUpPoint.X
+#define O_PICK_Y(M,i) (M).pesan[(i)].pickUpPoint.Y
+#define O_PICK_LABEL(M,i) (M).pesan[(i)].pickUpPoint.label
+#define O_DROP_X(M,i) (M).pesan[(i)].dropOffPoint.X
+#define O_DROP_Y(M,i) (M).pesan[(i)].dropOffPoint.Y
+#define O_DROP_LABEL(M,i) (M).pesan[(i)].dropOffPoint.label
 #define O_TYPE(M,i) (M).pesan[(i)].type
 #define O_T_PERISH(M,i) (M).pesan[(i)].tPerish
 /* Jika m adalah : MAP, cara deklarasi dan akses: */
