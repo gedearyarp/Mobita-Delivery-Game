@@ -79,7 +79,7 @@ POINT NextY (POINT P) {
     Ordinat(result) += 1;
     return result;
 }
-POINT PlusDelta (POINT P, float deltaX, float deltaY) {
+POINT PlusDelta (POINT P, int deltaX, int deltaY) {
     /* KAMUS LOKAL */
     POINT result = P;
     /* ALGORITMA */
@@ -110,7 +110,7 @@ float Panjang (POINT P1, POINT P2) {
     difY = Ordinat(P1) - Ordinat(P2);   // Selisih y1 dan y2
     return (sqrt(pow(difX, 2) + pow(difY, 2)));
 }
-void Geser (POINT *P, float deltaX, float deltaY) {
+void Geser (POINT *P, int deltaX, int deltaY) {
     /* KAMUS LOKAL */
     /* ALGORITMA */
     Absis(*P) += deltaX;
