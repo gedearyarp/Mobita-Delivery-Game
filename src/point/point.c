@@ -7,7 +7,7 @@
 
 /* *** IMPLEMENTASI PROTOTIPE PRIMITIF *** */
 /* *** Konstruktor membentuk POINT *** */
-POINT MakePOINT (float X, float Y, char Label) {
+POINT MakePOINT (int X, int Y, char Label) {
     /* KAMUS LOKAL */
     POINT p;
     /* ALGORITMA */
@@ -20,16 +20,16 @@ POINT MakePOINT (float X, float Y, char Label) {
 /* *** KELOMPOK Interaksi dengan I/O device, BACA/TULIS  *** */                                                 
 void BacaPOINT (POINT * P) {
     /* KAMUS LOKAL */
-    float x, y;
+    int x, y;
     char label;
     /* ALGORITMA */
-    scanf("%f %f %c", &x, &y, & label);
+    scanf("%d %d %c", &x, &y, & label);
     *P = MakePOINT(x,y,label);
 } 
 void TulisPOINT (POINT P) {
     /* KAMUS LOKAL */
     /* ALGORITMA */
-    printf("%c(%.2f,%.2f)", Label(P), Absis(P), Ordinat(P));
+    printf("%c(%d,%d)", Label(P), Absis(P), Ordinat(P));
 }                
 
 /* *** Kelompok operasi relasional terhadap POINT *** */
@@ -53,8 +53,8 @@ boolean IsOnSbY (POINT P) {
 }
 int Kuadran (POINT P) {
     /* KAMUS LOKAL */
-    float x = Absis(P);
-    float y = Ordinat(P);
+    int x = Absis(P);
+    int y = Ordinat(P);
     int kuadran = 0;
     /* ALGORITMA */
     if (x > 0 && y > 0) kuadran = 1;
@@ -135,8 +135,8 @@ void Mirror (POINT *P, boolean SbX) {
 void Putar (POINT *P, float Sudut) {
     /* KAMUS LOKAL */
     float sudutRad;
-    float x = Absis(*P);
-    float y = Ordinat(*P);
+    int x = Absis(*P);
+    int y = Ordinat(*P);
     /* ALGORITMA */
     // Konversi sudut derajat menjadi sudut radian (faktor konversi : pi/180)
     // Rumus: sudutRad = - Sudut / 180 * pi. Tanda negatif agar rotasi yang dilakukan searah jarum jam
