@@ -4,7 +4,7 @@
 #ifndef PESANAN_H
 #define PESANAN_H
 
-#include "point.h"
+#include "../point/point.h"
 
 typedef struct {
     int tMasuk;             // waktu pesanan masuk
