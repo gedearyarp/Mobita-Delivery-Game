@@ -13,7 +13,7 @@ pesanan.o: pesanan/pesanan.c
 konfigurasi.o: konfigurasi.c
 	gcc -c konfigurasi.c
 
-test_konfigurasi: test_konfigurasi.c charmachine.o wordmachine.o point.o peta.o pcolor.o pesanan.o konfigurasi.o
-	gcc test_konfigurasi.c charmachine.o wordmachine.o point.o peta.o pcolor.o pesanan.o konfigurasi.o -o test_konfigurasi
+test_konfigurasi: test_konfigurasi.c charmachine.o wordmachine.o point.o pcolor.o pesanan.o konfigurasi.o
+	gcc test_konfigurasi.c charmachine.o wordmachine.o point.o pcolor.o pesanan.o konfigurasi.o -o test_konfigurasi
 test_peta: test_peta.c charmachine.o wordmachine.o point.o peta.o pcolor.o pesanan.o konfigurasi.o
 	gcc test_peta.c charmachine.o wordmachine.o point.o peta.o pcolor.o pesanan.o konfigurasi.o -o test_peta
