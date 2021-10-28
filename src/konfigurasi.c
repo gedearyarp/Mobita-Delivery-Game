@@ -2,8 +2,8 @@
 #include "wordmachine.h"
 #include "charmachine.h"
 #include "konfigurasi.h"
-#include "point.h"
-#include "pesanan.h"
+#include "point/point.h"
+#include "pesanan/pesanan.h"
 #include <stdio.h>
 
 
