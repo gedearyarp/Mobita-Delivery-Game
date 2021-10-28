@@ -8,13 +8,13 @@
 #define VAL_UNDEF -999
 
 #include "boolean.h"
-#include "matrix.h"
-#include "wordmachine.h"
-#include "charmachine.h"
-#include "pesanan/pesanan.h"
-#include "point/point.h"
-#include "konfigurasi.h"
-#include "pcolor/pcolor.h"
+#include "../wordmachine/wordmachine.h"
+#include "../wordmachine/charmachine.h"
+#include "../konfigurasi/konfigurasi.h"
+#include "../point/point.h"
+#include "../pesanan/pesanan.h"
+#include "../pcolor/pcolor.h"
+#include "peta.h"
 
 
 void showPeta(MAP m,POINT p,int waktu,char item);

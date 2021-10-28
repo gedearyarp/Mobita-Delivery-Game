@@ -1,11 +1,10 @@
 #include "boolean.h"
-#include "matrix.h"
-#include "wordmachine.h"
-#include "charmachine.h"
-#include "pesanan/pesanan.h"
-#include "point/point.h"
-#include "konfigurasi.h"
-#include "pcolor/pcolor.h"
+#include "../wordmachine/wordmachine.h"
+#include "../wordmachine/charmachine.h"
+#include "../pesanan/pesanan.h"
+#include "../point/point.h"
+#include "../konfigurasi/konfigurasi.h"
+#include "../pcolor/pcolor.h"
 #include <stdio.h>
 
 void showPeta(MAP m,POINT p,int waktu,char item){
@@ -16,14 +15,14 @@ void showPeta(MAP m,POINT p,int waktu,char item){
 	boolean found = false;
 	for(a=0;a<nOrder(m);a++){
 		if(O_PICK_LABEL(m,a) == item)dropOff = O_DROP_LABEL(m,a);
-		if(O_MASUK(m,a)>=waktu)pickUp[a] = O_PICK_LABEL(m,a);
+		if(O_MASUK(m,a)<=waktu)pickUp[a] = O_PICK_LABEL(m,a);
 	}
 	for(b=0;b<nEff(m);b++){
 		if(Label(p)==NAMA(m,b))idxP = b;
 	}
-	while(PETA(m,i,j)!= '/'){
-		j = 0;
-		while(PETA(m,i,j)!='/'){
+	printf("%d %d\n",PETA_Y(m),PETA_X(m));
+	for(i=0;i<=PETA_Y(m)+1;i++){
+		for(j=0;j<=PETA_X(m)+1;j++){
 			if(PETA(m,i,j)==' ') {
 				printf("%c",PETA(m,i,j));
 				continue;
@@ -39,7 +38,7 @@ void showPeta(MAP m,POINT p,int waktu,char item){
 				if(PETA(m,i,j)==NAMA(m,b))idxD=b;
 				b++;
 			}
-			if(i == Ordinat(p) && j==Ordinat(p)){
+			if(p.label == PETA(m,i,j)){
 				print_yellow(PETA(m,i,j));
 			}
 			else if(PETA(m,i,j)==dropOff){
@@ -48,15 +47,14 @@ void showPeta(MAP m,POINT p,int waktu,char item){
 			else if(found){
 				print_red(PETA(m,i,j));
 			}
-			else if(ELMT_M(m, idxP, idxD) == 1){
+			else if(ELMT_M(m, idxP, idxD) == 1 && PETA(m,i,j)!='*'){
 				print_green(PETA(m,i,j));
 			}
 			else{
 				printf("%c",PETA(m,i,j));
 			}
-			j++;
 		}
-		i++;
+		printf("\n");
 	}
 }
 	

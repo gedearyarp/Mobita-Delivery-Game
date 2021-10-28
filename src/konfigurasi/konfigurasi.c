@@ -1,9 +1,9 @@
 #include "boolean.h"
-#include "wordmachine.h"
-#include "charmachine.h"
+#include "../wordmachine/wordmachine.h"
+#include "../wordmachine/charmachine.h"
 #include "konfigurasi.h"
-#include "point/point.h"
-#include "pesanan/pesanan.h"
+#include "../point/point.h"
+#include "../pesanan/pesanan.h"
 #include <stdio.h>
 
 
@@ -29,9 +29,9 @@ void CreateMap (MAP *m){
 void CreatePeta (MAP *m,int i,int j){
 	/* Membentuk peta menjad peta kosong dengan ukuran i,j*/
 	int x,y;
-	for(y=0;y<=i;y++){
-		for(x=0;x<=j;x++){
-			if(y==0 || x==0 || y== i || x==j)PETA(*m,y,x)='*';
+	for(y=0;y<=i+1;y++){
+		for(x=0;x<=j+1;x++){
+			if(y==0 || x==0 || y== i+1 || x==j+1)PETA(*m,y,x)='*';
 			else PETA(*m,y,x)=' ';
 		}
 	}
@@ -70,8 +70,10 @@ void BacaKoordinat(MAP *m){
 //	int val = ConvertInt();
 //	advWord();
 	int N = ConvertInt(currentWord.contents,currentWord.length);
+	PETA_Y(*m) = N;
 	advWord();
 	int M = ConvertInt(currentWord.contents,currentWord.length);
+	PETA_X(*m) = M;
 	CreatePeta(m,N,M);
 	NAMA(*m,0) = '8';
 //	printf("%d %d\n",N,M);
@@ -86,7 +88,7 @@ void BacaKoordinat(MAP *m){
 	advWord();
 	nEff(*m) = ConvertInt(currentWord.contents,currentWord.length);
 //	printf("%d\n",ConvertInt(currentWord.contents,currentWord.length));
-	for(i=0;i<nEff(*m);i++){
+	for(i=1;i<=nEff(*m);i++){
 		advWord();
 		NAMA(*m,i) = currentWord.contents[0];
 		advWord();
@@ -124,7 +126,7 @@ void BacaPesanan(MAP *m){
 		advWord();
 		O_PICK_LABEL(*m,i) = currentWord.contents[0];
 		x=0;
-		while(NAMA(*m,x) != currentWord.contents[0] &&NAMA(*m,x)!= 'y')x++;
+		while(NAMA(*m,x) != currentWord.contents[0] &&NAMA(*m,x)!= '/')x++;
 		if(NAMA(*m,x)==currentWord.contents[0]){
 			O_PICK_X(*m,i) = ABSIS(*m,x);
 			O_PICK_Y(*m,i) = ORDINAT(*m,x); 
@@ -132,7 +134,7 @@ void BacaPesanan(MAP *m){
 		advWord();
 		O_DROP_LABEL(*m,i) = currentWord.contents[0];
 		x=0;
-		while(NAMA(*m,x) != currentWord.contents[0] &&NAMA(*m,x)!= 'y')x++;
+		while(NAMA(*m,x) != currentWord.contents[0] &&NAMA(*m,x)!= '/')x++;
 		if(NAMA(*m,x)==currentWord.contents[0]){
 			O_DROP_X(*m,i) = ABSIS(*m,x);
 			O_DROP_Y(*m,i) = ORDINAT(*m,x); 
