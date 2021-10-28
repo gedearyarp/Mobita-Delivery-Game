@@ -1,4 +1,4 @@
-/* File: point.h */
+/* File: konfigurasi.h */
 /* *** Definisi ABSTRACT DATA TYPE POINT *** */
 
 #ifndef KONFIGURASI_H
@@ -11,15 +11,16 @@
 #include "matrix.h"
 #include "wordmachine.h"
 #include "charmachine.h"
-#include "pesanan.h"
-#include "point.h"
+#include "pesanan/pesanan.h"
+#include "point/point.h"
 
 typedef struct { 
-	POINT loc[CAPACITY]; /* Koordinat lokasi*/
-	int nEff; /* >=0 banyaknya elemen efektif*/
+	int nEff; /* >=0 banyaknya koordinat*/
+	int nPesanan; /* Banyaknya pesanan */
 	int hub[CAPACITY][CAPACITY]; /*  matrix adjency yang berhubungan dengan lokasi */
+	Pesanan pesan[CAPACITY];/* list dari pesanan*/
+	POINT loc[CAPACITY]; /* Koordinat lokasi*/
 	char peta[CAPACITY][CAPACITY];/* matrix untuk menampilkan koordinat lokasi*/
-	Pesanan pesan[CAPACITY];
 } MAP;
 /* *** Notasi Akses: Selektor MAP *** */
 #define NAMA(M,i) (M).loc[i].label
@@ -28,6 +29,7 @@ typedef struct {
 #define ELMT_M(M, i, j) (M).hub[(i)][(j)]
 #define PETA(M, i, j) (M).peta[(i)][(j)]
 #define nEff(M) (M).nEff
+#define nOrder(M) (M).nPesanan
 #define ORDER(M,i) (M).pesan[(i)]
 #define O_MASUK(M,i) (M).pesan[(i)].tMasuk
 #define O_PICK_X(M,i) (M).pesan[(i)].pickUpPoint.X
