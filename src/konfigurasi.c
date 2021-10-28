@@ -1,5 +1,4 @@
 #include "boolean.h"
-#include "matrix.h"
 #include "wordmachine.h"
 #include "charmachine.h"
 #include "konfigurasi.h"
