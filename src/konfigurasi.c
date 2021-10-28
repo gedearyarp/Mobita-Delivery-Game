@@ -30,9 +30,10 @@ void CreateMap (MAP *m){
 void CreatePeta (MAP *m,int i,int j){
 	/* Membentuk peta menjad peta kosong dengan ukuran i,j*/
 	int x,y;
-	for(y=0;y<i;y++){
-		for(x=0;x<j;x++){
-			PETA(*m,y,x)=' ';
+	for(y=0;y<=i;y++){
+		for(x=0;x<=j;x++){
+			if(y==0 || x==0 || y== i || x==j)PETA(*m,y,x)='*';
+			else PETA(*m,y,x)=' ';
 		}
 	}
 }
@@ -116,6 +117,7 @@ void BacaPesanan(MAP *m){
 	/*Membaca pesanan*/
 	advWord();
 	int i,x,n = ConvertInt(currentWord.contents,currentWord.length);
+	nOrder(*m) =  n;
 //	printf("%d\n",n);
 	for(i=0;i<n;i++){
 		advWord();
