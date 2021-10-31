@@ -1,0 +1,62 @@
+/* Fungsi/Prosedur untuk To Do List */
+
+#include <stdio.h>
+#include "../boolean.h"
+#include "../list_linked/list_linked.h"
+#include "../queue/queue.h"
+
+void printToDo(List to_do_list, int curr_time) {
+/* Mencetak to do list.
+   Fungsi ini dipanggil setiap ada command TO_DO. */
+    /* KAMUS LOKAL */
+    int i;
+    char pickLoc, dropLoc;  // nama tempat pick up dan drop off
+    Address p;
+    /* ALGORITMA */
+    printf("Pesanan pada To Do List:\n");
+    i = 0;
+    p = to_do_list;
+    while (p != NULL) {   
+        pickLoc = Label(PICK_P(INFO(p)));
+        dropLoc = Label(DROP_P(INFO(p)));
+        printf("%d. %c -> %c ", i+1, pickLoc, dropLoc);     // print lokasi
+        // print jenis item
+        if (TYPE(INFO(p)) == 'N'){               
+            printf("(Normal Item)");
+        } else if (TYPE(INFO(p)) == 'H'){
+            printf("(Heavy Item)");
+        } else if (TYPE(INFO(p)) == 'P'){
+            printf("(Perishable Item, sisa waktu %d)", T_PERISH(INFO(p)));
+        } else if (TYPE(INFO(p)) == 'V'){
+            printf("(VIP Item)");
+        }
+        printf("\n");
+        i++;
+        p = NEXT(p);
+    }
+}
+
+void insertToDo (List *to_do_list, Queue *queue_pesanan, int curr_time) {
+/* Menghapus pesanan dari queue_pesanan dan menambahkan pesanan itu ke to_do_list. 
+   Fungsi ini dipanggil setiap satuan waktu.
+   Prekondisi: variabel to_do_list dan queue_pesanan sudah dideklarasikan sebelum pemanggilan fungsi. */
+    /* KAMUS LOKAL */
+    ElType val;
+    /* ALGORITMA */
+    while (curr_time >= T_MASUK(HEAD(*queue_pesanan))) {
+        // insert pesanan ke to do list kalau current_time >= waktu masuk pesanan
+        dequeue(queue_pesanan, &val);
+        insertLast(to_do_list, val);
+    }
+}
+
+void deleteToDo (List *to_do_list, ElType val) {
+/* Menghapus val (pesanan) dari to_do_list ketika sudah di drop off. 
+   Fungsi ini dipanggil setiap selesai drop off.
+   Prekondisi: variabel to_do_list sudah dideklarasikan sebelum pemanggilan fungsi. */
+    /* KAMUS LOKAL */
+    int idx;
+    /* ALGORITMA */
+    idx = indexOf(*to_do_list, val);
+    deleteAt(to_do_list, idx, &val);
+}

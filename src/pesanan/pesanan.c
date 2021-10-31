@@ -4,7 +4,7 @@
 #include "pesanan.h"
 
 /* *** Implementasi Fungsi createPesanan *** */
-Pesanan createPesanan(int t0, int xP, int yP, char pick, int xD, int yD, char drop, char type, int tP) {
+Pesanan createPesanan(int t0, int xP, int yP, char pick, int xD, int yD, char drop, char type, int tP, int tPick) {
     /* KAMUS LOKAL */
     Pesanan P;
     /* ALGORITMA */
@@ -13,6 +13,7 @@ Pesanan createPesanan(int t0, int xP, int yP, char pick, int xD, int yD, char dr
     DROP_P(P) = MakePOINT(xD, yD, drop);
     TYPE(P) = type;
     T_PERISH(P) = tP;
+    T_PICK(P) = tPick;
     return P;
 }
 
@@ -23,15 +24,16 @@ void displayPesanan(Pesanan p) {
     TulisPOINT(PICK_P(p));
     printf(",");
     TulisPOINT(DROP_P(p));
-    printf(",%c,%d]", TYPE(p), T_PERISH(p));
+    printf(",%c,%d,%d]", TYPE(p), T_PERISH(p), T_PICK(p));
 }
 
 /* *** Implementasi Fungsi Boolean *** */
 boolean isPesananEqual(Pesanan P1, Pesanan P2) {
     /* ALGORITMA */
-    return ( (T_MASUK(P1) == T_MASUK(P2)) && 
-             (EQ(PICK_P(P1), PICK_P(P2))) &&
-             (EQ(DROP_P(P1), DROP_P(P2))) && 
-             (TYPE(P1) == TYPE(P2))       &&
-             (T_PERISH(P1) == T_PERISH(P2)) );
+    return ( (T_MASUK(P1) == T_MASUK(P2))   && 
+             (EQ(PICK_P(P1), PICK_P(P2)))   &&
+             (EQ(DROP_P(P1), DROP_P(P2)))   && 
+             (TYPE(P1) == TYPE(P2))         &&
+             (T_PERISH(P1) == T_PERISH(P2)) &&
+             (T_PICK(P1) == T_PICK(P2)) );
 }

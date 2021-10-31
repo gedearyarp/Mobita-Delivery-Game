@@ -13,8 +13,8 @@ int main () {
     Pesanan p1, p2, p3;
 
     /* ALGORITMA */
-    p1 = createPesanan(1, 3, 8, 'G', 8, 6, 'N', 'N', T_UNDEF);      // t=1, G(3,8)->N(8,6), Normal
-    p2 = createPesanan(10, 9, 13, 'P', 10, 3, 'Q', 'P', 20);        // t=10, P(9,13)->Q(10,3), Perishable(20)
+    p1 = createPesanan(1, 3, 8, 'G', 8, 6, 'N', 'N', T_UNDEF, T_UNDEF);      // t=1, G(3,8)->N(8,6), Normal
+    p2 = createPesanan(10, 9, 13, 'P', 10, 3, 'Q', 'P', 20, T_UNDEF);        // t=10, P(9,13)->Q(10,3), Perishable(20)
     p3 = p1;
 
     displayPesanan(p1); printf("\n");

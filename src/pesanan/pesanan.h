@@ -14,7 +14,8 @@ typedef struct {
     POINT pickUpPoint;      // tempat pick up (x,y,label)
     POINT dropOffPoint;     // tempat drop off (x,y,label)
     char type;              // jenis barang (N/H/P/V)
-    int tPerish;            // waktu barang hangus (hanya untuk perishable item, lainnya T_UNDEF)
+    int tPerish;            // waktu barang hangus (hanya untuk perishable item, jenis lainnya bernilai T_UNDEF)
+    int tPick;              // waktu saat barang di-pick up, nilai awal = T_UNDEF
 } Pesanan;
 
 /* *** Selektor *** */
@@ -23,9 +24,10 @@ typedef struct {
 #define DROP_P(p) (p).dropOffPoint
 #define TYPE(p) (p).type
 #define T_PERISH(p) (p).tPerish
+#define T_PICK(p) (p).tPick
 
 /* *** Konstruktor *** */
-Pesanan createPesanan(int t0, int xP, int yP, char pick, int xD, int yD, char drop, char type, int tP);
+Pesanan createPesanan(int t0, int xP, int yP, char pick, int xD, int yD, char drop, char type, int tP, int tPick);
 /* Membentuk sebuah data pesanan dari komponen-komponennya */
 
 /* *** Display Pesanan *** */

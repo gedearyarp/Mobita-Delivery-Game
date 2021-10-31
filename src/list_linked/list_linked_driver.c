@@ -15,10 +15,10 @@ int main () {
     Address loc1, loc2;
 
     /* ALGORITMA */
-    p1 = createPesanan(1, 3, 8, 'G', 8, 6, 'N', 'N', -1);       // t=1, G(3,8)->N(8,6), Normal
-    p2 = createPesanan(2, 8, 2, 'M', 1, 15, 'B', 'H', -1);      // t=2, M(8,2)->B(1,15), Heavy
-    p3 = createPesanan(9, 10, 3, 'Q', 7, 10, 'L', 'V', -1);     // t=9, Q(10,3)->L(7,10), VIP
-    p4 = createPesanan(10, 9, 13, 'P', 10, 3, 'Q', 'P', 20);    // t=10, P(9,13)->Q(10,3), Perishable(20)
+    p1 = createPesanan(1, 3, 8, 'G', 8, 6, 'N', 'N', T_UNDEF, T_UNDEF);     // t=1, G(3,8)->N(8,6), Normal
+    p2 = createPesanan(2, 8, 2, 'M', 1, 15, 'B', 'H', T_UNDEF, T_UNDEF);    // t=2, M(8,2)->B(1,15), Heavy
+    p3 = createPesanan(9, 10, 3, 'Q', 7, 10, 'L', 'V', T_UNDEF, T_UNDEF);   // t=9, Q(10,3)->L(7,10), VIP
+    p4 = createPesanan(10, 9, 13, 'P', 10, 3, 'Q', 'P', 20, T_UNDEF);       // t=10, P(9,13)->Q(10,3), Perishable(20)
     
     // PEMBUATAN LIST KOSONG
     CreateList(&l1);
