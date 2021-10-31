@@ -4,14 +4,17 @@
 #ifndef PESANAN_H
 #define PESANAN_H
 
+#include "../boolean.h"
 #include "../point/point.h"
+
+#define T_UNDEF (-1)
 
 typedef struct {
     int tMasuk;             // waktu pesanan masuk
-    POINT pickUpPoint;      // tempat pick up (x,y)
-    POINT dropOffPoint;     // tempat drop off (x,y)
+    POINT pickUpPoint;      // tempat pick up (x,y,label)
+    POINT dropOffPoint;     // tempat drop off (x,y,label)
     char type;              // jenis barang (N/H/P/V)
-    int tPerish;            // waktu barang hangus (hanya untuk perishable item)
+    int tPerish;            // waktu barang hangus (hanya untuk perishable item, lainnya T_UNDEF)
 } Pesanan;
 
 /* *** Selektor *** */
@@ -24,5 +27,13 @@ typedef struct {
 /* *** Konstruktor *** */
 Pesanan createPesanan(int t0, int xP, int yP, char pick, int xD, int yD, char drop, char type, int tP);
 /* Membentuk sebuah data pesanan dari komponen-komponennya */
+
+/* *** Display Pesanan *** */
+void displayPesanan(Pesanan p);
+/* Mencetak pesanan ke layar dengan format [t0,(pick,xP,yP),(drop,xD,yD),type,tP]
+
+/* *** Fungsi Boolean *** */
+boolean isPesananEqual(Pesanan p1, Pesanan p2);
+/* Menghasilkan true jika pesanan 1 = pesanan 2 */
 
 #endif

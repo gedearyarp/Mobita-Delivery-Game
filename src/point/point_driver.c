@@ -1,5 +1,9 @@
-/* File: driver_point.c */
+/* File: point_driver.c */
 /* *** Driver ABSTRACT DATA TYPE POINT *** */
+
+/* Note:
+    Compile:    gcc point.c point_driver.c -o d_point
+*/
 
 #include <stdio.h>
 #include "point.h"
