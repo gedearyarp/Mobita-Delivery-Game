@@ -5,7 +5,7 @@
 #include "../list_linked/list_linked.h"
 #include "../stack/stack.h"
 
-void printInProgress(List in_progress_list) {
+void printInProgress(List in_progress_list, int curr_time) {
 /* Fungsi untuk mencetak in progress list.
    Fungsi ini dipanggil setiap ada command IN_PROGRESS. */
     /* KAMUS LOKAL */
@@ -26,7 +26,7 @@ void printInProgress(List in_progress_list) {
         } else if (TYPE(INFO(p)) == 'H'){
             printf("Heavy Item");
         } else if (TYPE(INFO(p)) == 'P'){
-            tSisa = T_PERISH(INFO(p));
+            tSisa = curr_time - (T_PICK(INFO(p)) + T_PERISH(INFO(p)));
             printf("Perishable Item, sisa waktu %d", tSisa);
         } else if (TYPE(INFO(p)) == 'V'){
             printf("VIP Item");
