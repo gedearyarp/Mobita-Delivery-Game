@@ -23,7 +23,7 @@ void BacaPOINT (POINT * P) {
     int x, y;
     char label;
     /* ALGORITMA */
-    scanf("%d %d %c", &x, &y, & label);
+    scanf("%d %d %c", &x, &y, &label);
     *P = MakePOINT(x,y,label);
 } 
 void TulisPOINT (POINT P) {
@@ -103,7 +103,7 @@ float Jarak0 (POINT P) {
 }
 float Panjang (POINT P1, POINT P2) {
     /* KAMUS LOKAL */
-    float difX, difY;
+    int difX, difY;
     /* ALGORITMA */
     // Rumus jarak antara 2 titik adalah panjang = ((x1-x2)^2 + (y1-y2)^2)^0.5
     difX = Absis(P1) - Absis(P2);       // Selisih x1 dan x2

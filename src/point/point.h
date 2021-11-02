@@ -24,21 +24,19 @@ POINT MakePOINT (int X, int Y, char Label);
 
 /* *** KELOMPOK Interaksi dengan I/O device, BACA/TULIS  *** */                                                 
 void BacaPOINT (POINT * P); 
-/* Membaca nilai absis dan ordinat dari keyboard dan membentuk 
-   POINT P berdasarkan dari nilai absis dan ordinat tersebut */
-/* Komponen X dan Y dibaca dalam 1 baris, dipisahkan 1 buah spasi */
-/* Contoh: 1 2 
-   akan membentuk POINT <1,2> */
+/* Membaca nilai absis dan ordinat serta label dari keyboard dan 
+   membentuk POINT P berdasarkan nilai nilai input tersebut */
+/* Komponen X, Y, dan label dibaca dalam 1 baris, dipisahkan 1 buah spasi */
+/* Contoh: 1 2 A 
+   akan membentuk POINT <1,2,A> */
 /* I.S. Sembarang */
 /* F.S. P terdefinisi */
 void TulisPOINT (POINT P);
-/* Nilai P ditulis ke layar dengan format "(X,Y)" 
+/* Nilai P ditulis ke layar dengan format "label(X,Y)" 
    tanpa spasi, enter, atau karakter lain di depan, belakang, 
-   atau di antaranya 
-   Output X dan Y harus dituliskan dalam bilangan riil dengan 2 angka di belakang koma.
-*/
+   atau di antaranya */
 /* I.S. P terdefinisi */
-/* F.S. P tertulis di layar dengan format "(X,Y)" */                
+/* F.S. P tertulis di layar dengan format "label(X,Y)" */                
 
 /* *** Kelompok operasi relasional terhadap POINT *** */
 boolean EQ (POINT P1, POINT P2);
@@ -48,11 +46,11 @@ boolean NEQ (POINT P1, POINT P2);
 
 /* *** Kelompok menentukan di mana P berada *** */
 boolean IsOrigin (POINT P);
-/* Menghasilkan true jika P adalah titik origin */
+/* Menghasilkan true jika P adalah titik origin (0,0) */
 boolean IsOnSbX (POINT P);
-/* Menghasilkan true jika P terletak Pada sumbu X */
+/* Menghasilkan true jika P terletak Pada sumbu X (X,0)*/
 boolean IsOnSbY (POINT P);
-/* Menghasilkan true jika P terletak pada sumbu Y */
+/* Menghasilkan true jika P terletak pada sumbu Y (0,Y)*/
 int Kuadran (POINT P);
 /* Menghasilkan kuadran dari P: 1, 2, 3, atau 4 */
 /* Prekondisi : P bukan titik origin, */
