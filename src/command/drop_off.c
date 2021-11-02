@@ -8,6 +8,7 @@
 
 void dropOff (Stack *Tas, POINT p, int *uang)
 {
+    Pesanan pesanan;
     int plusMoney;
     char dropLoc, type;
     
@@ -44,5 +45,6 @@ void dropOff (Stack *Tas, POINT p, int *uang)
 
         *uang += plusMoney;
         printf("Uang yang didapatkan: %d Yen\n", plusMoney);
+        pop(Tas, *pesanan);
     }
 }
