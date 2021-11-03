@@ -8,10 +8,6 @@
 void CreateStack(Stack *s){
 	Stack st;
 	IDX_TOP(st)=IDX_UNDEF;
-	int i;
-	for(i=0;i<CAPACITY;i++){
-		st.buffer[i]=0;
-	}
 	*s=st;
 }
 /* I.S. sembarang; */

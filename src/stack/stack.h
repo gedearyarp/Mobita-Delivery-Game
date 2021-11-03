@@ -6,11 +6,12 @@
 #define STACK_H
 
 #include "../boolean.h"
+#include "../pesanan/pesanan.h"
 
 #define IDX_UNDEF -1
 #define CAPACITY 100
 
-typedef int ElType;
+typedef Pesanan ElType;
 typedef struct {
   ElType buffer[CAPACITY]; /* tabel penyimpan elemen */
   int idxTop;              /* alamat TOP: elemen puncak */
