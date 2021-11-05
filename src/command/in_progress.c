@@ -3,9 +3,9 @@
 #include <stdio.h>
 #include "../boolean.h"
 #include "../list_linked/list_linked.h"
-#include "../stack/stack.h"
+#include "../tas/tas.h"
 
-void printInProgress(List in_progress_list, int curr_time) {
+void in_progressCommand(List in_progress_list, int curr_time) {
 /* Fungsi untuk mencetak in progress list.
    Fungsi ini dipanggil setiap ada command IN_PROGRESS. */
     /* KAMUS LOKAL */

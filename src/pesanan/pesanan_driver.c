@@ -2,7 +2,7 @@
 /* *** Driver ABSTRACT DATA TYPE Pesanan *** */
 
 /* Note:
-    Compile:    gcc pesanan.c pesanan_driver.c ../point/point.c -o d_pesanan
+    Compile:    gcc pesanan.c pesanan_driver.c ../point/point.c -o pesanan_d
 */
 
 #include <stdio.h>

@@ -5,7 +5,7 @@
 #include "../list_linked/list_linked.h"
 #include "../queue/queue.h"
 
-void printToDo(List to_do_list, int curr_time) {
+void to_doCommand(List to_do_list, int curr_time) {
 /* Mencetak to do list.
    Fungsi ini dipanggil setiap ada command TO_DO. */
     /* KAMUS LOKAL */
@@ -51,8 +51,8 @@ void insertToDo (List *to_do_list, Queue *queue_pesanan, int curr_time) {
 }
 
 void deleteToDo (List *to_do_list, ElType val) {
-/* Menghapus val (pesanan) dari to_do_list ketika sudah di drop off. 
-   Fungsi ini dipanggil setiap selesai drop off.
+/* Menghapus val (pesanan) dari to_do_list ketika pesanan masuk in_progress. 
+   Fungsi ini dipanggil setiap pesanan masuk in_progress.
    Prekondisi: variabel to_do_list sudah dideklarasikan sebelum pemanggilan fungsi. */
     /* KAMUS LOKAL */
     int idx;

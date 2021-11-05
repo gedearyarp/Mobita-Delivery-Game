@@ -2,7 +2,7 @@
 /* FILE DRIVER ADT LINKED LIST */
 
 /* Note: 
-    Compile:     gcc list_linked.c list_linked_driver.c node.c ../pesanan/pesanan.c ../point/point.c -o d_list_linked
+    Compile:     gcc list_linked.c list_linked_driver.c node.c ../pesanan/pesanan.c ../point/point.c -o list_linked_d
 */
 
 #include <stdio.h>

@@ -2,7 +2,7 @@
 /* *** Driver ABSTRACT DATA TYPE POINT *** */
 
 /* Note:
-    Compile:    gcc point.c point_driver.c -o d_point
+    Compile:    gcc point.c point_driver.c -o point_d
 */
 
 #include <stdio.h>
