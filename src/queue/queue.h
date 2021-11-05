@@ -6,6 +6,7 @@
 
 #include "../boolean.h"
 #include "../pesanan/pesanan.h"
+#include "../konfigurasi/konfigurasi.h"
 
 #define IDX_UNDEF -1
 #define QCAPACITY 100
@@ -45,11 +46,11 @@ int lengthQ(Queue q);
 
 /* *** Primitif Add/Delete *** */
 void enqueue(Queue *q, ElType val);
-/* Proses: Menambahkan val pada q dengan aturan FIFO */
+/* Proses: Menambahkan val pada q dengan aturan FIFO dan terurut berdasarkan T_MASUK(val) */
 /* I.S. q mungkin kosong, tabel penampung elemen q TIDAK penuh */
-/* F.S. val menjadi TAIL yang baru, IDX_TAIL "mundur".
+/* F.S. val sudah dimasukkan ke dalam queue yang baru, IDX_TAIL "mundur".
         Jika q penuh semu, maka perlu dilakukan aksi penggeseran "maju" elemen-elemen q
-        menjadi rata kiri untuk membuat ruang kosong bagi TAIL baru  */
+        menjadi rata kiri untuk membuat ruang kosong bagi val  */
 
 void dequeue(Queue *q, ElType *val);
 /* Proses: Menghapus val pada q dengan aturan FIFO */
@@ -67,5 +68,8 @@ void displayQueue(Queue q);
 /* Contoh : jika ada tiga elemen bernilai 1, 20, 30 akan dicetak: [1,20,30] */
 /* Jika Queue kosong : menulis [] */
 
+/* Fungsi Create Queue Pesanan */
+void QueuePesanan (MAP m, Queue *q_pesanan);
+/* Menghasilkan queue pesanan */
 
 #endif
