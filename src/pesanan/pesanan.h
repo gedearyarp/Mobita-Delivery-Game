@@ -4,8 +4,8 @@
 #ifndef PESANAN_H
 #define PESANAN_H
 
-#include "../boolean.h"
-#include "../point/point.h"
+#include "boolean.h"
+#include "../ADT/point/point.h"
 
 #define T_UNDEF (-1)
 

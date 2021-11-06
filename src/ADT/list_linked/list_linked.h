@@ -7,8 +7,8 @@
 #define LIST_H
 
 #include "node.h"
-#include "../boolean.h"
-#include "../pesanan/pesanan.h"
+#include "./boolean.h"
+#include "../../pesanan/pesanan.h"
 
 typedef Address List;
 

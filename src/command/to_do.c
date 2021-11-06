@@ -1,9 +1,9 @@
 /* Fungsi/Prosedur untuk To Do List */
 
 #include <stdio.h>
-#include "../boolean.h"
-#include "../list_linked/list_linked.h"
-#include "../queue/queue.h"
+#include "../ADT/boolean.h"
+#include "../ADT/list_linked/list_linked.h"
+#include "../ADT/queue/queue.h"
 
 void to_doCommand(List to_do_list, int curr_time) {
 /* Mencetak to do list.

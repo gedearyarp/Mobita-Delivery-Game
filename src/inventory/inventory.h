@@ -1,7 +1,15 @@
 #ifndef INVENTORY_H
 #define INVENTORY_H
 
-#include "../boolean.h"
+#include "boolean.h"
+
+/*
+INDEX GADGET :
+1 = Kain Pembungkus Waktu
+2 = Senter Pembesar
+3 = Pintu Kemana Saja
+4 = Mesin Waktu
+*/
 
 typedef struct {
     int gadget[6];

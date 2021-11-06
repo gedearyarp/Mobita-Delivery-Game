@@ -1,8 +1,8 @@
 #include "boolean.h"
-#include "../wordmachine/wordmachine.h"
-#include "../wordmachine/charmachine.h"
+#include "../ADT/wordmachine/wordmachine.h"
+#include "../ADT/wordmachine/charmachine.h"
 #include "konfigurasi.h"
-#include "../point/point.h"
+#include "../ADT/point/point.h"
 #include "../pesanan/pesanan.h"
 #include <stdio.h>
 

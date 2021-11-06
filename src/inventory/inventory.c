@@ -1,5 +1,5 @@
 #include <stdio.h>
-#include "../boolean.h"
+#include "boolean.h"
 #include "inventory.h"
 
 Inventory createInventory(){
