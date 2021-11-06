@@ -1,6 +1,10 @@
 {
     "files.associations": {
         "stack.h": "c",
-        "tas.h": "c"
+        "tas.h": "c",
+        "boolean.h": "c",
+        "queue.h": "c",
+        "wordmachine.h": "c",
+        "konfigurasi.h": "c"
     }
 }

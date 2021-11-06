@@ -1,7 +1,7 @@
 /* Fungsi/Prosedur untuk In Progress List */
 
 #include <stdio.h>
-#include "../boolean.h"
+#include "../ADT/boolean.h"
 #include "../ADT/list_linked/list_linked.h"
 #include "../tas/tas.h"
 

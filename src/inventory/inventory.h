@@ -1,7 +1,7 @@
 #ifndef INVENTORY_H
 #define INVENTORY_H
 
-#include "../boolean.h"
+#include "boolean.h"
 
 typedef struct {
     int gadget[6];

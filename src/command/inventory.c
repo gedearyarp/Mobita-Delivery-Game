@@ -1,5 +1,5 @@
 #include <stdio.h>
-#include "../boolean.h"
+#include "../ADT/boolean.h"
 #include "../inventory/inventory.h"
 
 /*

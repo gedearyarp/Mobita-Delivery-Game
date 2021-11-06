@@ -2,7 +2,7 @@
 
 #include <stdio.h>
 #include <stdlib.h>
-#include "../boolean.h"
+#include "../ADT/boolean.h"
 #include "../point/point.h"
 #include "../konfigurasi/konfigurasi.h"
 
