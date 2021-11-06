@@ -1,18 +1,21 @@
 /* Fungsi/prosedur yang dipanggil ketika melakukan drop off*/
 
 #include <stdio.h>
-#include "../ADT/boolean.h"
-#include "../ADT/stack/stack.h"
-#include "../ADT/point/point.h"
-#include "../pesanan/pesanan.h"
+#include "../tas/tas.h"
+#include "../point/point.h"
 
 void dropOff (Stack *Tas, POINT p, int *uang)
 {
+    /* Prosedur untuk drop off jika drop location barang paling atas di tas sama dengan lokasi user. 
+       Jika tidak sama, tidak akan di drop off */
+
+    /* KAMUS LOKAL */
     Pesanan pesanan;
     int plusMoney;
     char dropLoc, type;
     
-    dropLoc = Label(DROP_P(TOP(*Tas)));  /* di ADT stack bentuknya ElType = int, tapi harusnya Eltype = Pesanan*/ 
+    /* ALGORITMA */
+    dropLoc = Label(DROP_P(TOP(*Tas)));
     type = TYPE(TOP(*Tas));
 
     if (Label(p) != dropLoc)
@@ -45,6 +48,6 @@ void dropOff (Stack *Tas, POINT p, int *uang)
 
         *uang += plusMoney;
         printf("Uang yang didapatkan: %d Yen\n", plusMoney);
-        pop(Tas, *pesanan);
+        pop(Tas, &pesanan);
     }
 }
