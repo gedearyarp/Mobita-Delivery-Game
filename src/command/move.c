@@ -3,7 +3,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include "../ADT/boolean.h"
-#include "../point/point.h"
+#include "../ADT/point/point.h"
 #include "../konfigurasi/konfigurasi.h"
 
 int idxPOINT(MAP m, POINT p){
@@ -35,7 +35,7 @@ POINT pointIdx(MAP m, int i){
     return m.loc[i];
 }
 
-void move(MAP m, POINT *user){
+void moveCommand(MAP m, POINT *user){
 /* menyajikan titik mana saja yang dapat disinggahi dari posisi user,
    kemudian user memilih salah satu titik, lokasi user sekarang
    berpindah ke titik tersebut */
