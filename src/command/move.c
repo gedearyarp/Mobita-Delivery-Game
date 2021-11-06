@@ -3,7 +3,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include "../ADT/boolean.h"
-#include "../point/point.h"
+#include "../ADT/point/point.h"
 #include "../konfigurasi/konfigurasi.h"
 
 int idxPOINT(MAP m, POINT p){
