@@ -2,8 +2,8 @@
 
 #include <stdio.h>
 #include "../boolean.h"
-#include "../stack/stack.h"
-#include "../point/point.h"
+#include "../ADT/stack/stack.h"
+#include "../ADT/point/point.h"
 #include "../pesanan/pesanan.h"
 
 void dropOff (Stack *Tas, POINT p, int *uang)

@@ -71,4 +71,3 @@ void move(MAP m, POINT *user){
     printf("Mobita sekarang berada di titik %c (%d,%d)!", Label(*user), Absis(*user), Ordinat(*user));
 }
 
-/* ***

@@ -1,6 +1,6 @@
-#include "../stack/stack.h"
-#include "../list_linked/list_linked.h"
-#include "../point/point.h"
+#include "../ADT/stack/stack.h"
+#include "../ADT/list_linked/list_linked.h"
+#include "../ADT/point/point.h"
 
 void pick_up(Stack *Tas, POINT P, List *to_do_list, List *in_progress_list, int curr_time, float *time_incr, int *cap_incr, int *uncompleted){
     Address q;
