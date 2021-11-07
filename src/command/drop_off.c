@@ -1,8 +1,7 @@
 /* Fungsi/prosedur yang dipanggil ketika melakukan drop off*/
 
 #include <stdio.h>
-#include "../tas/tas.h"
-#include "../point/point.h"
+#include "drop_off.h"
 
 void drop_OffCommand(Tas *Tas, POINT p, int *uang)
 {
