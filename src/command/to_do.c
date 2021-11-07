@@ -1,6 +1,8 @@
-/* Fungsi/Prosedur untuk To Do List */
+/* File: to_do.h */
+/* Realisasi Fungsi/Prosedur untuk To Do List */
 
 #include <stdio.h>
+#include "to_do.h"
 #include "../ADT/boolean.h"
 #include "../ADT/list_linked/list_linked.h"
 #include "../ADT/queue/queue.h"

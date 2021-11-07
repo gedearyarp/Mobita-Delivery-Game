@@ -1,11 +1,5 @@
-/* 
-NIM             : Hansel Valentino Tanoto
-Nama            : 13520046
-Tanggal         : 28 Oktober 2021
-Topik praktikum : ADT Linked List
-Deskripsi       : Implementasi fungsi/prosedur primitif ADT Linked List
-                  yang sudah didefinisikan di file header (list_linked.h)
-*/
+/* File: list_linked.c */
+/* REALISASI FUNGSI PROSEDUR PRIMITIF ADT LIST LINKED */
 
 #include <stdio.h>
 #include "list_linked.h"

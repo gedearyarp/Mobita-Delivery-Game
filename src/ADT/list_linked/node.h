@@ -1,3 +1,6 @@
+/* File: node.h */
+/* Definisi Node */
+
 #ifndef NODE_H
 #define NODE_H
 
