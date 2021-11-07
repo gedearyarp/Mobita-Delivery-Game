@@ -2,10 +2,7 @@
 
 #include <stdio.h>
 #include <stdlib.h>
-#include "../ADT/boolean.h"
-#include "../ADT/point/point.h"
-#include "../konfigurasi/konfigurasi.h"
-#include "../tas/tas.h"
+#include "move.h"
 
 int idxPOINT(MAP m, POINT p){
 /* mengembalikan indeks point pada map dari point */
@@ -56,7 +53,7 @@ int duration(Tas tas){
     }
 }
 
-void move(MAP m, int *waktu, Tas tas, POINT *user){
+void moveCommand(MAP m, int *waktu, Tas tas, POINT *user){
 /* menyajikan titik mana saja yang dapat disinggahi dari posisi user,
    kemudian user memilih salah satu titik, lokasi user sekarang
    berpindah ke titik tersebut */
