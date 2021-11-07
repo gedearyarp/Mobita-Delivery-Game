@@ -2,8 +2,8 @@
 /* Definisi ADT Stack dengan representasi array secara eksplisit dan alokasi statik */
 /* TOP adalah alamat elemen puncak */
 
-#ifndef STACK_H
-#define STACK_H
+#ifndef TAS_H
+#define TAS_H
 
 #include "../boolean.h"
 #include "../pesanan/pesanan.h"
@@ -11,12 +11,12 @@
 #define IDX_UNDEF -1
 #define MAXCAPACITY 100
 
-typedef Pesanan ElType;
 typedef struct {
-  ElType buffer[MAXCAPACITY]; /* tabel penyimpan elemen */
+  Pesanan buffer[MAXCAPACITY]; /* tabel penyimpan elemen */
   int idxTop;              /* alamat TOP: elemen puncak */
   int currCAPACITY;
-} Stack;
+} Tas;
+// normal, heavy, perishable
 
 /* ********* AKSES (Selektor) ********* */
 /* Jika s adalah Stack, maka akses elemen : */
@@ -25,26 +25,26 @@ typedef struct {
 #define currCAPACITY(s) (s).currCAPACITY
 
 /* *** Konstruktor/Kreator *** */
-void CreateStack(Stack *s);
+void CreateTas(Tas *s);
 /* I.S. sembarang; */
 /* F.S. Membuat sebuah stack S kosong dengan kondisi sbb: */
 /* - Index top bernilai IDX_UNDEF */
 /* Proses : Melakukan alokasi, membuat sebuah s kosong */
 
 /* ************ Prototype ************ */
-boolean isEmpty(Stack s);
+boolean isEmpty(Tas s);
 /* Mengirim true jika s kosong: lihat definisi di atas */
-boolean isFull(Stack s);
+boolean isFull(Tas s);
 /* Mengirim true jika tabel penampung nilai s stack penuh */
 
 /* ************ Menambahkan sebuah elemen ke Stack ************ */
-void push(Stack *s, ElType val);
+void push(Tas *s, Pesanan val);
 /* Menambahkan val sebagai elemen Stack s */
 /* I.S. s mungkin kosong, tabel penampung elemen stack TIDAK penuh */
 /* F.S. val menjadi TOP yang baru,IDX_TOP bertambah 1 */
 
 /* ************ Menghapus sebuah elemen Stack ************ */
-void pop(Stack *s, ElType *val);
+void pop(Tas *s, Pesanan *val);
 /* Menghapus val dari Stack s */
 /* I.S. s tidak mungkin kosong */
 /* F.S. val adalah nilai elemen TOP yang lama, IDX_TOP berkurang 1 */

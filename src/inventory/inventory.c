@@ -16,7 +16,7 @@ INDEX GADGET :
 2 = Senter Pembesar
 3 = Pintu Kemana Saja
 4 = Mesin Waktu
-*/
+*/ 
 
 void printInvetory(Inventory I){
     for(int i=1; i<=5; i++){

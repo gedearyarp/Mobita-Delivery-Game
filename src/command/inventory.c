@@ -1,7 +1,9 @@
 #include <stdio.h>
 #include "../ADT/boolean.h"
+#include "../ADT/list_linked/list_linked.h"
 #include "../inventory/inventory.h"
 #include "../tas/tas.h"
+#include "../pesanan/pesanan.h"
 
 /*
 kain pembungkus waktu: perlu ADT tas
@@ -10,7 +12,7 @@ pintu kemana saja: perlu ADT map
 mesin waktu: gampang (done)
 */
 
-void inventoryCommand(Inventory *I, int *waktu, Stack *tas){
+void inventoryCommand(Inventory *I, int *waktu, Tas *tas, List *in_progress_list){
     printInventory(*I);
     printf("Gadget mana yang ingin digunakan? (ketik 0 jika ingin kembali)\n");
     
@@ -30,6 +32,26 @@ void inventoryCommand(Inventory *I, int *waktu, Stack *tas){
         return;
     }
     else if(INV(*I, numInv) == 1){
+        int ada = 0, psnPerish = -1;
+        for(int psn=currCAPACITY(*tas)-1; psn>=0; psn--){
+            if(TYPE((*tas).buffer[psn]) == 'P'){
+                psnPerish = psn;
+                ada = 1;
+                break;
+            }
+        }
+        if(!ada){
+            printf("Tidak ada Kain Pembungkus Waktu dalam tas!");
+            return;
+        }
+        (*tas).buffer[psnPerish].tPick = *waktu;
+        int now = 0;
+        Address perish = FIRST(*in_progress_list);
+        while(now != currCAPACITY(*tas)-psnPerish-1){
+            perish = NEXT(perish);
+            now ++;
+        }
+        INFO(perish).tPick = *waktu;
         printf("Kain Pembungkus Waktu berhasil digunakan!");
     }
     else if(INV(*I, numInv) == 2){

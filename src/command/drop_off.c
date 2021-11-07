@@ -4,7 +4,7 @@
 #include "../tas/tas.h"
 #include "../point/point.h"
 
-void dropOff (Stack *Tas, POINT p, int *uang)
+void dropOff (Tas *Tas, POINT p, int *uang)
 {
     /* Prosedur untuk drop off jika drop location barang paling atas di tas sama dengan lokasi user. 
        Jika tidak sama, tidak akan di drop off */

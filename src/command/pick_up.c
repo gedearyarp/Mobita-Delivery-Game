@@ -2,7 +2,7 @@
 #include "../list_linked/list_linked.h"
 #include "../point/point.h"
 // BIKIN hapus to do list dan pickup utk jenis tertentu
-void pickUpCommand(Stack *Tas, POINT P, List *to_do_list, List *in_progress_list, int curr_time, float *time_incr, int *cap_incr, int *uncompleted){
+void pickUpCommand(Tas *Tas, POINT P, List *to_do_list, List *in_progress_list, int curr_time, float *time_incr, int *cap_incr, int *uncompleted){
     Address q;
     int ctr;
     Pesanan val;
