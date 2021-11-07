@@ -1,3 +1,7 @@
-/*
-File ini untuk main nya yaa tempat play gamenya
-*/
+#include <stdio.h>
+#include <stdlib.h>
+
+
+int main(){
+    
+}
