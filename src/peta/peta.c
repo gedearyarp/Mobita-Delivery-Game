@@ -7,7 +7,7 @@
 #include "../pcolor/pcolor.h"
 #include <stdio.h>
 
-void showPeta(MAP m,POINT p,int waktu,char item){
+void mapCommand(MAP m,POINT p,int waktu,char item){
 	//fungsi untuk menampilkan peta
 	int i=0,j=0,a,b,idxP,idxD;
 	char dropOff;
