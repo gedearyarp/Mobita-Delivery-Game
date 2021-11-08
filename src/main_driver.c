@@ -21,7 +21,7 @@
 #include "../ADT/list_linked/list_linked.h"
 #include "../ADT/stack/stack.h"
 #include "../ADT/queue/queue.h"
-#include "../ADT//stack.h"
+#include "../ADT/matrix/matrix.h"
 #include "../ADT/wordmachine/wordmachine.h"
 #include "../ADT/wordmachine/charmachine.h"
 
@@ -47,6 +47,11 @@ int main(){
 	startWord();
 	strcpy(command,currentWord.contents)
 	while(command !="EXIT" ){
+		printf("\nMobita berada di posisi %c (%d,%d)\n",lokasi.label,lokasi.X,lokasi.Y);
+		printf("Waktu: %d\n",waktu);
+		printf("Uang yang dimiliki: %d Yen\n",money);
+		printf("ENTER COMMAND: ")
+		
 		if (command == "MOVE"){
 			moveCommand(m, &lokasi);
 		}
