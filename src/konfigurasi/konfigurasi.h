@@ -58,7 +58,8 @@ typedef struct {
   Map kosong: m.nEff = 0
   Definisi elemen pertama : m.loc[i] dengan i=Point
   Definisi elemen terakhir yang terdefinisi: m.loc[i] dengan i=l.nEff */
-
+void readFile(MAP *M);
+	/*membaca input file*/
 int ConvertInt();
 	/*Mengkonvert input char dari mesin kata menjadi int*/
 void CreateMap (MAP *m);

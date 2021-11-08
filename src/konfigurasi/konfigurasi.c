@@ -7,7 +7,7 @@
 #include <stdio.h>
 
 
-void readFile(MAP *m){
+void readFile(MAP *M){
 	char ch, file_name[25];
 	FILE *fp;
 	printf("Masukkan nama file : ");
@@ -18,9 +18,12 @@ void readFile(MAP *m){
 		perror("Error ketika membuka file\n");
 		exit(EXIT_FAILURE);
    	}
-   
+   	CreateMap (M);
+	BacaKoordinat(M);
+	BacaAdjMatrix(M);
+	BacaPesanan(M);
 
-   fclose(fp);
+	fclose(fp);
 }
 
 
