@@ -2,15 +2,15 @@
 #include <stdlib.h>
 #include <string.h>
 #include "../konfigurasi/konfigurasi.h"
-#include "../command/buy.c"
-#include "../command/map.c"
-#include "../command/drop_off.c"
-#include "../command/help.c"
-#include "../command/in_progress.c"
-#include "../command/move.c"
-#include "../command/pick_up.c"
-#include "../command/to_do.c"
-#include "../command/inventory.c"
+#include "../command/buy.h"
+#include "../command/map.h"
+#include "../command/drop_off.h"
+#include "../command/help.h"
+#include "../command/in_progress.h"
+#include "../command/move.h"
+#include "../command/pick_up.h"
+#include "../command/to_do.h"
+#include "../command/inventory.h"
 
 
 

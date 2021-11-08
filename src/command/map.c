@@ -3,6 +3,7 @@
 #include "../ADT/wordmachine/charmachine.h"
 #include "../pesanan/pesanan.h"
 #include "../ADT/point/point.h"
+#include "map.h"
 #include "../konfigurasi/konfigurasi.h"
 #include "../pcolor/pcolor.h"
 #include <stdio.h>
