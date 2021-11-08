@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include "../ADT/boolean.h"
+#include "buy.h"
 #include "../inventory/inventory.h"
 
 void buyCommand(int *uang, Inventory *I){

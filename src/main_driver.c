@@ -1,16 +1,30 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
+#include "../command/buy.h"
+#include "../command/map.h"
+#include "../command/drop_off.h"
+#include "../command/help.h"
+#include "../command/in_progress.h"
+#include "../command/move.h"
+#include "../command/pick_up.h"
+#include "../command/to_do.h"
+#include "../command/inventory.h"
 #include "../konfigurasi/konfigurasi.h"
-#include "../command/buy.c"
-#include "../command/map.c"
-#include "../command/drop_off.c"
-#include "../command/help.c"
-#include "../command/in_progress.c"
-#include "../command/move.c"
-#include "../command/pick_up.c"
-#include "../command/to_do.c"
-#include "../command/inventory.c"
+#include "../ability/ability.h"
+#include "../pcolor/pcolor.h"
+#include "../pesanan/pesanan.h"
+#include "../tas/tas.h"
+#include "../ADT/point/point.h"
+#include "../ADT/list_linked/list_linked.h"
+#include "../ADT/stack/stack.h"
+#include "../ADT/queue/queue.h"
+#include "../ADT/matrix/matrix.h"
+#include "../ADT/wordmachine/wordmachine.h"
+#include "../ADT/wordmachine/charmachine.h"
+#include "../ADT/boolean.h"
+
+
 
 
 
@@ -31,6 +45,11 @@ int main(){
 	startWord();
 	strcpy(command,currentWord.contents)
 	while(command !="EXIT" ){
+		printf("\nMobita berada di posisi %c (%d,%d)\n",lokasi.label,lokasi.X,lokasi.Y);
+		printf("Waktu: %d\n",waktu);
+		printf("Uang yang dimiliki: %d Yen\n",money);
+		printf("ENTER COMMAND: ")
+		
 		if (command == "MOVE"){
 			moveCommand(m, &lokasi);
 		}
