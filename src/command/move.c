@@ -2,9 +2,7 @@
 
 #include <stdio.h>
 #include <stdlib.h>
-#include "../ADT/boolean.h"
-#include "../ADT/point/point.h"
-#include "../konfigurasi/konfigurasi.h"
+#include "move.h"
 
 int idxPOINT(MAP m, POINT p){
 /* mengembalikan indeks point pada map dari point */
@@ -35,7 +33,27 @@ POINT pointIdx(MAP m, int i){
     return m.loc[i];
 }
 
-void moveCommand(MAP m, POINT *user){
+int duration(Tas tas){
+/* mengembalikan waktu yang diperlukan untuk move
+   bertambah 1 untuk tiap heavy item di tas */
+    /* KAMUS LOKAL */
+    int i, t;
+    /* ALGORITMA */
+    t = 1;
+    if (isEmpty(tas)){
+        return t;
+    }
+    else{
+        for (i = 0; i <= IDX_TOP(*tas); i++){
+            if (TYPE(tas.buffer[i]) == 'H'){
+                t++;
+            }
+        }
+        return t;
+    }
+}
+
+void moveCommand(MAP m, int *waktu, Tas tas, POINT *user){
 /* menyajikan titik mana saja yang dapat disinggahi dari posisi user,
    kemudian user memilih salah satu titik, lokasi user sekarang
    berpindah ke titik tersebut */
@@ -68,6 +86,18 @@ void moveCommand(MAP m, POINT *user){
     printf("\n");
     // ubah posisi user
     *user = m.loc[movablePoint[k - 1]];
+    // ubah waktu
+    *waktu += duration(tas);
+    // display
+    printf("Mobita sekarang berada di titik %c (%d,%d)!", Label(*user), Absis(*user), Ordinat(*user));
+}
+
+void moveInv(POINT *user, POINT dest){
+/* memindahkan user ke mana saja tanpa menambah waktu */
+    /* KAMUS LOKAL */
+
+    /* ALGORITMA */
+    *user = dest;
     printf("Mobita sekarang berada di titik %c (%d,%d)!", Label(*user), Absis(*user), Ordinat(*user));
 }
 

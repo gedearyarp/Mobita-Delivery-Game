@@ -5,8 +5,8 @@
 #include <stdio.h>
 #include "tas.h"
 /* *** Konstruktor/Kreator *** */
-void CreateStack(Stack *s){
-	Stack st;
+void CreateTas(Tas *s){
+	Tas st;
 	IDX_TOP(st)=IDX_UNDEF;
 	currCAPACITY(st)=0;
 	*s=st;
@@ -17,21 +17,21 @@ void CreateStack(Stack *s){
 /* Proses : Melakukan alokasi, membuat sebuah s kosong */
 
 /* ************ Prototype ************ */
-boolean isEmpty(Stack s){
+boolean isEmpty(Tas s){
 	return IDX_TOP(s) == IDX_UNDEF;
 }
 /* Mengirim true jika s kosong: lihat definisi di atas */
-boolean isFull(Stack s){
+boolean isFull(Tas s){
 	return IDX_TOP(s) == currCAPACITY(s)-1;
 }
 /* Mengirim true jika tabel penampung nilai s stack penuh dengan kapasitas saat ini */
-boolean isMax(Stack s){
+boolean isMax(Tas s){
 	return IDX_TOP(s) == MAXCAPACITY-1;
 }
 /* Mengirim true jika tabel penampung nilai s stack penuh dengan kapasitas maks(100) */
 
 /* ************ Menambahkan sebuah elemen ke Stack ************ */
-void push(Stack *s, ElType val){
+void push(Tas *s, Pesanan val){
 	IDX_TOP(*s)++;
 	TOP(*s) = val;
 }
@@ -40,7 +40,7 @@ void push(Stack *s, ElType val){
 /* F.S. val menjadi TOP yang baru,IDX_TOP bertambah 1 */
 
 /* ************ Menghapus sebuah elemen Stack ************ */
-void pop(Stack *s, ElType *val){
+void pop(Tas *s, Pesanan *val){
 	*val = TOP(*s);
 	IDX_TOP(*s)--;
 }

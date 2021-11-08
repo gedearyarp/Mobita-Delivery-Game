@@ -1,3 +1,5 @@
+#include <stdio.h>
+
 void helpCommand() {
     printf("NEW GAME -> Memulai permainan\n");
     printf("EXIT -> Menutup program\n");

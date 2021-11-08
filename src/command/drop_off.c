@@ -1,10 +1,9 @@
 /* Fungsi/prosedur yang dipanggil ketika melakukan drop off*/
 
 #include <stdio.h>
-#include "../tas/tas.h"
-#include "../point/point.h"
+#include "drop_off.h"
 
-void dropOff (Stack *Tas, POINT p, int *uang)
+void drop_OffCommand(Tas *Tas, POINT p, int *uang)
 {
     /* Prosedur untuk drop off jika drop location barang paling atas di tas sama dengan lokasi user. 
        Jika tidak sama, tidak akan di drop off */
