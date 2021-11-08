@@ -20,7 +20,7 @@ int duration(Tas tas);
 /* mengembalikan waktu yang diperlukan untuk move
    bertambah 1 untuk tiap heavy item di tas */
 
-void moveCommand(MAP m, int *waktu, Tas tas, POINT *user);
+void moveCommand(MAP m, int *waktu, Tas tas, POINT *user, boolean *speedBoostActive, int *speedBoostTime);
 /* menyajikan titik mana saja yang dapat disinggahi dari posisi user,
    kemudian user memilih salah satu titik, lokasi user sekarang
    berpindah ke titik tersebut */

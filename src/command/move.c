@@ -44,7 +44,7 @@ int duration(Tas tas){
         return t;
     }
     else{
-        for (i = 0; i <= IDX_TOP(*tas); i++){
+        for (i = 0; i <= IDX_TOP(tas); i++){
             if (TYPE(tas.buffer[i]) == 'H'){
                 t++;
             }
@@ -53,7 +53,7 @@ int duration(Tas tas){
     }
 }
 
-void moveCommand(MAP m, int *waktu, Tas tas, POINT *user){
+void moveCommand(MAP m, int *waktu, Tas tas, POINT *user, boolean *speedBoostActive, int *speedBoostTime){
 /* menyajikan titik mana saja yang dapat disinggahi dari posisi user,
    kemudian user memilih salah satu titik, lokasi user sekarang
    berpindah ke titik tersebut */
@@ -87,7 +87,13 @@ void moveCommand(MAP m, int *waktu, Tas tas, POINT *user){
     // ubah posisi user
     *user = m.loc[movablePoint[k - 1]];
     // ubah waktu
-    *waktu += duration(tas);
+    if (duration(tas)!=1){ //ada heavy item
+        *speedBoostActive=false;
+        *waktu += duration(tas);
+    }
+    else{
+        speedBost(waktu, speedBoostActive, speedBoostTime);
+    }
     // display
     printf("Mobita sekarang berada di titik %c (%d,%d)!", Label(*user), Absis(*user), Ordinat(*user));
 }
