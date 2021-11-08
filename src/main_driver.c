@@ -12,11 +12,9 @@
 #include "../command/inventory.h"
 #include "../konfigurasi/konfigurasi.h"
 #include "../ability/ability.h"
-#include "../ADT/boolean.h"
 #include "../pcolor/pcolor.h"
 #include "../pesanan/pesanan.h"
 #include "../tas/tas.h"
-#include "../inventory/inventory.h"
 #include "../ADT/point/point.h"
 #include "../ADT/list_linked/list_linked.h"
 #include "../ADT/stack/stack.h"
@@ -24,7 +22,7 @@
 #include "../ADT/matrix/matrix.h"
 #include "../ADT/wordmachine/wordmachine.h"
 #include "../ADT/wordmachine/charmachine.h"
-
+#include "../ADT/boolean.h"
 
 
 
