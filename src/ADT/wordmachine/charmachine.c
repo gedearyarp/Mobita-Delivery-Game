@@ -41,7 +41,8 @@ void adv() {
 		      Jika  currentChar = MARK maka EOP akan menyala (true) */
 
 	/* Algoritma */
-	retval = fscanf(tape,"%c",&currentChar);
+//	retval = fscanf(tape,"%c",&currentChar);
+	currentChar = fgetc(tape);
 	eot = (currentChar == EOF);
 	if (eot) {
        fclose(tape);

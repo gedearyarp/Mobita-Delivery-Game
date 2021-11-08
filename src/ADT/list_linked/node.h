@@ -1,11 +1,11 @@
 /* File: node.h */
 /* Definisi Node */
-
+#include <stdlib.h>
+#include "../pesanan/pesanan.h"
 #ifndef NODE_H
 #define NODE_H
 
-#include <stdlib.h>
-#include "../pesanan/pesanan.h"
+
 
 typedef Pesanan ElType;
 typedef struct node* Address;

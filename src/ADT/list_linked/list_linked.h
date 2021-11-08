@@ -6,10 +6,10 @@
 #ifndef LIST_H
 #define LIST_H
 
-#include "node.h"
-#include "./boolean.h"
-#include "../pesanan/pesanan.h"
 
+#include "../boolean.h"
+#include "../pesanan/pesanan.h"
+#include "node.h"
 typedef Address List;
 
 #define IDX_UNDEF (-1)

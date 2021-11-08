@@ -2,6 +2,8 @@ charmachine.o: ADT/wordmachine/charmachine.c
 	gcc -c ADT/wordmachine/charmachine.c
 wordmachine.o: ADT/wordmachine/wordmachine.c
 	gcc -c ADT/wordmachine/wordmachine.c
+node.o : ADT/list_linked/node.c
+	gcc -c ADT/list_linked/node.c
 point.o: ADT/point/point.c
 	gcc -c ADT/point/point.c
 list_linked.o: ADT/list_linked/list_linked.c
@@ -40,9 +42,9 @@ ability.o: ability/ability.c
 	gcc -c ability/ability.c
 tas.o: tas/tas.c
 	gcc -c tas/tas.c
-driver_konfigurasi: konfigurasi/driver_konfigurasi.c charmachine.o wordmachine.o point.o map.o pcolor.o pesanan.o konfigurasi.o
-	gcc konfigurasi/driver_konfigurasi.c charmachine.o wordmachine.o point.o map.o pcolor.o pesanan.o konfigurasi.o -o driver_konfigurasi
-main_driver: main_driver.c charmachine.o wordmachine.o point.o list_linked.o stack.o queue.o matrix.o map.o buy.o drop_off.o help.o in_progress.o move.o pick_up.o to_do.o inventory.o pcolor.o pesanan.o konfigurasi.o ability.o tas.o
-	gcc main_driver.c charmachine.o wordmachine.o point.o list_linked.o stack.o queue.o matrix.o map.o buy.o drop_off.o help.o in_progress.o move.o pick_up.o to_do.o inventory.o pcolor.o pesanan.o konfigurasi.o ability.o tas.o -o main_driver
+driver_konfigurasi: konfigurasi/driver_konfigurasi.c charmachine.o wordmachine.o point.o map.o node.o pcolor.o pesanan.o konfigurasi.o
+	gcc konfigurasi/driver_konfigurasi.c charmachine.o wordmachine.o point.o map.o node.o pcolor.o pesanan.o konfigurasi.o -o driver_konfigurasi
+main_driver: main_driver.c charmachine.o wordmachine.o point.o pesanan.o list_linked.o stack.o queue.o matrix.o map.o buy.o drop_off.o help.o in_progress.o move.o pick_up.o to_do.o inventory.o pcolor.o pesanan.o konfigurasi.o ability.o tas.o
+	gcc main_driver.c charmachine.o wordmachine.o point.o pesanan.o list_linked.o stack.o queue.o matrix.o map.o buy.o drop_off.o help.o in_progress.o move.o pick_up.o to_do.o inventory.o pcolor.o pesanan.o konfigurasi.o ability.o tas.o -o main_driver
 
  

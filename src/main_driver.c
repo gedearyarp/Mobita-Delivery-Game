@@ -24,55 +24,71 @@
 #include "../ADT/boolean.h"
 
 
-
-
-
-
 int main(){
 	int money,waktu,curr_time,cap_incr,uncompleted;
 	float time_incr;
 	List to_do_list,in_progress_list;
-	char item,command[15];
+	char item;
+	int command;
+	boolean Finish;
 	MAP m;
 	POINT lokasi;
 	Inventory ivtr;
 	Tas tas;
-	CreateMap (&M);
-	BacaKoordinat(&M);
-	BacaAdjMatrix(&M);
-	BacaPesanan(&M);
-	startWord();
-	while(currentWord.contents!="EXIT" ){
+	readFile(&m);
+	
+	printf("Main Menu: \n");
+	printf("1. NEW GAME");
+	printf("2. EXIT");
+	printf("Masukkan angka sesuai pilihan diatas");
+	scanf("%d",&command);
+	if(command == "NEW GAME"){
+		Finish = false;
+	}
+	else if(command == "EXIT"){
+		Finish = true;
+	}
+	while(!Finish ){
 		printf("\nMobita berada di posisi %c (%d,%d)\n",lokasi.label,lokasi.X,lokasi.Y);
 		printf("Waktu: %d\n",waktu);
 		printf("Uang yang dimiliki: %d Yen\n",money);
+		printf("Pilihan Command: ");
+		printf("1. MOVE");
+		printf("2. PICK_UP");
+		printf("3. DROP_OFF");
+		printf("4. MAP");
+		printf("5. TO_DO");
+		printf("6. IN_PROGRESS");
+		printf("7. BUY");
+		printf("8. INVENTORY");
+		printf("9. HELP");
 		printf("ENTER COMMAND: ")
-		
-		if (command == "MOVE"){
+		gets(command);
+		if (command == 1){
 			moveCommand(m, &lokasi);
 		}
-		else if (command== "PICK_UP"){
+		else if (command== 2){
 			pick_upCommand(&tas, lokasi, &to_do_list, &in_progress_list,curr_time,&time_incr, &cap_incr, &uncompleted);
 		}
-		else if(command == "DROP_OFF"){
+		else if(command == 3){
 			drop_offCommand(&tas, lokasi, &money);
 		}
-		else if(command == "MAP"){
+		else if(command == 4){
 			mapCommand(m,lokasi,waktu,item)
 		}
-		else if(command == "TO_DO"){
+		else if(command == 5){
 			to_doCommand(to_do_list, curr_time);
 		}
-		else if(command == "IN_PROGRESS"){
+		else if(command == 6){
 			in_progressCommand(in_progress_list, curr_time);
 		}
-		else if(command == "BUY"){
+		else if(command == 7){
 			buyCommand(&money,&ivtr);
 		}
-		else if (command == "INVENTORY"){
+		else if (command == 8{
 			inventoryCommand(&Ivtr, &waktu, &tas, &in_progress_list);
 		}
-		else if (command == "HELP"){
+		else if (command ==9){
 			helpCommand();
 		}
 		advWord();
