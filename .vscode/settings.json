@@ -5,6 +5,7 @@
         "boolean.h": "c",
         "queue.h": "c",
         "wordmachine.h": "c",
-        "konfigurasi.h": "c"
+        "konfigurasi.h": "c",
+        "point.h": "c"
     }
 }
