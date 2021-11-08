@@ -41,7 +41,7 @@ void drop_OffCommand(Tas *Tas, POINT p, int *uang, int currTime, int *speedBoost
         {
             plusMoney = 400;
             printf("Pesanan Perishable Item berhasil diantarkan\n");
-
+            increaseCapacity(Tas);
         }
         else if (type = 'V')
         {
