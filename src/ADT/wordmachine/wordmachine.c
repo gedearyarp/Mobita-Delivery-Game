@@ -56,7 +56,7 @@ void copyWord(){
           Jika panjang kata melebihi CAPACITY, maka sisa kata terpotong */
 	int x;
 	x = 0;
-	while ((currentChar != BLANK) && (currentChar !='\n')){
+	while ((currentChar != EOF) && (currentChar != BLANK) && (currentChar !='\n')){
 		if (x<CAPACITY){
 			currentWord.contents[x] = currentChar;
 		}
