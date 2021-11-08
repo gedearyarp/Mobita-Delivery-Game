@@ -1,4 +1,4 @@
-#include "boolean.h"
+#include "../ADT/boolean.h"
 #include "../ADT/wordmachine/wordmachine.h"
 #include "../ADT/wordmachine/charmachine.h"
 #include "../pesanan/pesanan.h"

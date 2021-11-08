@@ -40,7 +40,8 @@ ability.o: ability/ability.c
 	gcc -c ability/ability.c
 tas.o: tas/tas.c
 	gcc -c tas/tas.c
-	
+driver_konfigurasi: konfigurasi/driver_konfigurasi.c charmachine.o wordmachine.o point.o map.o pcolor.o pesanan.o konfigurasi.o
+	gcc konfigurasi/driver_konfigurasi.c charmachine.o wordmachine.o point.o map.o pcolor.o pesanan.o konfigurasi.o -o driver_konfigurasi
 main_driver: main_driver.c charmachine.o wordmachine.o point.o list_linked.o stack.o queue.o matrix.o map.o buy.o drop_off.o help.o in_progress.o move.o pick_up.o to_do.o inventory.o pcolor.o pesanan.o konfigurasi.o ability.o tas.o
 	gcc main_driver.c charmachine.o wordmachine.o point.o list_linked.o stack.o queue.o matrix.o map.o buy.o drop_off.o help.o in_progress.o move.o pick_up.o to_do.o inventory.o pcolor.o pesanan.o konfigurasi.o ability.o tas.o -o main_driver
 

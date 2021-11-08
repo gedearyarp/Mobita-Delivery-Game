@@ -1,4 +1,5 @@
 #include <stdio.h>
+#include <stdlib.h>
 #include "charmachine.h"
 #include "wordmachine.h"
 #include "boolean.h"
@@ -9,7 +10,7 @@ void ignoreBlank(){
 	/* Mengabaikan satu atau beberapa BLANK
    I.S. : currentChar sembarang 
    F.S. : currentChar ≠ BLANK atau currentChar = MARK */
-   while(currentChar == BLANK || currentChar =='\n'&& currentChar != MARK ){
+   while(currentChar == BLANK || currentChar =='\n'&& currentChar != EOF ){
    		adv();
    }
 }
@@ -22,7 +23,7 @@ void startWord(){
           currentChar karakter pertama sesudah karakter terakhir kata */
     start();
     ignoreBlank();
-    if(currentChar == MARK){
+    if(currentChar == EOF){
     	endWord = true;
 	}
 	else {
@@ -37,7 +38,7 @@ void advWord(){
           Jika currentChar = MARK, endWord = true.		  
    Proses : Akuisisi kata menggunakan procedure copyWord */
 	ignoreBlank();
-	if(currentChar == MARK){
+	if(currentChar == EOF){
 		endWord= true;
 	}
 	else{
@@ -55,7 +56,7 @@ void copyWord(){
           Jika panjang kata melebihi CAPACITY, maka sisa kata terpotong */
 	int x;
 	x = 0;
-	while ((currentChar != MARK) && (currentChar != BLANK) && (currentChar !='\n')){
+	while ((currentChar != BLANK) && (currentChar !='\n')){
 		if (x<CAPACITY){
 			currentWord.contents[x] = currentChar;
 		}

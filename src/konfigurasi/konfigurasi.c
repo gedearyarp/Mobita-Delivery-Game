@@ -5,25 +5,17 @@
 #include "../ADT/point/point.h"
 #include "../pesanan/pesanan.h"
 #include <stdio.h>
+#include <stdlib.h>
 
 
 void readFile(MAP *M){
-	char ch, file_name[25];
-	FILE *fp;
-	printf("Masukkan nama file : ");
-	gets(file_name);
-	fp = fopen(file_name, "r"); // read mode
-	if (fp == NULL)
-	{
-		perror("Error ketika membuka file\n");
-		exit(EXIT_FAILURE);
-   	}
+	 // read mode
+   	startWord();
    	CreateMap (M);
 	BacaKoordinat(M);
 	BacaAdjMatrix(M);
 	BacaPesanan(M);
 
-	fclose(fp);
 }
 
 
@@ -86,7 +78,6 @@ void BacaKoordinat(MAP *m){
 	//kamus
 	int i,x,y;
 	//algoritma
-	startWord();
 //	int val = ConvertInt();
 //	advWord();
 	int N = ConvertInt(currentWord.contents,currentWord.length);
@@ -165,7 +156,8 @@ void BacaPesanan(MAP *m){
 			advWord();
 			O_T_PERISH(*m,i) = currentWord.contents[0];;
 		}
-//		printf("%d %c %c %c\n",O_MASUK(*m,i),O_PICK_LABEL(*m,i),O_DROP_LABEL(*m,i),O_TYPE(*m,i));
+	//	printf("%c",currentWord.contents[0]);
+	//	printf("%d %c %c %c\n",O_MASUK(*m,i),O_PICK_LABEL(*m,i),O_DROP_LABEL(*m,i),O_TYPE(*m,i));
 	}
 	
 }

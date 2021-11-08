@@ -3,6 +3,7 @@
 
 #include "charmachine.h"
 #include <stdio.h>
+#include <stdlib.h>
 
 char currentChar;
 boolean eot;
@@ -19,7 +20,16 @@ void start() {
           Jika currentChar = MARK maka EOP akan menyala (true) */
 
 	/* Algoritma */
-	tape = stdin;
+	char ch, file_name[25];
+	printf("Masukkan nama file : ");
+	gets(file_name);
+	tape = fopen(file_name, "r");
+	if (tape == NULL)
+	{
+		perror("Error ketika membuka file\n");
+		exit(EXIT_FAILURE);
+		return;
+   	}
 	adv();
 }
 
@@ -32,7 +42,7 @@ void adv() {
 
 	/* Algoritma */
 	retval = fscanf(tape,"%c",&currentChar);
-	eot = (currentChar == MARK);
+	eot = (currentChar == EOF);
 	if (eot) {
        fclose(tape);
  	}
