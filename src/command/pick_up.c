@@ -1,6 +1,4 @@
-#include "../tas/tas.h"
-#include "../list_linked/list_linked.h"
-#include "../point/point.h"
+#include "pick_up.h"
 // BIKIN hapus to do list dan pickup utk jenis tertentu
 void pickUpCommand(Tas *Tas, POINT P, List *to_do_list, List *in_progress_list, int curr_time, float *time_incr, int *cap_incr, int *uncompleted){
     Address q;

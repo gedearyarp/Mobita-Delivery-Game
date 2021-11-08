@@ -1,4 +1,5 @@
 #include <stdio.h>
+#include "help.h"
 
 void helpCommand() {
     printf("NEW GAME -> Memulai permainan\n");
