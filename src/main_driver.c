@@ -1,6 +1,5 @@
 #include <stdio.h>
 #include <stdlib.h>
-#include <string.h>
 #include "../command/buy.h"
 #include "../command/map.h"
 #include "../command/drop_off.h"
@@ -43,8 +42,7 @@ int main(){
 	BacaAdjMatrix(&M);
 	BacaPesanan(&M);
 	startWord();
-	strcpy(command,currentWord.contents)
-	while(command !="EXIT" ){
+	while(currentWord.contents!="EXIT" ){
 		printf("\nMobita berada di posisi %c (%d,%d)\n",lokasi.label,lokasi.X,lokasi.Y);
 		printf("Waktu: %d\n",waktu);
 		printf("Uang yang dimiliki: %d Yen\n",money);

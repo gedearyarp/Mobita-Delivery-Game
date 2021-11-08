@@ -7,6 +7,23 @@
 #include <stdio.h>
 
 
+void readFile(MAP *m){
+	char ch, file_name[25];
+	FILE *fp;
+	printf("Masukkan nama file : ");
+	gets(file_name);
+	fp = fopen(file_name, "r"); // read mode
+	if (fp == NULL)
+	{
+		perror("Error ketika membuka file\n");
+		exit(EXIT_FAILURE);
+   	}
+   
+
+   fclose(fp);
+}
+
+
 void CreateMap (MAP *m){
 	/*  Membentuk map menjadi map kosong*/
 	//kamus
