@@ -3,7 +3,9 @@
 #include <stdio.h>
 #include "drop_off.h"
 
-void drop_OffCommand(Tas *Tas, POINT p, int *uang)
+#define IDX_UNDEF -1
+
+void drop_OffCommand(Tas *Tas, POINT p, int *uang, int currTime, int *speedBoostTime, boolean *speedBoostActive)
 {
     /* Prosedur untuk drop off jika drop location barang paling atas di tas sama dengan lokasi user. 
        Jika tidak sama, tidak akan di drop off */
@@ -32,6 +34,8 @@ void drop_OffCommand(Tas *Tas, POINT p, int *uang)
         {
             plusMoney = 400;
             printf("Pesanan Heavy Item berhasil diantarkan\n");
+            *speedBoostTime=0;
+            *speedBoostActive=true;
         }
         else if (type = 'P')
         {
