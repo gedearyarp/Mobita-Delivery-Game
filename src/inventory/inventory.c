@@ -18,7 +18,7 @@ INDEX GADGET :
 4 = Mesin Waktu
 */ 
 
-void printInvetory(Inventory I){
+void printInventory(Inventory I){
     for(int i=1; i<=5; i++){
         if(INV(I, i) == 0) printf("%d. -\n", i);
         else if (INV(I, i) == 1) printf("%d. Kain Pembungkus Waktu\n", i);

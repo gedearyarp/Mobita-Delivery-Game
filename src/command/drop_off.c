@@ -2,7 +2,7 @@
 
 #include <stdio.h>
 #include "drop_off.h"
-
+#include "../point/point.h"
 #define IDX_UNDEF -1
 
 void drop_OffCommand(Tas *Tas, POINT p, int *uang, int currTime, int *speedBoostTime, boolean *speedBoostActive)
@@ -51,6 +51,6 @@ void drop_OffCommand(Tas *Tas, POINT p, int *uang, int currTime, int *speedBoost
 
         *uang += plusMoney;
         printf("Uang yang didapatkan: %d Yen\n", plusMoney);
-        pop(Tas, &pesanan);
+        popTas(Tas, &pesanan);
     }
 }

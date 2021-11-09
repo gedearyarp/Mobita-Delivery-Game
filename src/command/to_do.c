@@ -4,8 +4,8 @@
 #include <stdio.h>
 #include "to_do.h"
 #include "../ADT/boolean.h"
-#include "../ADT/list_linked/list_linked.h"
-#include "../ADT/queue/queue.h"
+#include "../list_linked/list_linked.h"
+#include "../queue/queue.h"
 
 void to_doCommand(List to_do_list, int curr_time) {
 /* Mencetak to do list.
@@ -59,6 +59,6 @@ void deleteToDo (List *to_do_list, ElType val) {
     /* KAMUS LOKAL */
     int idx;
     /* ALGORITMA */
-    idx = indexOf(*to_do_list, val);
+    idx = indexOfList(*to_do_list, val);
     deleteAt(to_do_list, idx, &val);
 }

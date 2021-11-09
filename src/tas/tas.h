@@ -5,10 +5,10 @@
 #ifndef TAS_H
 #define TAS_H
 
-#include "../boolean.h"
+#include "../ADT/boolean.h"
 #include "../pesanan/pesanan.h"
 
-#define IDX_UNDEF -1
+#define INDEX_UNDEF -1
 #define MAXCAPACITY 100
 
 typedef struct {
@@ -32,19 +32,19 @@ void CreateTas(Tas *s);
 /* Proses : Melakukan alokasi, membuat sebuah s kosong */
 
 /* ************ Prototype ************ */
-boolean isEmpty(Tas s);
+boolean TasIsEmpty(Tas s);
 /* Mengirim true jika s kosong: lihat definisi di atas */
-boolean isFull(Tas s);
+boolean TasIsFull(Tas s);
 /* Mengirim true jika tabel penampung nilai s stack penuh */
 
 /* ************ Menambahkan sebuah elemen ke Stack ************ */
-void push(Tas *s, Pesanan val);
+void pushTas(Tas *s, Pesanan val);
 /* Menambahkan val sebagai elemen Stack s */
 /* I.S. s mungkin kosong, tabel penampung elemen stack TIDAK penuh */
 /* F.S. val menjadi TOP yang baru,IDX_TOP bertambah 1 */
 
 /* ************ Menghapus sebuah elemen Stack ************ */
-void pop(Tas *s, Pesanan *val);
+void popTas(Tas *s, Pesanan *val);
 /* Menghapus val dari Stack s */
 /* I.S. s tidak mungkin kosong */
 /* F.S. val adalah nilai elemen TOP yang lama, IDX_TOP berkurang 1 */

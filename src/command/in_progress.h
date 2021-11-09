@@ -5,7 +5,7 @@
 #define IN_PROGRESS_H
 
 #include "../ADT/boolean.h"
-#include "../ADT/list_linked/list_linked.h"
+#include "../list_linked/list_linked.h"
 #include "../tas/tas.h"
 
 void in_progressCommand(List in_progress_list, int curr_time);

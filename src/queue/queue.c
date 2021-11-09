@@ -8,15 +8,15 @@
 void CreateQueue(Queue *q) {
     /* KAMUS LOKAL */
     /* ALGORITMA */
-    IDX_HEAD(*q) = IDX_UNDEF;
-    IDX_TAIL(*q) = IDX_UNDEF;
+    IDX_HEAD(*q) = I_UNDEF;
+    IDX_TAIL(*q) = I_UNDEF;
 }
 
 /* ********* Prototype ********* */
 boolean isEmptyQ(Queue q) {
     /* KAMUS LOKAL */
     /* ALGORITMA */
-    return ((IDX_HEAD(q) == IDX_UNDEF) && (IDX_TAIL(q) == IDX_UNDEF));
+    return ((IDX_HEAD(q) == I_UNDEF) && (IDX_TAIL(q) == I_UNDEF));
 }
 boolean isFullQ(Queue q) {
     /* KAMUS LOKAL */
@@ -71,8 +71,8 @@ void dequeue(Queue *q, ElType *val) {
     /* ALGORITMA */
     *val = HEAD(*q);
     if (IDX_HEAD(*q) == IDX_TAIL(*q)) {
-        IDX_TAIL(*q) = IDX_UNDEF;
-        IDX_TAIL(*q) = IDX_UNDEF;
+        IDX_TAIL(*q) = I_UNDEF;
+        IDX_TAIL(*q) = I_UNDEF;
     } else {
         IDX_HEAD(*q) += 1;
     }

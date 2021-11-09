@@ -1,8 +1,8 @@
 #include "boolean.h"
-#include "../ADT/wordmachine/wordmachine.h"
-#include "../ADT/wordmachine/charmachine.h"
+#include "../wordmachine/wordmachine.h"
+#include "../wordmachine/charmachine.h"
 #include "konfigurasi.h"
-#include "../ADT/point/point.h"
+#include "../point/point.h"
 #include "../pesanan/pesanan.h"
 #include <stdio.h>
 #include <stdlib.h>
@@ -24,13 +24,13 @@ void CreateMap (MAP *m){
 	//kamus
 	int y,x;
 	//algoritma
-	for(x=0;x<CAPACITY;x++ ){
+	for(x=0;x<CAP;x++ ){
 		NAMA(*m,x) = '/';
 		ABSIS(*m,x) = VAL_UNDEF;
 		ORDINAT(*m,x) = VAL_UNDEF;
 	}
-	for(y=0;y<CAPACITY;y++){
-		for(x=0;x<CAPACITY;x++){
+	for(y=0;y<CAP;y++){
+		for(x=0;x<CAP;x++){
 			ELMT_M(*m, y, x) = VAL_UNDEF;
 			PETA(*m,y,x)='/';
 		}

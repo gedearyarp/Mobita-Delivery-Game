@@ -4,7 +4,7 @@
 #include <stdio.h>
 #include "in_progress.h"
 #include "../ADT/boolean.h"
-#include "../ADT/list_linked/list_linked.h"
+#include "../list_linked/list_linked.h"
 #include "../tas/tas.h"
 
 void in_progressCommand(List in_progress_list, int curr_time) {
@@ -58,7 +58,7 @@ void updateInProgress (List *in_progress_list, Tas tas, int option, int curr_tim
     // option2: drop off 
     else if (option == 1) {
         deleteFirst(in_progress_list, &deleted);
-        if (TYPE(deleted) == 'H' && (heavyItemCount(in_progress_list) == 0)) {
+        if (TYPE(deleted) == 'H' && (heavyItemCount(*in_progress_list) == 0)) {
             *time_incr *= 0.5;        // Abillity: Speed Boost
         } else if (TYPE(deleted) == 'P') {
             *cap_incr++;             // Abillity: Increase Capacity
@@ -66,10 +66,10 @@ void updateInProgress (List *in_progress_list, Tas tas, int option, int curr_tim
     }
     // option3: hangus atau return
     else if (option == 2) {
-        loc = FIRST(in_progress_list);
+        loc = FIRST(*in_progress_list);
         while (loc != NULL) {
             if ((TYPE(INFO(loc)) == 'P') && (curr_time >= T_PICK(INFO(loc)) + T_PERISH(INFO(loc)))) {
-                idx = indexOfList(in_progress_list, INFO(loc));
+                idx = indexOfList(*in_progress_list, INFO(loc));
                 deleteAt(in_progress_list, idx, &deleted);
                 *uncompleted += 1;
             }

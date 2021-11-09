@@ -7,7 +7,7 @@
 #define LIST_H
 
 
-#include "../boolean.h"
+#include "../ADT/boolean.h"
 #include "../pesanan/pesanan.h"
 #include "node.h"
 typedef Address List;
