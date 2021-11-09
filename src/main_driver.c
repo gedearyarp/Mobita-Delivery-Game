@@ -48,23 +48,23 @@ int main(){
 		Finish = false;
 	}
 	else if(command == 2){
-		Finish = true;
+		return 0;
 	}
-	while(!Finish ){
+	while(Finish ){
 		printf("\nMobita berada di posisi %c (%d,%d)\n",lokasi.label,lokasi.X,lokasi.Y);
 		printf("Waktu: %d\n",waktu);
 		printf("Uang yang dimiliki: %d Yen\n",money);
 		printf("Pilihan Command: ");
-		printf("1. MOVE");
-		printf("2. PICK_UP");
-		printf("3. DROP_OFF");
-		printf("4. MAP");
-		printf("5. TO_DO");
-		printf("6. IN_PROGRESS");
-		printf("7. BUY");
-		printf("8. INVENTORY");
-		printf("9. HELP");
-		printf("ENTER COMMAND: ");
+		printf("\n1. MOVE");
+		printf("\n2. PICK_UP");
+		printf("\n3. DROP_OFF");
+		printf("\n4. MAP");
+		printf("\n5. TO_DO");
+		printf("\n6. IN_PROGRESS");
+		printf("\n7. BUY");
+		printf("\n8. INVENTORY");
+		printf("\n9. HELP");
+		printf("\nENTER COMMAND: ");
 		scanf("%d",&command);
 		if (command == 1){
 			moveCommand(m, &waktu, tas, &lokasi, &speedBoostActive, &speedBoostTime);
