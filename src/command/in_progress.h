@@ -18,7 +18,7 @@ void updateInProgress (List *in_progress_list, Tas tas, int option);
 /* Fungsi ini dipanggil setiap pick_up barang (option 1) dan drop_off barang (option 2) */
 /* Note: sebelum pemanggilan fungsi ini, deklarasikan dulu variabel in_progress_list */ 
 
-void deletePerishable(List in_progress_list, int curr_time, int *uncompleted);
+void deletePerishable(List *in_progress_list, int curr_time, int *uncompleted);
 /* Menghapus Perishable item jika sudah lewat batas waktu */
 /* Fungsi ini dipanggil setiap satuan waktu */
 /* Note: sebelum pemanggilan fungsi ini, deklarasikan dulu variabel in_progress_list dan uncompleted (gagal diantar) */ 

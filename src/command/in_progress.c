@@ -56,7 +56,7 @@ void updateInProgress (List *in_progress_list, Tas tas, int option) {
     }
 }
 
-void deletePerishable(List in_progress_list, int curr_time, int *uncompleted) {
+void deletePerishable(List *in_progress_list, int curr_time, int *uncompleted) {
 /* Menghapus Perishable item jika sudah lewat batas waktu */
 /* Fungsi ini dipanggil setiap satuan waktu */
 /* Note: sebelum pemanggilan fungsi ini, deklarasikan dulu variabel in_progress_list dan uncompleted (gagal diantar) */ 
@@ -65,10 +65,10 @@ void deletePerishable(List in_progress_list, int curr_time, int *uncompleted) {
     Address loc;    
     int idx;
     /* ALGORITMA */
-    loc = FIRST(in_progress_list);
+    loc = FIRST(*in_progress_list);
     while (loc != NULL) {
         if ((TYPE(INFO(loc)) == 'P') && (curr_time >= T_PICK(INFO(loc)) + T_PERISH(INFO(loc)))) {
-            idx = indexOfList(in_progress_list, INFO(loc));
+            idx = indexOfList(*in_progress_list, INFO(loc));
             deleteAt(in_progress_list, idx, &deleted);
             *uncompleted += 1;
         }
