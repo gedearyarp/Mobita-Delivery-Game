@@ -98,12 +98,28 @@ void moveCommand(MAP m, int *waktu, Tas tas, POINT *user, boolean *speedBoostAct
     printf("Mobita sekarang berada di titik %c (%d,%d)!", Label(*user), Absis(*user), Ordinat(*user));
 }
 
-void moveInv(POINT *user, POINT dest){
+void moveInv(MAP m, POINT *user){
 /* memindahkan user ke mana saja tanpa menambah waktu */
     /* KAMUS LOKAL */
-
+    int i, n;
+    int points[50];
     /* ALGORITMA */
-    *user = dest;
+    // mencetak tiap lokasi yang bisa disinggahi
+    n = 0;
+    for (i = 0; i < LengthMAP(m); i++){
+        if (Label(*user) != NAMA(m, i)){
+            points[n] = i;
+            printf("%d. %c (%d,%d)\n", n + 1, NAMA(m, i), ABSIS(m, i), ORDINAT(m, i));
+            n++;
+        }
+    }
+    // input posisi yang ingin dipilih
+    printf("Posisi yang dipilih? (ketik 0 jika ingin kembali)");
+    printf("\n");
+    printf("ENTER COMMAND: ");
+    scanf("%d", &n);
+    printf("\n");
+    // pindahkan user ke titik yang dipilih
+    *user = pointIdx(Map m, points[n - 1]);
     printf("Mobita sekarang berada di titik %c (%d,%d)!", Label(*user), Absis(*user), Ordinat(*user));
 }
-
