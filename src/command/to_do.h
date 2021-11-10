@@ -17,7 +17,7 @@ void insertToDo (List *to_do_list, Queue *queue_pesanan, int curr_time);
    Fungsi ini dipanggil setiap satuan waktu.
    Prekondisi: variabel to_do_list dan queue_pesanan sudah dideklarasikan sebelum pemanggilan fungsi. */
 
-void deleteToDo (List *to_do_list, ElType val);
+void deleteToDo (List *to_do_list, int idx, ElType *val);
 /* Menghapus val (pesanan) dari to_do_list ketika pesanan masuk in_progress. 
    Fungsi ini dipanggil setiap pesanan masuk in_progress.
    Prekondisi: variabel to_do_list sudah dideklarasikan sebelum pemanggilan fungsi. */

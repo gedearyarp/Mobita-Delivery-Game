@@ -52,13 +52,11 @@ void insertToDo (List *to_do_list, Queue *queue_pesanan, int curr_time) {
     }
 }
 
-void deleteToDo (List *to_do_list, ElType val) {
+void deleteToDo (List *to_do_list, int idx, ElType *val) {
 /* Menghapus val (pesanan) dari to_do_list ketika pesanan masuk in_progress. 
    Fungsi ini dipanggil setiap pesanan masuk in_progress.
    Prekondisi: variabel to_do_list sudah dideklarasikan sebelum pemanggilan fungsi. */
     /* KAMUS LOKAL */
-    int idx;
     /* ALGORITMA */
-    idx = indexOf(*to_do_list, val);
-    deleteAt(to_do_list, idx, &val);
+    deleteAt(to_do_list, idx, val);
 }

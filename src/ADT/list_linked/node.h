@@ -5,7 +5,7 @@
 #define NODE_H
 
 #include <stdlib.h>
-#include "../pesanan/pesanan.h"
+#include "../../pesanan/pesanan.h"
 
 typedef Pesanan ElType;
 typedef struct node* Address;

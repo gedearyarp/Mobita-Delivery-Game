@@ -1,4 +1,4 @@
-/* File : listlinier.h */
+/* File : list_linked.h */
 /* contoh ADT list berkait dengan representasi fisik pointer  */
 /* Representasi address dengan pointer */
 /* ElType adalah integer */
@@ -7,8 +7,8 @@
 #define LIST_H
 
 #include "node.h"
-#include "./boolean.h"
-#include "../pesanan/pesanan.h"
+#include "../boolean.h"
+#include "../../pesanan/pesanan.h"
 
 typedef Address List;
 

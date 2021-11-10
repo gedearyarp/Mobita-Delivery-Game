@@ -2,10 +2,11 @@
 
 #include <stdio.h>
 #include "drop_off.h"
+#include "in_progress.h"
 
 #define IDX_UNDEF -1
 
-void drop_OffCommand(Tas *Tas, POINT p, int *uang, int currTime, int *speedBoostTime, boolean *speedBoostActive)
+void drop_OffCommand(Tas *Tas, List *in_progress_list, POINT p, int *uang, int currTime, int *speedBoostTime, boolean *speedBoostActive)
 {
     /* Prosedur untuk drop off jika drop location barang paling atas di tas sama dengan lokasi user. 
        Jika tidak sama, tidak akan di drop off */
@@ -52,5 +53,6 @@ void drop_OffCommand(Tas *Tas, POINT p, int *uang, int currTime, int *speedBoost
         *uang += plusMoney;
         printf("Uang yang didapatkan: %d Yen\n", plusMoney);
         pop(Tas, &pesanan);
+        updateInProgress(in_progress_list, *Tas, 2);
     }
 }
