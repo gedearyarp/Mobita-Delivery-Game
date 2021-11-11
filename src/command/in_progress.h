@@ -13,7 +13,7 @@ void in_progressCommand(List in_progress_list, int curr_time);
 /* Fungsi untuk mencetak in progress list.
    Fungsi ini dipanggil setiap ada command IN_PROGRESS. */
 
-void updateInProgress (List *in_progress_list, Tas tas, int option, int curr_time, float *time_incr, int *cap_incr, int *uncompleted);
+void updateInProgress (List *in_progress_list, Tas tas, int option);
 /* Fungsi untuk mengupdate in progress list */
 /* Fungsi ini dipanggil setiap pick_up barang (option 1) dan drop_off barang (option 2) */
 /* Note: sebelum pemanggilan fungsi ini, deklarasikan dulu variabel in_progress_list */ 
