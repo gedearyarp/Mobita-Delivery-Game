@@ -51,6 +51,8 @@ int main(){
 		return 0;
 	}
 	QueuePesanan(m, &queue_pesanan);
+	curr_time = 0;
+	uncompleted = 0;
 	while(!Finish ){
 		printf("\nMobita berada di posisi %c (%d,%d)\n",lokasi.label,lokasi.X,lokasi.Y);
 		printf("Waktu: %d\n",waktu);
@@ -70,7 +72,7 @@ int main(){
 		if (command == 1){
 			moveCommand(m, &waktu, tas, &lokasi, &speedBoostActive, &speedBoostTime);
 			insertToDo(&to_do_list, &queue_pesanan, curr_time);
-			deletePerishable(in_progress_list, curr_time, &uncompleted);
+			deletePerishable(&in_progress_list, curr_time, &uncompleted);
 		}
 		else if (command== 2){
 			pickUpCommand(&tas, lokasi, &to_do_list, &in_progress_list);
