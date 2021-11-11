@@ -4,7 +4,7 @@
 #include "in_progress.h"
 #include <stdio.h>
 // BIKIN hapus to do list dan pickup utk jenis tertentu
-void pickUpCommand(Tas *Tas, POINT P, List *to_do_list, List *in_progress_list, int curr_time, float *time_incr, int *cap_incr, int *uncompleted){
+void pickUpCommand(Tas *Tas, POINT P, List *to_do_list, List *in_progress_list){
     Address q;
     int ctr;
     Pesanan val;
@@ -16,7 +16,7 @@ void pickUpCommand(Tas *Tas, POINT P, List *to_do_list, List *in_progress_list, 
     }
     if (EQ(P, PICK_P(INFO(q)))){
         pushTas(Tas, INFO(q));
-        updateInProgress (in_progress_list, *Tas, 0, curr_time, time_incr, cap_incr, uncompleted);
+        updateInProgress (in_progress_list, *Tas, 0);
         deleteAt(to_do_list, ctr, &val);
         printf("Pesanan berupa ");
         switch(TYPE(TOP_TAS(*Tas))){
