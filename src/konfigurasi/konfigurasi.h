@@ -13,23 +13,29 @@
 #include "konfigurasi.h"
 #include "../ADT/point/point.h"
 #include "../pesanan/pesanan.h"
+#include "../ADT/matrix/matrix.h"
+#include "../ADT/matrix_char/matrix_c.h"
 
 typedef struct { 
 	int nEff; /* >=0 banyaknya koordinat*/
 	int nPesanan; /* Banyaknya pesanan */
 	int mapY; /*Ukuran Y dari peta*/ 
 	int mapX; /*Ukuran X dari peta*/
-	int hub[CAP][CAP]; /*  matrix adjency yang berhubungan dengan lokasi */
+	Matrix hub; /*  matrix adjency yang berhubungan dengan lokasi */
 	Pesanan pesan[CAP];/* list dari pesanan*/
 	POINT loc[CAP]; /* Koordinat lokasi*/
-	char peta[CAP][CAP];/* matrix untuk menampilkan koordinat lokasi*/
+	Matriks peta;/* matrix untuk menampilkan koordinat lokasi*/
 } MAP;
 /* *** Notasi Akses: Selektor MAP *** */
 #define NAMA(M,i) (M).loc[i].label
 #define ABSIS(M,i) (M).loc[i].X
 #define ORDINAT(M,i) (M).loc[i].Y
-#define ELMT_M(M, i, j) (M).hub[(i)][(j)]
-#define PETA(M, i, j) (M).peta[(i)][(j)]
+#define ELMT_M(M, i, j) (M).hub.contents[(i)][(j)]
+#define ROWS_M(M) (M).hub.rowEff
+#define COLS_M(M) (M).hub.colEff
+#define PETA(M, i, j) (M).peta.contents[(i)][(j)]
+#define ROWS_P(M)	(M).peta.rowEff
+#define COLS_P(M)	(M).peta.colEff
 #define nEff(M) (M).nEff
 #define nOrder(M) (M).nPesanan
 #define ORDER(M,i) (M).pesan[(i)]

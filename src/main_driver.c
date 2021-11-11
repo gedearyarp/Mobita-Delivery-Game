@@ -19,6 +19,7 @@
 #include "ADT/stack/stack.h"
 #include "ADT/queue/queue.h"
 #include "ADT/matrix/matrix.h"
+#include "ADT/matrix_c/matrix_c.h"
 #include "ADT/wordmachine/wordmachine.h"
 #include "ADT/wordmachine/charmachine.h"
 #include "ADT/boolean.h"
@@ -43,11 +44,11 @@ int main(){
 	printf("1. NEW GAME\n");
 	printf("2. EXIT\n");
 	printf("Masukkan angka sesuai pilihan diatas: ");
-	scanf("%d",&command);
-	if(command == 1){
+	startWord();
+	if(currentWord.contents[0] == '1'){
 		Finish = false;
 	}
-	else if(command == 2){
+	else if(currentWord.contents[0] == '2'){
 		return 0;
 	}
 	QueuePesanan(m, &queue_pesanan);
@@ -68,11 +69,15 @@ int main(){
 		printf("\n8. INVENTORY");
 		printf("\n9. HELP");
 		printf("\nENTER COMMAND: ");
-		scanf("%d",&command);
+		advWord();
+		command =convertInt(currentWord.contents,currentWord.length);
 		if (command == 1){
+			int prewaktu= waktu;
 			moveCommand(m, &waktu, tas, &lokasi, &speedBoostActive, &speedBoostTime);
-			insertToDo(&to_do_list, &queue_pesanan, curr_time);
-			deletePerishable(&in_progress_list, curr_time, &uncompleted);
+			if(prewaktu){
+				insertToDo(&to_do_list, &queue_pesanan, curr_time);
+				deletePerishable(&in_progress_list, curr_time, &uncompleted);
+			}
 		}
 		else if (command== 2){
 			pickUpCommand(&tas, lokasi, &to_do_list, &in_progress_list);

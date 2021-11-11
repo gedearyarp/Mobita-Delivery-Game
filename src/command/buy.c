@@ -23,7 +23,8 @@ void buyCommand(int *uang, Inventory *I){
     int gadget, hargaGadget[5] = { 0, 800, 1200, 1500, 3000 };
     while(true){
         printf("ENTER COMMAND: ");
-        scanf("%d", &gadget);
+        advWord();
+        gadget =convertInt(currentWord.contents,currentWord.length);
         if(gadget >= 0 && gadget <= 4){
             break;
         }

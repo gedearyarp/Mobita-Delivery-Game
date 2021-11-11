@@ -10,6 +10,8 @@
 #include "../ADT/boolean.h"
 #include "../ADT/wordmachine/wordmachine.h"
 #include "../ADT/wordmachine/charmachine.h"
+#include "../ADT/matrix/matrix.h"
+#include "../ADT/matrix_char/matrix_c.h"
 #include "../konfigurasi/konfigurasi.h"
 #include "../ADT/point/point.h"
 #include "../pesanan/pesanan.h"

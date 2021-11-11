@@ -10,7 +10,7 @@
 
 void readFile(MAP *M){
 	 // read mode
-   	startWord();
+   	startKonf();
    	CreateMap (M);
 	BacaKoordinat(M);
 	BacaAdjMatrix(M);
@@ -41,6 +41,8 @@ void CreateMap (MAP *m){
 void CreatePeta (MAP *m,int i,int j){
 	/* Membentuk peta menjad peta kosong dengan ukuran i,j*/
 	int x,y;
+	ROWS_P(*m) = i+1;
+	COLS_P(*m) = j+1;
 	for(y=0;y<=i+1;y++){
 		for(x=0;x<=j+1;x++){
 			if(y==0 || x==0 || y== i+1 || x==j+1)PETA(*m,y,x)='*';
@@ -98,6 +100,8 @@ void BacaKoordinat(MAP *m){
 //	printf("%d %d\n",x,y);
 	advWord();
 	nEff(*m) = ConvertInt(currentWord.contents,currentWord.length);
+	ROWS_M(*m) = nEff(*m);
+	COLS_M(*m) = nEff(*m);
 //	printf("%d\n",ConvertInt(currentWord.contents,currentWord.length));
 	for(i=1;i<=nEff(*m);i++){
 		advWord();

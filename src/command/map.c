@@ -24,6 +24,7 @@ void mapCommand(MAP m,POINT p,int waktu,char item){
 	printf("%d %d\n",PETA_Y(m),PETA_X(m));
 	for(i=0;i<=PETA_Y(m)+1;i++){
 		for(j=0;j<=PETA_X(m)+1;j++){
+//			printf("%c",PETA(m,i,j));
 			if(PETA(m,i,j)==' ') {
 				printf("%c",PETA(m,i,j));
 				continue;

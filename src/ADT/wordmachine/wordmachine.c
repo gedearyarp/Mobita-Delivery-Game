@@ -15,7 +15,21 @@ void ignoreBlank(){
    }
 }
 
-
+void startKonf(){
+	/* I.S. : currentChar sembarang 
+   F.S. : endWord = true, dan currentChar = MARK; 
+          atau endWord = false, currentWord adalah kata yang sudah diakuisisi,
+          currentChar karakter pertama sesudah karakter terakhir kata */
+    startFile();
+    ignoreBlank();
+    if(currentChar == EOF){
+    	endWord = true;
+	}
+	else {
+		endWord = false;
+		copyWord();
+	}
+}
 void startWord(){
 	/* I.S. : currentChar sembarang 
    F.S. : endWord = true, dan currentChar = MARK; 

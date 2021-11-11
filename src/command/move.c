@@ -84,6 +84,8 @@ void moveCommand(MAP m, int *waktu, Tas tas, POINT *user, boolean *speedBoostAct
     printf("\n");
     printf("ENTER COMMAND: ");
     scanf("%d", &k);
+    advWord();
+    k =convertInt(currentWord.contents,currentWord.length);
     printf("\n");
     
     // apabila posisi yang dipilih bukan 0, maka move akan dieksekusi
@@ -122,7 +124,8 @@ void moveInv(MAP m, POINT *user){
     printf("Posisi yang dipilih? (ketik 0 jika ingin kembali)");
     printf("\n");
     printf("ENTER COMMAND: ");
-    scanf("%d", &n);
+    advWord();
+    n =convertInt(currentWord.contents,currentWord.length);
     printf("\n");
     // pindahkan user ke titik yang dipilih
     *user = pointIdx(m, points[n - 1]);

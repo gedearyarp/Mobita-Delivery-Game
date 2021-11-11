@@ -20,7 +20,8 @@ void inventoryCommand(Inventory *I, int *waktu, Tas *tas, List *in_progress_list
     int numInv, gadget;
     while(true){
         printf("ENTER COMMAND: ");
-        scanf("%d", &numInv);
+        advWord();
+        numInv =convertInt(currentWord.contents,currentWord.length);
         if(numInv >= 0 && numInv <= 5){
             break;
         } 

@@ -23,6 +23,11 @@ void ignoreBlank();
 /* Mengabaikan satu atau beberapa BLANK
    I.S. : currentChar sembarang 
    F.S. : currentChar ≠ BLANK atau currentChar = MARK */
+void startKonf();
+/* I.S. : currentChar sembarang 
+   F.S. : endWord = true, dan currentChar = MARK; 
+          atau endWord = false, currentWord adalah kata yang sudah diakuisisi,
+          currentChar karakter pertama sesudah karakter terakhir kata */
 
 void startWord();
 /* I.S. : currentChar sembarang 
