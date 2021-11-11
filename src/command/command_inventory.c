@@ -5,7 +5,9 @@
 #include "../inventory/inventory.h"
 #include "../tas/tas.h"
 #include "../pesanan/pesanan.h"
-
+#include "../ADT/wordmachine/wordmachine.h"
+#include "../ADT/wordmachine/charmachine.h"
+#include "../konfigurasi/konfigurasi.h"
 /*
 kain pembungkus waktu: perlu ADT tas
 senter pembesar: perlu ADT tas
@@ -21,7 +23,7 @@ void inventoryCommand(Inventory *I, int *waktu, Tas *tas, List *in_progress_list
     while(true){
         printf("ENTER COMMAND: ");
         advWord();
-        numInv =convertInt(currentWord.contents,currentWord.length);
+        numInv =ConvertInt(currentWord.contents,currentWord.length);
         if(numInv >= 0 && numInv <= 5){
             break;
         } 

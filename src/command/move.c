@@ -4,7 +4,9 @@
 #include <stdlib.h>
 #include "move.h"
 #include "../ability/ability.h"
-
+#include "../ADT/wordmachine/wordmachine.h"
+#include "../ADT/wordmachine/charmachine.h"
+#include "../konfigurasi/konfigurasi.h"
 int idxPOINT(MAP m, POINT p){
 /* mengembalikan indeks point pada map dari point */
     /* KAMUS LOKAL */
@@ -85,7 +87,7 @@ void moveCommand(MAP m, int *waktu, Tas tas, POINT *user, boolean *speedBoostAct
     printf("ENTER COMMAND: ");
     scanf("%d", &k);
     advWord();
-    k =convertInt(currentWord.contents,currentWord.length);
+    k =ConvertInt(currentWord.contents,currentWord.length);
     printf("\n");
     
     // apabila posisi yang dipilih bukan 0, maka move akan dieksekusi
@@ -125,7 +127,7 @@ void moveInv(MAP m, POINT *user){
     printf("\n");
     printf("ENTER COMMAND: ");
     advWord();
-    n =convertInt(currentWord.contents,currentWord.length);
+    n =ConvertInt(currentWord.contents,currentWord.length);
     printf("\n");
     // pindahkan user ke titik yang dipilih
     *user = pointIdx(m, points[n - 1]);

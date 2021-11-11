@@ -2,6 +2,9 @@
 #include "../ADT/boolean.h"
 #include "buy.h"
 #include "../inventory/inventory.h"
+#include "../ADT/wordmachine/wordmachine.h"
+#include "../ADT/wordmachine/charmachine.h"
+#include "../konfigurasi/konfigurasi.h"
 
 void buyCommand(int *uang, Inventory *I){
     printf("Uang Anda sekarang: %d Yen\n", uang);
@@ -24,7 +27,7 @@ void buyCommand(int *uang, Inventory *I){
     while(true){
         printf("ENTER COMMAND: ");
         advWord();
-        gadget =convertInt(currentWord.contents,currentWord.length);
+        gadget =ConvertInt(currentWord.contents,currentWord.length);
         if(gadget >= 0 && gadget <= 4){
             break;
         }

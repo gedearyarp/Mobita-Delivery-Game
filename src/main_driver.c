@@ -19,7 +19,7 @@
 #include "ADT/stack/stack.h"
 #include "ADT/queue/queue.h"
 #include "ADT/matrix/matrix.h"
-#include "ADT/matrix_c/matrix_c.h"
+#include "ADT/matrix_char/matrix_c.h"
 #include "ADT/wordmachine/wordmachine.h"
 #include "ADT/wordmachine/charmachine.h"
 #include "ADT/boolean.h"
@@ -70,7 +70,7 @@ int main(){
 		printf("\n9. HELP");
 		printf("\nENTER COMMAND: ");
 		advWord();
-		command =convertInt(currentWord.contents,currentWord.length);
+		command =ConvertInt(currentWord.contents,currentWord.length);
 		if (command == 1){
 			int prewaktu= waktu;
 			moveCommand(m, &waktu, tas, &lokasi, &speedBoostActive, &speedBoostTime);
