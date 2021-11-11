@@ -85,18 +85,22 @@ void moveCommand(MAP m, int *waktu, Tas tas, POINT *user, boolean *speedBoostAct
     printf("ENTER COMMAND: ");
     scanf("%d", &k);
     printf("\n");
-    // ubah posisi user
-    *user = m.loc[movablePoint[k - 1]];
-    // ubah waktu
-    if (duration(tas)!=1){ //ada heavy item
-        *speedBoostActive=false;
-        *waktu += duration(tas);
+    
+    // apabila posisi yang dipilih bukan 0, maka move akan dieksekusi
+    if (k != 0){
+        // ubah posisi user
+        *user = m.loc[movablePoint[k - 1]];
+        // ubah waktu
+        if (duration(tas)!=1) {         // ada heavy item
+            *speedBoostActive=false;
+            *waktu += duration(tas);
+        }
+        else{
+            speedBoost(waktu, speedBoostTime, speedBoostActive);    
+        }
+        // display
+        printf("Mobita sekarang berada di titik %c (%d,%d)!", Label(*user), Absis(*user), Ordinat(*user));
     }
-    else{
-        speedBoost(waktu,  speedBoostTime,speedBoostActive);
-    }
-    // display
-    printf("Mobita sekarang berada di titik %c (%d,%d)!", Label(*user), Absis(*user), Ordinat(*user));
 }
 
 void moveInv(MAP m, POINT *user){
