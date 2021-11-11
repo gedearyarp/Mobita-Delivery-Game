@@ -4,14 +4,14 @@
 #ifndef KONFIGURASI_H
 #define KONFIGURASI_H
 
-#define CAPACITY 50
+#define CAP 50
 #define VAL_UNDEF -999
 
 #include "boolean.h"
-#include "../ADT/wordmachine/wordmachine.h"
-#include "../ADT/wordmachine/charmachine.h"
+#include "../wordmachine/wordmachine.h"
+#include "../wordmachine/charmachine.h"
 #include "konfigurasi.h"
-#include "../ADT/point/point.h"
+#include "../point/point.h"
 #include "../pesanan/pesanan.h"
 
 typedef struct { 
@@ -19,10 +19,10 @@ typedef struct {
 	int nPesanan; /* Banyaknya pesanan */
 	int mapY; /*Ukuran Y dari peta*/ 
 	int mapX; /*Ukuran X dari peta*/
-	int hub[CAPACITY][CAPACITY]; /*  matrix adjency yang berhubungan dengan lokasi */
-	Pesanan pesan[CAPACITY];/* list dari pesanan*/
-	POINT loc[CAPACITY]; /* Koordinat lokasi*/
-	char peta[CAPACITY][CAPACITY];/* matrix untuk menampilkan koordinat lokasi*/
+	int hub[CAP][CAP]; /*  matrix adjency yang berhubungan dengan lokasi */
+	Pesanan pesan[CAP];/* list dari pesanan*/
+	POINT loc[CAP]; /* Koordinat lokasi*/
+	char peta[CAP][CAP];/* matrix untuk menampilkan koordinat lokasi*/
 } MAP;
 /* *** Notasi Akses: Selektor MAP *** */
 #define NAMA(M,i) (M).loc[i].label
@@ -58,7 +58,8 @@ typedef struct {
   Map kosong: m.nEff = 0
   Definisi elemen pertama : m.loc[i] dengan i=Point
   Definisi elemen terakhir yang terdefinisi: m.loc[i] dengan i=l.nEff */
-
+void readFile(MAP *M);
+	/*membaca input file*/
 int ConvertInt();
 	/*Mengkonvert input char dari mesin kata menjadi int*/
 void CreateMap (MAP *m);

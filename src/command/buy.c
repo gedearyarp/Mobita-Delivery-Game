@@ -46,6 +46,6 @@ void buyCommand(int *uang, Inventory *I){
     if (gadget == 1) printf("Kain Pembungkus Waktu berhasil dibeli!\n");
     else if (gadget == 2) printf("Senter Pembesar berhasil dibeli!\n");
     else if (gadget == 3) printf("Pintu Kemana Saja berhasil dibeli!\n");
-    else if (gadget == 4){ printf("Mesin Waktu berhasil dibeli!\n");
+    else if (gadget == 4) printf("Mesin Waktu berhasil dibeli!\n");
     printf("Uang Anda sekarang: %d Yen\n", *uang);
 }

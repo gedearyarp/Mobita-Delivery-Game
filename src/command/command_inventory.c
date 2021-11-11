@@ -1,7 +1,8 @@
 #include <stdio.h>
 #include "../ADT/boolean.h"
-#include "../ADT/list_linked/list_linked.h"
-#include "inventory.h"
+#include "../list_linked/list_linked.h"
+#include "command_inventory.h"
+#include "../inventory/inventory.h"
 #include "../tas/tas.h"
 #include "../pesanan/pesanan.h"
 

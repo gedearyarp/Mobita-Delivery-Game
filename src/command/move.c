@@ -3,6 +3,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include "move.h"
+#include "../ability/ability.h"
 
 int idxPOINT(MAP m, POINT p){
 /* mengembalikan indeks point pada map dari point */
@@ -40,7 +41,7 @@ int duration(Tas tas){
     int i, t;
     /* ALGORITMA */
     t = 1;
-    if (isEmpty(tas)){
+    if (TasIsEmpty(tas)){
         return t;
     }
     else{
@@ -92,7 +93,7 @@ void moveCommand(MAP m, int *waktu, Tas tas, POINT *user, boolean *speedBoostAct
         *waktu += duration(tas);
     }
     else{
-        speedBost(waktu, speedBoostActive, speedBoostTime);
+        speedBoost(waktu,  speedBoostTime,speedBoostActive);
     }
     // display
     printf("Mobita sekarang berada di titik %c (%d,%d)!", Label(*user), Absis(*user), Ordinat(*user));

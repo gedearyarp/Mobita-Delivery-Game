@@ -1,16 +1,17 @@
-/* File: charmachine.c */
-/* Implementasi Character Engine */
+/* File: charmachine.h */
+/* Definisi Character Engine */
 
-#include "charmachine.h"
-#include <stdio.h>
+#ifndef CHAR_ENGINE_H
+#define CHAR_ENGINE_H
 
-char currentChar;
-boolean eot;
+#include "boolean.h"
 
-static FILE * tape;
-static int retval;
+#define MARK '.'
+/* Char Engine State */
+extern char currentChar;
+extern boolean eot;
 
-void start() {
+void start();
 /* Mesin siap dioperasikan. Pita disiapkan untuk dibaca.
    Karakter pertama yang ada pada pita posisinya adalah pada jendela.
    I.S. : sembarang
@@ -18,22 +19,11 @@ void start() {
           Jika currentChar != MARK maka EOP akan padam (false)
           Jika currentChar = MARK maka EOP akan menyala (true) */
 
-	/* Algoritma */
-	tape = stdin;
-	adv();
-}
-
-void adv() {
+void adv();
 /* Pita dimajukan satu karakter. 
    I.S. : Karakter pada jendela = currentChar, currentChar != MARK
    F.S. : currentChar adalah karakter berikutnya dari currentChar yang lama, 
           currentChar mungkin = MARK
-		      Jika  currentChar = MARK maka EOP akan menyala (true) */
+          Jika  currentChar = MARK maka EOP akan menyala (true) */
 
-	/* Algoritma */
-	retval = fscanf(tape,"%c",&currentChar);
-	eot = (currentChar == MARK);
-	if (eot) {
-       fclose(tape);
- 	}
-}
+#endif

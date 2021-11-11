@@ -4,6 +4,7 @@
 #include "drop_off.h"
 #include "in_progress.h"
 
+#include "../point/point.h"
 #define IDX_UNDEF -1
 
 void drop_OffCommand(Tas *Tas, List *in_progress_list, POINT p, int *uang, int currTime, int *speedBoostTime, boolean *speedBoostActive)
@@ -52,7 +53,8 @@ void drop_OffCommand(Tas *Tas, List *in_progress_list, POINT p, int *uang, int c
 
         *uang += plusMoney;
         printf("Uang yang didapatkan: %d Yen\n", plusMoney);
-        pop(Tas, &pesanan);
+        popTas(Tas, &pesanan);
         updateInProgress(in_progress_list, *Tas, 2);
+        
     }
 }

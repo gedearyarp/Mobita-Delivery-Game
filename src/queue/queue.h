@@ -4,11 +4,11 @@
 #ifndef QUEUE_H
 #define QUEUE_H
 
-#include "../boolean.h"
+#include "boolean.h"
 #include "../pesanan/pesanan.h"
 #include "../konfigurasi/konfigurasi.h"
 
-#define IDX_UNDEF -1
+#define I_UNDEF -1
 #define QCAPACITY 100
 
 /* Definisi elemen dan address */

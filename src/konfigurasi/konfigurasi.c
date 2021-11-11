@@ -1,26 +1,21 @@
 #include "boolean.h"
-#include "../ADT/wordmachine/wordmachine.h"
-#include "../ADT/wordmachine/charmachine.h"
+#include "../wordmachine/wordmachine.h"
+#include "../wordmachine/charmachine.h"
 #include "konfigurasi.h"
-#include "../ADT/point/point.h"
+#include "../point/point.h"
 #include "../pesanan/pesanan.h"
 #include <stdio.h>
+#include <stdlib.h>
 
 
-void readFile(MAP *m){
-	char ch, file_name[25];
-	FILE *fp;
-	printf("Masukkan nama file : ");
-	gets(file_name);
-	fp = fopen(file_name, "r"); // read mode
-	if (fp == NULL)
-	{
-		perror("Error ketika membuka file\n");
-		exit(EXIT_FAILURE);
-   	}
-   
+void readFile(MAP *M){
+	 // read mode
+   	startWord();
+   	CreateMap (M);
+	BacaKoordinat(M);
+	BacaAdjMatrix(M);
+	BacaPesanan(M);
 
-   fclose(fp);
 }
 
 
@@ -29,13 +24,13 @@ void CreateMap (MAP *m){
 	//kamus
 	int y,x;
 	//algoritma
-	for(x=0;x<CAPACITY;x++ ){
+	for(x=0;x<CAP;x++ ){
 		NAMA(*m,x) = '/';
 		ABSIS(*m,x) = VAL_UNDEF;
 		ORDINAT(*m,x) = VAL_UNDEF;
 	}
-	for(y=0;y<CAPACITY;y++){
-		for(x=0;x<CAPACITY;x++){
+	for(y=0;y<CAP;y++){
+		for(x=0;x<CAP;x++){
 			ELMT_M(*m, y, x) = VAL_UNDEF;
 			PETA(*m,y,x)='/';
 		}
@@ -83,7 +78,6 @@ void BacaKoordinat(MAP *m){
 	//kamus
 	int i,x,y;
 	//algoritma
-	startWord();
 //	int val = ConvertInt();
 //	advWord();
 	int N = ConvertInt(currentWord.contents,currentWord.length);
@@ -162,7 +156,8 @@ void BacaPesanan(MAP *m){
 			advWord();
 			O_T_PERISH(*m,i) = currentWord.contents[0];;
 		}
-//		printf("%d %c %c %c\n",O_MASUK(*m,i),O_PICK_LABEL(*m,i),O_DROP_LABEL(*m,i),O_TYPE(*m,i));
+	//	printf("%c",currentWord.contents[0]);
+	//	printf("%d %c %c %c\n",O_MASUK(*m,i),O_PICK_LABEL(*m,i),O_DROP_LABEL(*m,i),O_TYPE(*m,i));
 	}
 	
 }

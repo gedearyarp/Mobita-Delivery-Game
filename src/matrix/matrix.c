@@ -55,7 +55,7 @@ boolean isIdxEff(Matrix m, Index i, Index j){
 	return (i<m.rowEff && j<m.colEff&& i>=0 &&j>=0);
 }
 
-ElType getElmtDiagonal(Matrix m, Index i){
+int getElmtDiagonal(Matrix m, Index i){
 	/* Mengirimkan elemen m(i,i) */
 	if(isIdxEff(m,i,i))return (m.contents[i][i]);
 }
@@ -182,7 +182,7 @@ Matrix multiplyMatrix(Matrix m1, Matrix m2){
 	
 }
 
-Matrix multiplyConst(Matrix m, ElType x){
+Matrix multiplyConst(Matrix m, int x){
 	int i,j;
 	//algoritma
 	Matrix m3;
@@ -195,7 +195,7 @@ Matrix multiplyConst(Matrix m, ElType x){
 	return m3;
 }
 /* Mengirim hasil perkalian setiap elemen m dengan x */
-void pMultiplyConst(Matrix *m, ElType k){
+void pMultiplyConst(Matrix *m, int k){
 	/* I.S. m terdefinisi, k terdefinisi */
 /* F.S. Mengalikan setiap elemen m dengan k */
 	int i,j;

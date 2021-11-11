@@ -21,11 +21,11 @@ typedef struct {
 
 Inventory createInventory();
 
-void printInvetory(Inventory I);
+void printInventory(Inventory I);
 
 void addGadget(Inventory *I, int idxGadget);
 
-void removeGadget(Inventory *I);
+void removeGadget(Inventory *I, int numInv, int *gadget);
 
 
 #endif

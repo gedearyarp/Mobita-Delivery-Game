@@ -6,7 +6,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include "../ADT/boolean.h"
-#include "../ADT/point/point.h"
+#include "../point/point.h"
 #include "../konfigurasi/konfigurasi.h"
 #include "../tas/tas.h"
 

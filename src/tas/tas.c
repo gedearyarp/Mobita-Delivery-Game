@@ -1,13 +1,13 @@
 /* File : stack.h */
 /* Definisi ADT Stack dengan representasi array secara eksplisit dan alokasi statik */
 /* TOP adalah alamat elemen puncak */
-#include "../boolean.h"
+#include "../ADT/boolean.h"
 #include <stdio.h>
 #include "tas.h"
 /* *** Konstruktor/Kreator *** */
 void CreateTas(Tas *s){
 	Tas st;
-	IDX_TOP(st)=IDX_UNDEF;
+	IDX_TOP(st)=INDEX_UNDEF;
 	currCAPACITY(st)=0;
 	*s=st;
 }
@@ -17,11 +17,11 @@ void CreateTas(Tas *s){
 /* Proses : Melakukan alokasi, membuat sebuah s kosong */
 
 /* ************ Prototype ************ */
-boolean isEmpty(Tas s){
-	return IDX_TOP(s) == IDX_UNDEF;
+boolean TasIsEmpty(Tas s){
+	return IDX_TOP(s) == INDEX_UNDEF;
 }
 /* Mengirim true jika s kosong: lihat definisi di atas */
-boolean isFull(Tas s){
+boolean TasIsFull(Tas s){
 	return IDX_TOP(s) == currCAPACITY(s)-1;
 }
 /* Mengirim true jika tabel penampung nilai s stack penuh dengan kapasitas saat ini */
@@ -31,7 +31,7 @@ boolean isMax(Tas s){
 /* Mengirim true jika tabel penampung nilai s stack penuh dengan kapasitas maks(100) */
 
 /* ************ Menambahkan sebuah elemen ke Stack ************ */
-void push(Tas *s, Pesanan val){
+void pushTas(Tas *s, Pesanan val){
 	IDX_TOP(*s)++;
 	TOP(*s) = val;
 }
@@ -40,7 +40,7 @@ void push(Tas *s, Pesanan val){
 /* F.S. val menjadi TOP yang baru,IDX_TOP bertambah 1 */
 
 /* ************ Menghapus sebuah elemen Stack ************ */
-void pop(Tas *s, Pesanan *val){
+void popTas(Tas *s, Pesanan *val){
 	*val = TOP(*s);
 	IDX_TOP(*s)--;
 }
