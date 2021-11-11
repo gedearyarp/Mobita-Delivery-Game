@@ -45,7 +45,7 @@ int duration(Tas tas){
         return t;
     }
     else{
-        for (i = 0; i <= IDX_TOP(tas); i++){
+        for (i = 0; i <= IDX_TAS(tas); i++){
             if (TYPE(tas.buffer[i]) == 'H'){
                 t++;
             }
@@ -121,6 +121,6 @@ void moveInv(MAP m, POINT *user){
     scanf("%d", &n);
     printf("\n");
     // pindahkan user ke titik yang dipilih
-    *user = pointIdx(Map m, points[n - 1]);
+    *user = pointIdx(m, points[n - 1]);
     printf("Mobita sekarang berada di titik %c (%d,%d)!", Label(*user), Absis(*user), Ordinat(*user));
 }

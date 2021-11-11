@@ -1,19 +1,19 @@
-charmachine.o: wordmachine/charmachine.c
-	gcc -c wordmachine/charmachine.c
-wordmachine.o: wordmachine/wordmachine.c
-	gcc -c wordmachine/wordmachine.c
-node.o : list_linked/node.c
-	gcc -c list_linked/node.c
-point.o: point/point.c
-	gcc -c point/point.c
-list_linked.o: list_linked/list_linked.c
-	gcc -c list_linked/list_linked.c
-stack.o: stack/stack.c
-	gcc -c stack/stack.c
-queue.o: queue/queue.c
-	gcc -c queue/queue.c
-matrix.o: matrix/matrix.c
-	gcc -c matrix/matrix.c
+charmachine.o: ADT/wordmachine/charmachine.c
+	gcc -c ADT/wordmachine/charmachine.c
+wordmachine.o: ADT/wordmachine/wordmachine.c
+	gcc -c ADT/wordmachine/wordmachine.c
+node.o : ADT/list_linked/node.c
+	gcc -c ADT/list_linked/node.c
+point.o: ADT/point/point.c
+	gcc -c ADT/point/point.c
+list_linked.o: ADT/list_linked/list_linked.c
+	gcc -c ADT/list_linked/list_linked.c
+stack.o: ADT/stack/stack.c
+	gcc -c ADT/stack/stack.c
+queue.o: ADT/queue/queue.c
+	gcc -c ADT/queue/queue.c
+matrix.o: ADT/matrix/matrix.c
+	gcc -c ADT/matrix/matrix.c
 map.o: command/map.c
 	gcc -c command/map.c
 buy.o: command/buy.c

@@ -4,7 +4,7 @@
 #include <stdio.h>
 #include "in_progress.h"
 #include "../ADT/boolean.h"
-#include "../list_linked/list_linked.h"
+#include "../ADT/list_linked/list_linked.h"
 #include "../tas/tas.h"
 
 void in_progressCommand(List in_progress_list, int curr_time) {
@@ -39,37 +39,23 @@ void in_progressCommand(List in_progress_list, int curr_time) {
     }
 }
 
-void updateInProgress (List *in_progress_list, Tas tas, int option) {
+void updateInProgress (List *in_progress_list, Tas tas, int option, int curr_time, float *time_incr, int *cap_incr, int *uncompleted) {
 /* Fungsi untuk mengupdate in progress list */
 /* Fungsi ini dipanggil setiap pick_up barang (option 1) dan drop_off barang (option 2) */
 /* Note: sebelum pemanggilan fungsi ini, deklarasikan dulu variabel in_progress_list */ 
     /* KAMUS LOKAL */
     ElType deleted;    // menyimpan value hasil delete
+    Address loc;    
+    int idx;
     /* ALGORITMA */
     // option 1: pickup
     if (option == 1) {
-        insertFirst(in_progress_list, TOP(tas));
+        insertFirst(in_progress_list, TOP_TAS(tas));
     }
     // option2: drop off 
     else if (option == 2) {
         deleteFirst(in_progress_list, &deleted);
-        if (TYPE(deleted) == 'H' && (heavyItemCount(*in_progress_list) == 0)) {
-            *time_incr *= 0.5;        // Abillity: Speed Boost
-        } else if (TYPE(deleted) == 'P') {
-            *cap_incr++;             // Abillity: Increase Capacity
-        }
-    }
-    // option3: hangus atau return
-    else if (option == 3) {
-        loc = FIRST(*in_progress_list);
-        while (loc != NULL) {
-            if ((TYPE(INFO(loc)) == 'P') && (curr_time >= T_PICK(INFO(loc)) + T_PERISH(INFO(loc)))) {
-                idx = indexOfList(*in_progress_list, INFO(loc));
-                deleteAt(in_progress_list, idx, &deleted);
-                *uncompleted += 1;
-            }
-            loc = NEXT(loc);
-        }
+
     }
 }
 

@@ -7,14 +7,13 @@
 #define LIST_H
 
 
-#include "../ADT/boolean.h"
-#include "../pesanan/pesanan.h"
+#include "../boolean.h"
+#include "../../pesanan/pesanan.h"
 #include "node.h"
 typedef Address List;
 
 #define IDX_UNDEF (-1)
 #define FIRST(l) (l)
-
 /* Definisi List : */
 /* List kosong : FIRST(l) = NULL */
 /* Setiap elemen dengan Address p dapat diacu INFO(p), NEXT(p) */

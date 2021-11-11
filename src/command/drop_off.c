@@ -4,8 +4,7 @@
 #include "drop_off.h"
 #include "in_progress.h"
 
-#include "../point/point.h"
-#define IDX_UNDEF -1
+#include "../ADT/point/point.h"
 
 void drop_OffCommand(Tas *Tas, List *in_progress_list, POINT p, int *uang, int currTime, int *speedBoostTime, boolean *speedBoostActive)
 {
@@ -18,8 +17,8 @@ void drop_OffCommand(Tas *Tas, List *in_progress_list, POINT p, int *uang, int c
     char dropLoc, type;
     
     /* ALGORITMA */
-    dropLoc = Label(DROP_P(TOP(*Tas)));
-    type = TYPE(TOP(*Tas));
+    dropLoc = Label(DROP_P(TOP_TAS(*Tas)));
+    type = TYPE(TOP_TAS(*Tas));
 
     if (Label(p) != dropLoc)
     {
@@ -54,7 +53,7 @@ void drop_OffCommand(Tas *Tas, List *in_progress_list, POINT p, int *uang, int c
         *uang += plusMoney;
         printf("Uang yang didapatkan: %d Yen\n", plusMoney);
         popTas(Tas, &pesanan);
-        updateInProgress(in_progress_list, *Tas, 2);
+    //    updateInProgress(in_progress_list, *Tas, 2);
         
     }
 }

@@ -20,8 +20,8 @@ typedef struct {
 
 /* ********* AKSES (Selektor) ********* */
 /* Jika s adalah Stack, maka akses elemen : */
-#define IDX_TOP(s) (s).idxTop
-#define     TOP(s) (s).buffer[(s).idxTop]
+#define IDX_TAS(s) (s).idxTop
+#define     TOP_TAS(s) (s).buffer[(s).idxTop]
 #define currCAPACITY(s) (s).currCAPACITY
 
 /* *** Konstruktor/Kreator *** */

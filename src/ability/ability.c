@@ -4,7 +4,7 @@
 
 void speedBoost(int *waktu, int *speedBoostTime, boolean *speedBoostActive){
     if (speedBoostActive){
-        speedBoostTime++;
+        *speedBoostTime++;
         if (*speedBoostTime <=10){
             if ((*speedBoostTime%2) == 0){
                 *waktu++;
@@ -20,8 +20,8 @@ void speedBoost(int *waktu, int *speedBoostTime, boolean *speedBoostActive){
     }
 }
 
-increaseCapacity(Tas *Tas){
-    if (currCAPACITY(*Tas)<MAXCAPACITY-1){
-        currCAPACITY(*Tas)++;
+void increaseCapacity(Tas *tas){
+    if (currCAPACITY(*tas)<MAXCAPACITY-1){
+        currCAPACITY(*tas)++;
     }
 }

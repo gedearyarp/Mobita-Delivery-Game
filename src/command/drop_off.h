@@ -7,7 +7,7 @@
 #include <stdio.h>
 #include "../ADT/boolean.h"
 #include "../tas/tas.h"
-#include "../point/point.h"
+#include "../ADT/point/point.h"
 #include "../ability/ability.h"
 #include "../ADT/list_linked/node.h"
 #include "../ADT/list_linked/list_linked.h"

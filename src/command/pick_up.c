@@ -1,10 +1,10 @@
 #include "pick_up.h"
 #include "to_do.h"
-#include "../point/point.h"
+#include "../ADT/point/point.h"
 #include "in_progress.h"
 #include <stdio.h>
 // BIKIN hapus to do list dan pickup utk jenis tertentu
-void pickUpCommand(Tas *Tas, POINT P, List *to_do_list, List *in_progress_list){
+void pickUpCommand(Tas *Tas, POINT P, List *to_do_list, List *in_progress_list, int curr_time, float *time_incr, int *cap_incr, int *uncompleted){
     Address q;
     int ctr;
     Pesanan val;
@@ -19,14 +19,14 @@ void pickUpCommand(Tas *Tas, POINT P, List *to_do_list, List *in_progress_list){
         updateInProgress (in_progress_list, *Tas, 0, curr_time, time_incr, cap_incr, uncompleted);
         deleteAt(to_do_list, ctr, &val);
         printf("Pesanan berupa ");
-        switch(TYPE(TOP(*Tas))){
+        switch(TYPE(TOP_TAS(*Tas))){
             case 'N': printf("Normal Item"); break;
             case 'H': printf("Heavy Item"); break;
             case 'P':printf("Perishable Item"); break;
             default: break;
         }
         printf(" berhasil diambil!\n");
-        printf("Tujuan Pesanan: %c", Label(DROP_P(TOP(*Tas))));
+        printf("Tujuan Pesanan: %c", Label(DROP_P(TOP_TAS(*Tas))));
     }
     else {
         printf("Pesanan tidak ditemukan!");

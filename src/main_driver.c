@@ -13,14 +13,14 @@
 #include "pcolor/pcolor.h"
 #include "pesanan/pesanan.h"
 #include "tas/tas.h"
-#include "point/point.h"
-#include "list_linked/list_linked.h"
-#include "list_linked/Node.h"
-#include "stack/stack.h"
-#include "queue/queue.h"
-#include "matrix/matrix.h"
-#include "wordmachine/wordmachine.h"
-#include "wordmachine/charmachine.h"
+#include "ADT/point/point.h"
+#include "ADT/list_linked/list_linked.h"
+#include "ADT/list_linked/Node.h"
+#include "ADT/stack/stack.h"
+#include "ADT/queue/queue.h"
+#include "ADT/matrix/matrix.h"
+#include "ADT/wordmachine/wordmachine.h"
+#include "ADT/wordmachine/charmachine.h"
 #include "ADT/boolean.h"
 #include <stdio.h>
 #include <stdlib.h>
@@ -38,7 +38,6 @@ int main(){
 	Tas tas;
 	readFile(&m);
 	boolean speedBoostActive;
-	
 	printf("Main Menu: \n");
 	printf("1. NEW GAME\n");
 	printf("2. EXIT\n");
@@ -50,7 +49,7 @@ int main(){
 	else if(command == 2){
 		return 0;
 	}
-	while(Finish ){
+	while(!Finish ){
 		printf("\nMobita berada di posisi %c (%d,%d)\n",lokasi.label,lokasi.X,lokasi.Y);
 		printf("Waktu: %d\n",waktu);
 		printf("Uang yang dimiliki: %d Yen\n",money);
@@ -73,7 +72,7 @@ int main(){
 			pickUpCommand(&tas, lokasi, &to_do_list, &in_progress_list,curr_time,&time_incr, &cap_incr, &uncompleted);
 		}
 		else if(command == 3){
-			drop_OffCommand(&tas, lokasi, &money, curr_time, &speedBoostTime, &speedBoostActive);
+			drop_OffCommand(&tas,&in_progress_list, lokasi, &money, curr_time, &speedBoostTime, &speedBoostActive);
 		}
 		else if(command == 4){
 			mapCommand(m,lokasi,waktu,item);

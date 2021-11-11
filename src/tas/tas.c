@@ -7,7 +7,7 @@
 /* *** Konstruktor/Kreator *** */
 void CreateTas(Tas *s){
 	Tas st;
-	IDX_TOP(st)=INDEX_UNDEF;
+	IDX_TAS(st)=INDEX_UNDEF;
 	currCAPACITY(st)=0;
 	*s=st;
 }
@@ -18,22 +18,22 @@ void CreateTas(Tas *s){
 
 /* ************ Prototype ************ */
 boolean TasIsEmpty(Tas s){
-	return IDX_TOP(s) == INDEX_UNDEF;
+	return IDX_TAS(s) == INDEX_UNDEF;
 }
 /* Mengirim true jika s kosong: lihat definisi di atas */
 boolean TasIsFull(Tas s){
-	return IDX_TOP(s) == currCAPACITY(s)-1;
+	return IDX_TAS(s) == currCAPACITY(s)-1;
 }
 /* Mengirim true jika tabel penampung nilai s stack penuh dengan kapasitas saat ini */
 boolean isMax(Tas s){
-	return IDX_TOP(s) == MAXCAPACITY-1;
+	return IDX_TAS(s) == MAXCAPACITY-1;
 }
 /* Mengirim true jika tabel penampung nilai s stack penuh dengan kapasitas maks(100) */
 
 /* ************ Menambahkan sebuah elemen ke Stack ************ */
 void pushTas(Tas *s, Pesanan val){
-	IDX_TOP(*s)++;
-	TOP(*s) = val;
+	IDX_TAS(*s)++;
+	TOP_TAS(*s) = val;
 }
 /* Menambahkan val sebagai elemen Stack s */
 /* I.S. s mungkin kosong, tabel penampung elemen stack TIDAK penuh */
@@ -41,8 +41,8 @@ void pushTas(Tas *s, Pesanan val){
 
 /* ************ Menghapus sebuah elemen Stack ************ */
 void popTas(Tas *s, Pesanan *val){
-	*val = TOP(*s);
-	IDX_TOP(*s)--;
+	*val = TOP_TAS(*s);
+	IDX_TAS(*s)--;
 }
 /* Menghapus val dari Stack s */
 /* I.S. s tidak mungkin kosong */

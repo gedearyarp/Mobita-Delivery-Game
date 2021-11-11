@@ -6,14 +6,14 @@
 #define STACK_H
 
 #include "./boolean.h"
-#include "../pesanan/pesanan.h"
+#include "../../pesanan/pesanan.h"
 
-#define IDX_UNDEF -1
-#define CAPACITY 100
+#define IDX_UNDF -1
+#define CAPY 100
 
 typedef Pesanan ElType;
 typedef struct {
-  ElType buffer[CAPACITY]; /* tabel penyimpan elemen */
+  ElType buffer[CAPY]; /* tabel penyimpan elemen */
   int idxTop;              /* alamat TOP: elemen puncak */
 } Stack;
 
@@ -26,7 +26,7 @@ typedef struct {
 void CreateStack(Stack *s);
 /* I.S. sembarang; */
 /* F.S. Membuat sebuah stack S kosong dengan kondisi sbb: */
-/* - Index top bernilai IDX_UNDEF */
+/* - Index top bernilai IDX_UNDF */
 /* Proses : Melakukan alokasi, membuat sebuah s kosong */
 
 /* ************ Prototype ************ */

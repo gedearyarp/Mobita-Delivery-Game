@@ -7,21 +7,21 @@
 /* *** Konstruktor/Kreator *** */
 void CreateStack(Stack *s){
 	Stack st;
-	IDX_TOP(st)=IDX_UNDEF;
+	IDX_TOP(st)=IDX_UNDF;
 	*s=st;
 }
 /* I.S. sembarang; */
 /* F.S. Membuat sebuah stack S kosong dengan kondisi sbb: */
-/* - Index top bernilai IDX_UNDEF */
+/* - Index top bernilai IDX_UNDF */
 /* Proses : Melakukan alokasi, membuat sebuah s kosong */
 
 /* ************ Prototype ************ */
 boolean isEmpty(Stack s){
-	return IDX_TOP(s) == IDX_UNDEF;
+	return IDX_TOP(s) == IDX_UNDF;
 }
 /* Mengirim true jika s kosong: lihat definisi di atas */
 boolean isFull(Stack s){
-	return IDX_TOP(s) == CAPACITY-1;
+	return IDX_TOP(s) == CAPY-1;
 }
 /* Mengirim true jika tabel penampung nilai s stack penuh */
 

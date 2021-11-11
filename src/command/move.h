@@ -6,7 +6,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include "../ADT/boolean.h"
-#include "../point/point.h"
+#include "../ADT/point/point.h"
 #include "../konfigurasi/konfigurasi.h"
 #include "../tas/tas.h"
 
@@ -25,7 +25,7 @@ void moveCommand(MAP m, int *waktu, Tas tas, POINT *user, boolean *speedBoostAct
    kemudian user memilih salah satu titik, lokasi user sekarang
    berpindah ke titik tersebut */
 
-void moveInv(POINT *user, POINT dest);
+void moveInv(MAP m, POINT *user);
 /* memindahkan user ke mana saja tanpa menambah waktu */
 
 #endif // MOVE_H
