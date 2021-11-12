@@ -7,6 +7,16 @@
 #include "../ADT/wordmachine/wordmachine.h"
 #include "../ADT/wordmachine/charmachine.h"
 #include "../konfigurasi/konfigurasi.h"
+
+POINT getUsersPoint(MAP m){
+/* mengembalikan point lokasi Mobita di awal
+   yaitu headquarter/point pertama di map */
+    /* KAMUS LOKAL */
+    
+    /* ALGORITMA */
+    return m.loc[0];
+}
+
 int idxPOINT(MAP m, POINT p){
 /* mengembalikan indeks point pada map dari point */
     /* KAMUS LOKAL */
@@ -127,7 +137,7 @@ void moveInv(MAP m, POINT *user){
     printf("\n");
     printf("ENTER COMMAND: ");
     advWord();
-    n =ConvertInt(currentWord.contents,currentWord.length);
+    n = ConvertInt(currentWord.contents, currentWord.length);
     printf("\n");
     // pindahkan user ke titik yang dipilih
     *user = pointIdx(m, points[n - 1]);
