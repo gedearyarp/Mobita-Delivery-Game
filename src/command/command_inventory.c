@@ -8,6 +8,7 @@
 #include "../ADT/wordmachine/wordmachine.h"
 #include "../ADT/wordmachine/charmachine.h"
 #include "../konfigurasi/konfigurasi.h"
+#include "../ability/ability.h"
 /*
 kain pembungkus waktu: perlu ADT tas
 senter pembesar: perlu ADT tas
@@ -15,7 +16,7 @@ pintu kemana saja: perlu ADT map
 mesin waktu: gampang (done)
 */
 
-void inventoryCommand(Inventory *I, int *waktu, Tas *tas, List *in_progress_list){
+void inventoryCommand(Inventory *I, int *waktu, Tas *tas, List *in_progress_list, MAP peta, POINT *user){
     printInventory(*I);
     printf("Gadget mana yang ingin digunakan? (ketik 0 jika ingin kembali)\n");
     
@@ -64,6 +65,7 @@ void inventoryCommand(Inventory *I, int *waktu, Tas *tas, List *in_progress_list
         printf("Senter Pembesar berhasil digunakan!");
     }
     else if(INV(*I, numInv) == 3){
+        moveInv(peta, &user);
         printf("Pintu Kemana Saja berhasil digunakan!");
     }
     else if(INV(*I, numInv) == 4){
