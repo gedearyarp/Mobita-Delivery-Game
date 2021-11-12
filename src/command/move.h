@@ -10,6 +10,10 @@
 #include "../konfigurasi/konfigurasi.h"
 #include "../tas/tas.h"
 
+POINT getUsersPoint(MAP m);
+/* mengembalikan point lokasi Mobita di awal
+   yaitu headquarter/point pertama di map */
+
 int idxPOINT(MAP m, POINT p);
 /* mengembalikan indeks point pada map dari point */
 
