@@ -27,15 +27,15 @@
 #include <stdlib.h>
 
 int main(){
-	int money,waktu,curr_time,cap_incr,uncompleted,speedBoostTime;
+	int money=0,waktu=0,curr_time,cap_incr,uncompleted,speedBoostTime;
 	float time_incr;
 	Queue queue_pesanan;
 	List to_do_list,in_progress_list;
-	char item;
+	char item='0';
 	int command;
 	boolean Finish;
 	MAP m;
-	POINT lokasi;
+	POINT lokasi= MakePOINT(1,1,'8');
 	Inventory ivtr;
 	Tas tas;
 	readFile(&m);

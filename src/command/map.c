@@ -8,6 +8,7 @@
 #include "../pcolor/pcolor.h"
 #include <stdio.h>
 
+
 void mapCommand(MAP m,POINT p,int waktu,char item){
 	//fungsi untuk menampilkan peta
 	int i=0,j=0,a,b,idxP,idxD;
@@ -18,7 +19,7 @@ void mapCommand(MAP m,POINT p,int waktu,char item){
 		if(O_PICK_LABEL(m,a) == item)dropOff = O_DROP_LABEL(m,a);
 		if(O_MASUK(m,a)<=waktu)pickUp[a] = O_PICK_LABEL(m,a);
 	}
-	for(b=0;b<nEff(m);b++){
+	for(b=0;b<=nEff(m);b++){
 		if(Label(p)==NAMA(m,b))idxP = b;
 	}
 	printf("%d %d\n",PETA_Y(m),PETA_X(m));
@@ -36,7 +37,7 @@ void mapCommand(MAP m,POINT p,int waktu,char item){
 				a++;
 			}
 			b=0;
-			while(b<nEff(m)){
+			while(b<=nEff(m)){
 				if(PETA(m,i,j)==NAMA(m,b))idxD=b;
 				b++;
 			}
@@ -49,12 +50,13 @@ void mapCommand(MAP m,POINT p,int waktu,char item){
 			else if(found){
 				print_red(PETA(m,i,j));
 			}
-			else if(ELMT_M(m, idxP, idxD) == 1 && PETA(m,i,j)!='*'){
+			else if(idxP<=nEff(m)&&idxD<=nEff(m)&&ELMT_M(m, idxP, idxD) == 1 && PETA(m,i,j)!='*'){
 				print_green(PETA(m,i,j));
 			}
 			else{
 				printf("%c",PETA(m,i,j));
 			}
+//			printf("%d %d",idxP,idxD);
 		}
 		printf("\n");
 	}
