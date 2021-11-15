@@ -5,14 +5,21 @@ void pickUpCommand(Tas *Tas, POINT P, List *to_do_list, List *in_progress_list, 
     Address q;
     int ctr;
     Pesanan val;
+    boolean found;
     q=FIRST(*to_do_list);
     ctr=0;
-    while (!EQ(P, PICK_P(INFO(q))) && q!=NULL){
-        q=NEXT(q);
-        ctr++;
+    found=false;
+    while (!found && q!=NULL){
+        if (EQ(P, PICK_P(INFO(q)))){
+            found=true;
+        }
+        else{
+            q=NEXT(q);
+            ctr++;
+        }
     }
 
-    if (q!=NULL){
+    if (found){
         if (currCAPACITY(*Tas)<currMaxCapaxity(*Tas)){
             pushTas(Tas, INFO(q));
             T_PICK(INFO(q))=*currTime;
@@ -26,14 +33,14 @@ void pickUpCommand(Tas *Tas, POINT P, List *to_do_list, List *in_progress_list, 
                 default: break;
             }
             printf(" berhasil diambil!\n");
-            printf("Tujuan Pesanan: %c", Label(DROP_P(TOP_TAS(*Tas))));
+            printf("Tujuan Pesanan: %c\n", Label(DROP_P(TOP_TAS(*Tas))));
         }
         else{
-            printf("Tas sudah penuh, tidak bisa mengambil pesanan!");
+            printf("Tas sudah penuh, tidak bisa mengambil pesanan!\n");
         }
     }
     else {
-        printf("Pesanan tidak ditemukan!");
+        printf("Pesanan tidak ditemukan!\n");
     }
 }
 
