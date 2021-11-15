@@ -16,9 +16,10 @@
 #include "../ADT/point/point.h"
 #include "../pesanan/pesanan.h"
 #include "../pcolor/pcolor.h"
+#include "../ADT/list_linked/list_linked.h"
 
 
-void mapCommand(MAP m,POINT p,int waktu,char item);
+void mapCommand(MAP m,POINT p,int waktu,char item,List to_do_list);
 	//fungsi untuk menampilkan peta
 #endif
 

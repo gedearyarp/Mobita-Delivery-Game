@@ -89,7 +89,7 @@ int main(){
 			drop_OffCommand(&tas,&in_progress_list, lokasi, &money, waktu, &speedBoostTime, &speedBoostActive);
 		}
 		else if(command == 4){
-			mapCommand(m,lokasi,waktu,item);
+			mapCommand(m,lokasi,waktu,Label(DROP_P(TOP_TAS(tas))),to_do_list);
 		}
 		else if(command == 5){
 			to_doCommand(to_do_list, waktu);

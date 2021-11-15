@@ -9,15 +9,16 @@
 #include <stdio.h>
 
 
-void mapCommand(MAP m,POINT p,int waktu,char item){
+void mapCommand(MAP m,POINT p,int waktu,char dropOff,List to_do_list){
 	//fungsi untuk menampilkan peta
 	int i=0,j=0,a,b,idxP,idxD;
-	char dropOff;
+//	char dropOff;
 	char pickUp[nOrder(m)];
 	boolean found = false;
-	for(a=0;a<nOrder(m);a++){
-		if(O_PICK_LABEL(m,a) == item)dropOff = O_DROP_LABEL(m,a);
-		if(O_MASUK(m,a)<=waktu)pickUp[a] = O_PICK_LABEL(m,a);
+	Address temp =FIRST(to_do_list);
+	while(NEXT(temp)!=NULL){
+		pickUp[a] = Label(PICK_P(INFO(temp)));
+		temp = NEXT(temp); 
 	}
 	for(b=0;b<=nEff(m);b++){
 		if(Label(p)==NAMA(m,b))idxP = b;

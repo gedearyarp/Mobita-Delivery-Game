@@ -13,7 +13,7 @@ int main(){
 	readFile(&M);
 	POINT p = MakePOINT(5,4,'I');
 	int waktu = 1;
-	char item = 'M';
+	char item = 'B';
 	mapCommand(M,p,waktu,item);
 	
 }

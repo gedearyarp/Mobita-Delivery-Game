@@ -98,7 +98,6 @@ void QueuePesanan (MAP m, Queue *q_pesanan) {
     int i;
     /* ALGORITMA */
     for (i = 0; i < nOrder(m); i++) {
-    	displayPesanan(ORDER(m,i));
         enqueue(q_pesanan, ORDER(m,i));
     }
 }
