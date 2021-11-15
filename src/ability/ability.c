@@ -12,11 +12,11 @@ void speedBoost(int *waktu, int *speedBoostTime, boolean *speedBoostActive){
         }
         else{
             *speedBoostActive=false;
-            *speedBoostTime=-1;
+            *speedBoostTime=0;
         }
     }
     else{
-        waktu++;
+        *waktu++;
     }
 }
 

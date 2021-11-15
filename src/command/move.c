@@ -79,7 +79,8 @@ void moveCommand(MAP m, int *waktu, Tas tas, POINT *user, boolean *speedBoostAct
     i = idxPOINT(m, *user);
     // memasukkan semua indeks titik yang memiliki nilai 1 pada hub dengan indeks ke-i
     k = 0;
-    for (j = 0; j < LengthMAP(m); j++){
+    for (j = 0; j <=LengthMAP(m); j++){
+    	movablePoint[j] = -1;
         if (ELMT_M(m, i, j) == 1){
             movablePoint[k] = j;
             k++;
@@ -88,7 +89,7 @@ void moveCommand(MAP m, int *waktu, Tas tas, POINT *user, boolean *speedBoostAct
     // mencetak
     printf("Posisi yang dapat dicapai:\n");
     k = 0;
-    while (movablePoint[k] != 0){
+    while (movablePoint[k] != -1){
         j = movablePoint[k];
         if (j<=nEff(m))printf("%d. %c (%d,%d)\n", k + 1, NAMA(m, j), ABSIS(m, j), ORDINAT(m, j));
         k++;

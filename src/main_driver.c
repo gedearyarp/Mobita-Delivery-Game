@@ -27,7 +27,7 @@
 #include <stdlib.h>
 
 int main(){
-	int money=0,waktu=0,curr_time,cap_incr,uncompleted,speedBoostTime;
+	int money=0,waktu=0,cap_incr,uncompleted,speedBoostTime=0;
 	float time_incr;
 	Queue queue_pesanan;
 	List to_do_list,in_progress_list;
@@ -38,7 +38,7 @@ int main(){
 	Inventory ivtr;
 	Tas tas;
 	readFile(&m);
-	boolean speedBoostActive;
+	boolean speedBoostActive = false;
 	printf("Main Menu: \n");
 	printf("1. NEW GAME\n");
 	printf("2. EXIT\n");
@@ -50,10 +50,13 @@ int main(){
 	else if(currentWord.contents[0] == '2'){
 		return 0;
 	}
+	CreateQueue(&queue_pesanan);
 	QueuePesanan(m, &queue_pesanan);
-	curr_time = 0;
 	uncompleted = 0;
 	POINT lokasi = getUsersPoint(m);
+	CreateTas(&tas);
+	CreateList(&to_do_list);
+	CreateList(&in_progress_list);
 	while(!Finish ){
 		printf("\nMobita berada di posisi %c (%d,%d)\n",lokasi.label,lokasi.X,lokasi.Y);
 		printf("Waktu: %d\n",waktu);
@@ -74,25 +77,25 @@ int main(){
 		if (command == 1){
 			int prewaktu= waktu;
 			moveCommand(m, &waktu, tas, &lokasi, &speedBoostActive, &speedBoostTime);
-			if(prewaktu){
-				insertToDo(&to_do_list, &queue_pesanan, curr_time);
-				deletePerishable(&in_progress_list, curr_time, &uncompleted);
+			if(prewaktu != waktu){
+				insertToDo(&to_do_list, &queue_pesanan, waktu);
+				deletePerishable(&in_progress_list, waktu, &uncompleted);
 			}
 		}
 		else if (command== 2){
 			pickUpCommand(&tas, lokasi, &to_do_list, &in_progress_list);
 		}
 		else if(command == 3){
-			drop_OffCommand(&tas,&in_progress_list, lokasi, &money, curr_time, &speedBoostTime, &speedBoostActive);
+			drop_OffCommand(&tas,&in_progress_list, lokasi, &money, waktu, &speedBoostTime, &speedBoostActive);
 		}
 		else if(command == 4){
 			mapCommand(m,lokasi,waktu,item);
 		}
 		else if(command == 5){
-			to_doCommand(to_do_list, curr_time);
+			to_doCommand(to_do_list, waktu);
 		}
 		else if(command == 6){
-			in_progressCommand(in_progress_list, curr_time);
+			in_progressCommand(in_progress_list, waktu);
 		}
 		else if(command == 7){
 			buyCommand(&money,&ivtr);
