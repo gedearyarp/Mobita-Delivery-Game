@@ -15,5 +15,4 @@ int main(){
 	int waktu = 1;
 	char item = 'B';
 	mapCommand(M,p,waktu,item);
-	
 }

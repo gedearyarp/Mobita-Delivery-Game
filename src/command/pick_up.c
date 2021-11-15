@@ -11,11 +11,12 @@ void pickUpCommand(Tas *Tas, POINT P, List *to_do_list, List *in_progress_list, 
         q=NEXT(q);
         ctr++;
     }
-    if (EQ(P, PICK_P(INFO(q)))){
+
+    if (q!=NULL){
         if (currCAPACITY(*Tas)<currMaxCapaxity(*Tas)){
             pushTas(Tas, INFO(q));
             T_PICK(INFO(q))=*currTime;
-            updateInProgress (in_progress_list, *Tas, 1, *currTime);
+            updateInProgress (in_progress_list, *Tas, 1, currTime);
             deleteAt(to_do_list, ctr, &val);
             printf("Pesanan berupa ");
             switch(TYPE(TOP_TAS(*Tas))){
