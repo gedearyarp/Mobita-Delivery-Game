@@ -42,6 +42,8 @@ void drop_OffCommand(Tas *Tas, List *in_progress_list, POINT p, int *uang, int c
         {
             plusMoney = 400;
             printf("Pesanan Perishable Item berhasil diantarkan\n");
+            *speedBoostActive=true;
+            *speedBoostTime=0;
             increaseCapacity(Tas);
         }
         else if (type = 'V')
@@ -53,7 +55,7 @@ void drop_OffCommand(Tas *Tas, List *in_progress_list, POINT p, int *uang, int c
         *uang += plusMoney;
         printf("Uang yang didapatkan: %d Yen\n", plusMoney);
         popTas(Tas, &pesanan);
-        updateInProgress(in_progress_list, *Tas, 2);
+        updateInProgress(in_progress_list, *Tas, 2, &currTime);
         
     }
 }
