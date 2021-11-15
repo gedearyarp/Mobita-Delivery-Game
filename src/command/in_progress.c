@@ -28,7 +28,7 @@ void in_progressCommand(List in_progress_list, int curr_time) {
         } else if (TYPE(INFO(p)) == 'H'){
             printf("Heavy Item");
         } else if (TYPE(INFO(p)) == 'P'){
-            tSisa = curr_time - (T_PICK(INFO(p)) + T_PERISH(INFO(p)));
+            tSisa = (T_PICK(INFO(p)) + T_PERISH(INFO(p))) - curr_time;
             printf("Perishable Item, sisa waktu %d", tSisa);
         } else if (TYPE(INFO(p)) == 'V'){
             printf("VIP Item");
