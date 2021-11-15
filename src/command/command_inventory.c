@@ -65,7 +65,9 @@ void inventoryCommand(Inventory *I, int *waktu, Tas *tas, List *in_progress_list
         printf("Senter Pembesar berhasil digunakan!");
     }
     else if(INV(*I, numInv) == 3){
-        moveInv(peta, user);
+        int berhasil = 0;
+        moveInv(peta, user, &berhasil);
+        if(!berhasil) return;
     }
     else if(INV(*I, numInv) == 4){
         if(*waktu >= 50) *waktu -= 50;

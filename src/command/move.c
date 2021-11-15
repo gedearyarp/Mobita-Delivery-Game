@@ -117,7 +117,7 @@ void moveCommand(MAP m, int *waktu, Tas tas, POINT *user, boolean *speedBoostAct
     }
 }
 
-void moveInv(MAP m, POINT *user){
+void moveInv(MAP m, POINT *user, int *berhasil){
 /* memindahkan user ke mana saja tanpa menambah waktu */
     /* KAMUS LOKAL */
     int i, n;
@@ -144,5 +144,6 @@ void moveInv(MAP m, POINT *user){
         *user = pointIdx(m, points[n - 1]);
         printf("Mobita sekarang berada di titik %c (%d,%d)!\n", Label(*user), Absis(*user), Ordinat(*user));
         printf("Pintu Kemana Saja berhasil digunakan!");
+        *berhasil = 1;
     }
 }
