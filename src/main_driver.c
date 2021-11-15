@@ -34,7 +34,7 @@ int main(){
 	char item='0';
 	int command;
 	boolean Finish;
-	MAP m
+	MAP m;
 	Inventory ivtr;
 	Tas tas;
 	readFile(&m);

@@ -90,16 +90,15 @@ void moveCommand(MAP m, int *waktu, Tas tas, POINT *user, boolean *speedBoostAct
     k = 0;
     while (movablePoint[k] != 0){
         j = movablePoint[k];
-        printf("%d. %c (%d,%d)\n", k + 1, NAMA(m, j), ABSIS(m, j), ORDINAT(m, j));
+        if (j<=nEff(m))printf("%d. %c (%d,%d)\n", k + 1, NAMA(m, j), ABSIS(m, j), ORDINAT(m, j));
+        k++;
     }
     printf("Posisi yang dipilih? (ketik 0 jika ingin kembali)");
     printf("\n");
     printf("ENTER COMMAND: ");
-    scanf("%d", &k);
     advWord();
     k =ConvertInt(currentWord.contents,currentWord.length);
     printf("\n");
-    
     // apabila posisi yang dipilih bukan 0, maka move akan dieksekusi
     if (k != 0){
         // ubah posisi user

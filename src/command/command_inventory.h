@@ -9,8 +9,9 @@
 #include "../inventory/inventory.h"
 #include "../tas/tas.h"
 #include "../pesanan/pesanan.h"
+#include "move.h"
 
-void inventoryCommand(Inventory *I, int *waktu, Tas *tas, List *in_progress_list);
+void inventoryCommand(Inventory *I, int *waktu, Tas *tas, List *in_progress_list,MAP peta, POINT *user);
 
 #endif
 
