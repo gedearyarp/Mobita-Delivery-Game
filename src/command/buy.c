@@ -9,7 +9,7 @@
 void buyCommand(int *uang, Inventory *I){
     printf("Uang Anda sekarang: %d Yen\n", *uang);
     printf("Gadget yang tersedia\n");
-    printf("1. Kain Pembungkus Waktu (800yen)\n");
+    printf("1. Kain Pembungkus Waktu (800y Yen)\n");
     printf("2. Senter Pembesar (1200 Yen)\n");
     printf("3. Pintu Kemana Saja (1500 Yen)\n");
     printf("4. Mesin Waktu (3000 Yen)\n");

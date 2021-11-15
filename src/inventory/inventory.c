@@ -33,6 +33,7 @@ void addGadget(Inventory *I, int idxGadget){
     for(int i=1; i<=5; i++){
         if(INV(*I, i) == 0){
             INV(*I, i) = idxGadget;
+            break;
         }
     }
 }
