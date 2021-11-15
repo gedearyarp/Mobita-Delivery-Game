@@ -16,7 +16,7 @@ void in_progressCommand(List in_progress_list, int curr_time) {
     char dropLoc;   // nama tempat drop off
     Address p;
     /* ALGORITMA */
-    printf("Pesanan pada To Do List:\n");
+    printf("Pesanan pada In Progress List:\n");
     i = 0;
     p = in_progress_list;
     while (p != NULL) {
@@ -33,7 +33,7 @@ void in_progressCommand(List in_progress_list, int curr_time) {
         } else if (TYPE(INFO(p)) == 'V'){
             printf("VIP Item");
         }
-        printf("(Tujuan: %c)\n", dropLoc);
+        printf(" (Tujuan: %c)\n", dropLoc);
         i++;
         p = NEXT(p);
     }
