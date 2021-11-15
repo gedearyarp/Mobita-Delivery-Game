@@ -158,8 +158,9 @@ void BacaPesanan(MAP *m){
 		O_TYPE(*m,i) =  currentWord.contents[0];
 		if(O_TYPE(*m,i)=='P'){
 			advWord();
-			O_T_PERISH(*m,i) = currentWord.contents[0];;
+			O_T_PERISH(*m,i) = currentWord.contents[0];
 		}
+		O_tPick(*m,i) = -1;
 	//	printf("%c",currentWord.contents[0]);
 	//	printf("%d %c %c %c\n",O_MASUK(*m,i),O_PICK_LABEL(*m,i),O_DROP_LABEL(*m,i),O_TYPE(*m,i));
 	}

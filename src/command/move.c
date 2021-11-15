@@ -109,7 +109,7 @@ void moveCommand(MAP m, int *waktu, Tas tas, POINT *user, boolean *speedBoostAct
             *speedBoostActive=false;
             *waktu += duration(tas);
         }
-        else{
+       else{
             speedBoost(waktu, speedBoostTime, speedBoostActive);    
         }
         // display

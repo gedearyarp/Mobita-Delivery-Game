@@ -3,7 +3,7 @@
 #include <stdio.h>
 
 void speedBoost(int *waktu, int *speedBoostTime, boolean *speedBoostActive){
-    if (speedBoostActive){
+    if (*speedBoostActive==true){
         *speedBoostTime++;
         if (*speedBoostTime <=10){
             if ((*speedBoostTime%2) == 0){
@@ -16,7 +16,7 @@ void speedBoost(int *waktu, int *speedBoostTime, boolean *speedBoostActive){
         }
     }
     else{
-        *waktu++;
+        *waktu = *waktu+1;
     }
 }
 

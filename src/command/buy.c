@@ -7,7 +7,7 @@
 #include "../konfigurasi/konfigurasi.h"
 
 void buyCommand(int *uang, Inventory *I){
-    printf("Uang Anda sekarang: %d Yen\n", uang);
+    printf("Uang Anda sekarang: %d Yen\n", *uang);
     printf("Gadget yang tersedia\n");
     printf("1. Kain Pembungkus Waktu (800yen)\n");
     printf("2. Senter Pembesar (1200 Yen)\n");

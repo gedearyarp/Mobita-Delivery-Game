@@ -17,7 +17,7 @@ void to_doCommand(List to_do_list, int curr_time) {
     /* ALGORITMA */
     printf("Pesanan pada To Do List:\n");
     i = 0;
-    p = to_do_list;
+    p = FIRST(to_do_list);
     while (p != NULL) {   
         pickLoc = Label(PICK_P(INFO(p)));
         dropLoc = Label(DROP_P(INFO(p)));

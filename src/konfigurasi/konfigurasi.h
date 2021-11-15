@@ -48,6 +48,7 @@ typedef struct {
 #define O_DROP_X(M,i) (M).pesan[(i)].dropOffPoint.X
 #define O_DROP_Y(M,i) (M).pesan[(i)].dropOffPoint.Y
 #define O_DROP_LABEL(M,i) (M).pesan[(i)].dropOffPoint.label
+#define O_tPick(M,i) (M).pesan[(i)].tPick
 #define O_TYPE(M,i) (M).pesan[(i)].type
 #define O_T_PERISH(M,i) (M).pesan[(i)].tPerish
 /* Jika m adalah : MAP, cara deklarasi dan akses: */
