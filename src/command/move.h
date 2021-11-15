@@ -29,7 +29,7 @@ void moveCommand(MAP m, int *waktu, Tas tas, POINT *user, boolean *speedBoostAct
    kemudian user memilih salah satu titik, lokasi user sekarang
    berpindah ke titik tersebut */
 
-void moveInv(MAP m, POINT *user);
+void moveInv(MAP m, POINT *user,int *berhasil);
 /* memindahkan user ke mana saja tanpa menambah waktu */
 
 #endif // MOVE_H
