@@ -1,10 +1,7 @@
 #include "pick_up.h"
-#include "to_do.h"
-#include "../ADT/point/point.h"
-#include "in_progress.h"
-#include <stdio.h>
+
 // BIKIN hapus to do list dan pickup utk jenis tertentu
-void pickUpCommand(Tas *Tas, POINT P, List *to_do_list, List *in_progress_list){
+void pickUpCommand(Tas *Tas, POINT P, List *to_do_list, List *in_progress_list, int *currTime){
     Address q;
     int ctr;
     Pesanan val;
@@ -15,18 +12,24 @@ void pickUpCommand(Tas *Tas, POINT P, List *to_do_list, List *in_progress_list){
         ctr++;
     }
     if (EQ(P, PICK_P(INFO(q)))){
-        pushTas(Tas, INFO(q));
-        updateInProgress (in_progress_list, *Tas, 1);
-        deleteAt(to_do_list, ctr, &val);
-        printf("Pesanan berupa ");
-        switch(TYPE(TOP_TAS(*Tas))){
-            case 'N': printf("Normal Item"); break;
-            case 'H': printf("Heavy Item"); break;
-            case 'P':printf("Perishable Item"); break;
-            default: break;
+        if (currCAPACITY(*Tas)<currMaxCapaxity(*Tas)){
+            pushTas(Tas, INFO(q));
+            T_PICK(INFO(q))=*currTime;
+            updateInProgress (in_progress_list, *Tas, 1, *currTime);
+            deleteAt(to_do_list, ctr, &val);
+            printf("Pesanan berupa ");
+            switch(TYPE(TOP_TAS(*Tas))){
+                case 'N': printf("Normal Item"); break;
+                case 'H': printf("Heavy Item"); break;
+                case 'P':printf("Perishable Item"); break;
+                default: break;
+            }
+            printf(" berhasil diambil!\n");
+            printf("Tujuan Pesanan: %c", Label(DROP_P(TOP_TAS(*Tas))));
         }
-        printf(" berhasil diambil!\n");
-        printf("Tujuan Pesanan: %c", Label(DROP_P(TOP_TAS(*Tas))));
+        else{
+            printf("Tas sudah penuh, tidak bisa mengambil pesanan!");
+        }
     }
     else {
         printf("Pesanan tidak ditemukan!");

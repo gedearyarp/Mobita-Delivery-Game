@@ -39,7 +39,7 @@ void in_progressCommand(List in_progress_list, int curr_time) {
     }
 }
 
-void updateInProgress (List *in_progress_list, Tas tas, int option) {
+void updateInProgress (List *in_progress_list, Tas tas, int option, int *currTime) {
 /* Fungsi untuk mengupdate in progress list */
 /* Fungsi ini dipanggil setiap pick_up barang (option 1) dan drop_off barang (option 2) */
 /* Note: sebelum pemanggilan fungsi ini, deklarasikan dulu variabel in_progress_list */ 
@@ -51,6 +51,7 @@ void updateInProgress (List *in_progress_list, Tas tas, int option) {
     // option 1: pickup
     if (option == 1) {
         insertFirst(in_progress_list, TOP_TAS(tas));
+        T_PICK(INFO(FIRST(*in_progress_list)))=*currTime;
     }
     // option2: drop off 
     else if (option == 2) {

@@ -9,6 +9,7 @@ void CreateTas(Tas *s){
 	Tas st;
 	IDX_TAS(st)=INDEX_UNDEF;
 	currCAPACITY(st)=0;
+	currMaxCapaxity(st)=3;
 	*s=st;
 }
 /* I.S. sembarang; */
@@ -34,6 +35,7 @@ boolean isMax(Tas s){
 void pushTas(Tas *s, Pesanan val){
 	IDX_TAS(*s)++;
 	TOP_TAS(*s) = val;
+	currCAPACITY(*s)++;
 }
 /* Menambahkan val sebagai elemen Stack s */
 /* I.S. s mungkin kosong, tabel penampung elemen stack TIDAK penuh */
@@ -43,6 +45,7 @@ void pushTas(Tas *s, Pesanan val){
 void popTas(Tas *s, Pesanan *val){
 	*val = TOP_TAS(*s);
 	IDX_TAS(*s)--;
+	currCAPACITY(*s)--;
 }
 /* Menghapus val dari Stack s */
 /* I.S. s tidak mungkin kosong */
