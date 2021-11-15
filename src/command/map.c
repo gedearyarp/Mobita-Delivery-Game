@@ -16,8 +16,10 @@ void mapCommand(MAP m,POINT p,int waktu,char dropOff,List to_do_list){
 	char pickUp[nOrder(m)];
 	boolean found = false;
 	Address temp =FIRST(to_do_list);
+	a=0;
 	while(NEXT(temp)!=NULL){
 		pickUp[a] = Label(PICK_P(INFO(temp)));
+		a++;
 		temp = NEXT(temp); 
 	}
 	for(b=0;b<=nEff(m);b++){
