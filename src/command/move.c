@@ -140,7 +140,7 @@ void moveInv(MAP m, POINT *user){
     n = ConvertInt(currentWord.contents, currentWord.length);
     printf("\n");
     // pindahkan user ke titik yang dipilih
-    if (k != 0){
+    if (n != 0){
         *user = pointIdx(m, points[n - 1]);
         printf("Mobita sekarang berada di titik %c (%d,%d)!\n", Label(*user), Absis(*user), Ordinat(*user));
         printf("Pintu Kemana Saja berhasil digunakan!");
