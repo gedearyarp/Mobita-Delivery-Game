@@ -83,7 +83,7 @@ int main(){
 			}
 		}
 		else if (command== 2){
-			pickUpCommand(&tas, lokasi, &to_do_list, &in_progress_list);
+			pickUpCommand(&tas, lokasi, &to_do_list, &in_progress_list, &waktu);
 		}
 		else if(command == 3){
 			drop_OffCommand(&tas,&in_progress_list, lokasi, &money, waktu, &speedBoostTime, &speedBoostActive);

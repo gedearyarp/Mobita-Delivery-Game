@@ -15,6 +15,7 @@ typedef struct {
   Pesanan buffer[MAXCAPACITY]; /* tabel penyimpan elemen */
   int idxTop;              /* alamat TOP: elemen puncak */
   int currCAPACITY;
+  int currMaxCapacity;
 } Tas;
 // normal, heavy, perishable
 
@@ -23,6 +24,7 @@ typedef struct {
 #define IDX_TAS(s) (s).idxTop
 #define     TOP_TAS(s) (s).buffer[(s).idxTop]
 #define currCAPACITY(s) (s).currCAPACITY
+#define currMaxCapaxity(s) (s).currMaxCapacity
 
 /* *** Konstruktor/Kreator *** */
 void CreateTas(Tas *s);
