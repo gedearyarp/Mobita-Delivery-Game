@@ -34,8 +34,7 @@ int main(){
 	char item='0';
 	int command;
 	boolean Finish;
-	MAP m;
-	POINT lokasi= MakePOINT(1,1,'8');
+	MAP m
 	Inventory ivtr;
 	Tas tas;
 	readFile(&m);
@@ -54,6 +53,7 @@ int main(){
 	QueuePesanan(m, &queue_pesanan);
 	curr_time = 0;
 	uncompleted = 0;
+	POINT lokasi = getUsersPoint(m);
 	while(!Finish ){
 		printf("\nMobita berada di posisi %c (%d,%d)\n",lokasi.label,lokasi.X,lokasi.Y);
 		printf("Waktu: %d\n",waktu);
@@ -98,7 +98,7 @@ int main(){
 			buyCommand(&money,&ivtr);
 		}
 		else if (command == 8){
-			inventoryCommand(&ivtr, &waktu, &tas, &in_progress_list);
+			inventoryCommand(&ivtr, &waktu, &tas, &in_progress_list,m,&lokasi);
 		}
 		else if (command ==9){
 			helpCommand();
