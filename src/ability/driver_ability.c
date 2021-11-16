@@ -13,7 +13,7 @@ int main(){
     Tas tas;
     List to_do_list, in_progress_list;
     POINT P, G,N;
-    int currTime=0, uang=0, speedBoostTime=0;
+    int currTime=1, uang=0, speedBoostTime=0;
     boolean speedBoostActive=false;
     Pesanan psn;
     Queue queue_pesanan;
@@ -26,14 +26,21 @@ int main(){
     CreateList(&to_do_list);
     CreateList(&in_progress_list);
 
-    MakePOINT(3,8, 'G');
-    MakePOINT(8,6, 'N');
+    G=MakePOINT(3,8, 'G');
+    N=MakePOINT(8,6, 'N');
+    QueuePesanan(M, &queue_pesanan);
+    displayQueue(queue_pesanan);
+    insertToDo(&to_do_list, &queue_pesanan, currTime);
 
     pickUpCommand(&tas, G, &to_do_list, &in_progress_list, &currTime);
-    drop_OffCommand(&tas, &in_progress_list, N, &uang, &currTime, &speedBoostTime, &speedBoostActive);
-    printf("Current max tas capacity: %d", currMaxCapaxity(tas));
+    drop_OffCommand(&tas, &in_progress_list, N, &uang, currTime, &speedBoostTime, &speedBoostActive);
+    printf("Current max tas capacity: %d\n", currMaxCapaxity(tas));
     for (int i=1; i<=10;i++){
         moveCommand(M, &currTime, tas, &P, &speedBoostActive, &speedBoostTime);
         printf("Waktu: %d", currTime);
     }
 }
+
+// to run: 
+// 1. cd src
+// 2. ./driver_ability
