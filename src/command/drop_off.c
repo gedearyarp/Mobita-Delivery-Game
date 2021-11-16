@@ -22,11 +22,11 @@ void drop_OffCommand(Tas *Tas, List *in_progress_list, POINT p, int *uang, int c
 
     if (TasIsEmpty(*Tas))
     {
-        printf("Tidak dapat pesanan yang dapat diantarkan!\n");  
+        printf("Tidak ada pesanan yang dapat diantarkan!\n");  
     }
     else if (Label(p) != dropLoc)
     {
-        printf("Tidak dapat pesanan yang dapat diantarkan!\n");
+        printf("Tidak ada pesanan yang dapat diantarkan!\n");
     }
     else if (Label(p) == dropLoc)
     {

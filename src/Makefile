@@ -35,6 +35,8 @@ tas.o: tas/tas.c
 inventory.o: inventory/inventory.c
 	gcc -c inventory/inventory.c
 
+driver_drop_off : command/driver_drop_off.c list_linked.o tas.o point.o pesanan.o to_do.o in_progress.o drop_off.o queue.o node.o ability.o
+	gcc command/driver_drop_off.c list_linked.o tas.o point.o pesanan.o to_do.o in_progress.o drop_off.o queue.o node.o ability.o -o driver_drop_off
 driver_ability: ability/driver_ability.c node.o charmachine.o wordmachine.o point.o pesanan.o list_linked.o stack.o queue.o matrix.o map.o buy.o drop_off.o help.o in_progress.o move.o pick_up.o to_do.o command_inventory.o inventory.o pcolor.o konfigurasi.o ability.o tas.o
 	gcc ability/driver_ability.c node.o charmachine.o wordmachine.o point.o pesanan.o list_linked.o stack.o queue.o matrix.o map.o buy.o drop_off.o help.o in_progress.o move.o pick_up.o to_do.o command_inventory.o inventory.o pcolor.o konfigurasi.o ability.o tas.o -o driver_ability
 driver_pick_up : command/driver_pick_up.c list_linked.o tas.o point.o pesanan.o to_do.o in_progress.o pick_up.o queue.o node.o

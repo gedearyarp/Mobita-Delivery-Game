@@ -21,10 +21,15 @@ int main(){
     Y=MakePOINT(3,4,'Y');
     X=MakePOINT(1,2,'X');
 
-    psn1=createPesanan(1, 1, 2, 'X', 5, 6, 'A', 'V', -1, 1);
-    psn2=createPesanan(1, 1, 2, 'X', 7, 8, 'B', 'P', 20, 1);
-    psn3=createPesanan(1, 1, 2, 'X', 9, 10, 'C', 'H', -1, 1);
-    psn4=createPesanan(1, 1, 2, 'X', 11, 12, 'D', 'N', -1, 1);
+    psn1=createPesanan(1, 1, 2, 'X', 5, 6, 'X', 'N', -1, 1);
+    psn2=createPesanan(1, 1, 2, 'X', 7, 8, 'X', 'P', 20, 1);
+    psn3=createPesanan(1, 1, 2, 'X', 9, 10, 'X', 'H', -1, 1);
+    psn4=createPesanan(1, 1, 2, 'X', 11, 12, 'X', 'N', -1, 1);
+
+    enqueue(&queue_pesanan, psn1);
+    enqueue(&queue_pesanan, psn2);
+    enqueue(&queue_pesanan, psn3);
+    enqueue(&queue_pesanan, psn4);
 
     /* Pengiriman barang gagal jika tidak ada barang di tas */
     drop_OffCommand(&tas,&in_progress_list,X,&uang,currTime,&speedBoostTime,&speedBoostActive);
@@ -42,15 +47,19 @@ int main(){
     drop_OffCommand(&tas,&in_progress_list,Y,&uang,currTime,&speedBoostTime,&speedBoostActive);
 
     /* Pengriman 4 barang yang ada di tas */
+    printf("\ntype barang yang terkirim = %c\n", TYPE(TOP_TAS(tas)));
     drop_OffCommand(&tas,&in_progress_list,X,&uang,currTime,&speedBoostTime,&speedBoostActive);
     printf("uang = %d, speedboost = %d\n", uang, speedBoostActive);
 
+    printf("\ntype barang yang terkirim = %c\n", TYPE(TOP_TAS(tas)));
     drop_OffCommand(&tas,&in_progress_list,X,&uang,currTime,&speedBoostTime,&speedBoostActive);
     printf("uang = %d, speedboost = %d\n", uang, speedBoostActive);
 
+    printf("\ntype barang yang terkirim = %c\n", TYPE(TOP_TAS(tas)));
     drop_OffCommand(&tas,&in_progress_list,X,&uang,currTime,&speedBoostTime,&speedBoostActive);
     printf("uang = %d, speedboost = %d\n", uang, speedBoostActive);
 
+    printf("\ntype barang yang terkirim = %c\n", TYPE(TOP_TAS(tas)));
     drop_OffCommand(&tas,&in_progress_list,X,&uang,currTime,&speedBoostTime,&speedBoostActive);
     printf("uang = %d, speedboost = %d\n", uang, speedBoostActive);
 
