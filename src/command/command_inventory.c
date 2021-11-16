@@ -60,8 +60,8 @@ void inventoryCommand(Inventory *I, int *waktu, Tas *tas, List *in_progress_list
         printf("Kain Pembungkus Waktu berhasil digunakan!");
     }
     else if(INV(*I, numInv) == 2){
-        if(currCAPACITY(*tas) > 50) currCAPACITY(*tas) = 100;
-        else currCAPACITY(*tas) *= 2;
+        if(currMaxCapacity(*tas) > 50) currMaxCapacity(*tas) = 100;
+        else currMaxCapacity(*tas) *= 2;
         printf("Senter Pembesar berhasil digunakan!");
     }
     else if(INV(*I, numInv) == 3){

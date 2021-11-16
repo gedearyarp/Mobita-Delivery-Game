@@ -9,7 +9,7 @@ void CreateTas(Tas *s){
 	Tas st;
 	IDX_TAS(st)=INDEX_UNDEF;
 	currCAPACITY(st)=0;
-	currMaxCapaxity(st)=3;
+	currMaxCapacity(st)=3;
 	*s=st;
 }
 /* I.S. sembarang; */
@@ -23,7 +23,7 @@ boolean TasIsEmpty(Tas s){
 }
 /* Mengirim true jika s kosong: lihat definisi di atas */
 boolean TasIsFull(Tas s){
-	return IDX_TAS(s) == currCAPACITY(s)-1;
+	return IDX_TAS(s) == currMaxCapacity(s)-1;
 }
 /* Mengirim true jika tabel penampung nilai s stack penuh dengan kapasitas saat ini */
 boolean isMax(Tas s){
