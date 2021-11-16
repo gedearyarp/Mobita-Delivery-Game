@@ -4,7 +4,8 @@
 
 Inventory createInventory(){
     Inventory I;
-    for(int i=0; i<6; i++){
+    int i;
+    for(i=0; i<6; i++){
         INV(I, i) = 0;
     }
     TOT_INV(I) = 0;
@@ -19,7 +20,8 @@ INDEX GADGET :
 */ 
 
 void printInventory(Inventory I){
-    for(int i=1; i<=5; i++){
+    int i;
+    for(i=1; i<=5; i++){
         if(INV(I, i) == 0) printf("%d. -\n", i);
         else if (INV(I, i) == 1) printf("%d. Kain Pembungkus Waktu\n", i);
         else if (INV(I, i) == 2) printf("%d. Senter Pembesar\n", i);
@@ -29,8 +31,17 @@ void printInventory(Inventory I){
 }
 
 void addGadget(Inventory *I, int idxGadget){
+    if(idxGadget>4 || idxGadget<1){
+        printf("Idx Gadget hanya 1 sampai 4.\n");
+        return;
+    }
+    if(TOT_INV(*I) == 5){
+        printf("Inventory penuh!\n");
+        return;
+    }
     TOT_INV(*I) ++;
-    for(int i=1; i<=5; i++){
+    int i;
+    for(i=1; i<=5; i++){
         if(INV(*I, i) == 0){
             INV(*I, i) = idxGadget;
             break;
