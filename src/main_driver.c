@@ -27,7 +27,7 @@
 #include <stdlib.h>
 
 int main(){
-	int money=5000,waktu=0,cap_incr,uncompleted,speedBoostTime=0;
+	int money=5000,waktu=0,cap_incr,uncompleted=0,speedBoostTime=0;
 	float time_incr;
 	Queue queue_pesanan;
 	List to_do_list,in_progress_list;
@@ -52,6 +52,7 @@ int main(){
 	}
 	CreateQueue(&queue_pesanan);
 	QueuePesanan(m, &queue_pesanan);
+	displayQueue(queue_pesanan);
 	uncompleted = 0;
 	POINT lokasi = getUsersPoint(m);
 	CreateTas(&tas);
@@ -106,6 +107,7 @@ int main(){
 		else if (command ==9){
 			helpCommand();
 		}
+		if(isEmptyList(to_do_list) && isEmptyList(in_progrres_list) )
 	}
     
 }
