@@ -19,6 +19,7 @@ void in_progressCommand(List in_progress_list, int curr_time) {
     printf("Pesanan pada In Progress List:\n");
     i = 0;
     p = in_progress_list;
+    if (p == NULL) printf("-Tidak ada pesanan-\n");
     while (p != NULL) {
         dropLoc = Label(DROP_P(INFO(p)));
         printf("%d. ", i+1);
@@ -29,7 +30,7 @@ void in_progressCommand(List in_progress_list, int curr_time) {
             printf("Heavy Item");
         } else if (TYPE(INFO(p)) == 'P'){
             tSisa = (T_PICK(INFO(p)) + T_PERISH(INFO(p))) - curr_time;
-            printf("Perishable Item, sisa waktu %d", tSisa);
+            printf("Perishable Item, sisa waktu: %d", tSisa);
         } else if (TYPE(INFO(p)) == 'V'){
             printf("VIP Item");
         }
