@@ -5,8 +5,13 @@
 #include "../ADT/wordmachine/wordmachine.h"
 #include "../ADT/wordmachine/charmachine.h"
 #include "../konfigurasi/konfigurasi.h"
+#include "./move.h"
 
-void buyCommand(int *uang, Inventory *I){
+void buyCommand(int *uang, Inventory *I, MAP peta, POINT user){
+    if(NEQ(user, getUsersPoint(peta))){
+        printf("Tidak bisa membuka inventory, lokasi tidak berada pada headquarter!");
+        return;
+    }
     printf("Uang Anda sekarang: %d Yen\n", *uang);
     printf("Gadget yang tersedia\n");
     printf("1. Kain Pembungkus Waktu (800 Yen)\n");

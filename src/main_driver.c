@@ -86,10 +86,10 @@ int main(){
 			pickUpCommand(&tas, lokasi, &to_do_list, &in_progress_list, &waktu);
 		}
 		else if(command == 3){
-			drop_OffCommand(&tas,&in_progress_list, lokasi, &money, waktu, &speedBoostTime, &speedBoostActive);
+			drop_OffCommand(&tas, &in_progress_list, lokasi, &money, waktu, &speedBoostTime, &speedBoostActive);
 		}
 		else if(command == 4){
-			mapCommand(m,lokasi,waktu,Label(DROP_P(TOP_TAS(tas))),to_do_list);
+			mapCommand(m, lokasi, waktu, Label(DROP_P(TOP_TAS(tas))), to_do_list);
 		}
 		else if(command == 5){
 			to_doCommand(to_do_list, waktu);
@@ -98,10 +98,10 @@ int main(){
 			in_progressCommand(in_progress_list, waktu);
 		}
 		else if(command == 7){
-			buyCommand(&money,&ivtr);
+			buyCommand(&money,&ivtr, m, lokasi);
 		}
 		else if (command == 8){
-			inventoryCommand(&ivtr, &waktu, &tas, &in_progress_list,m,&lokasi);
+			inventoryCommand(&ivtr, &waktu, &tas, &in_progress_list, m, &lokasi);
 		}
 		else if (command ==9){
 			helpCommand();
