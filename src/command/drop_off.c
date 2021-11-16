@@ -20,7 +20,11 @@ void drop_OffCommand(Tas *Tas, List *in_progress_list, POINT p, int *uang, int c
     dropLoc = Label(DROP_P(TOP_TAS(*Tas)));
     type = TYPE(TOP_TAS(*Tas));
 
-    if (Label(p) != dropLoc)
+    if (TasIsEmpty(*Tas))
+    {
+        printf("Tidak dapat pesanan yang dapat diantarkan!\n");  
+    }
+    else if (Label(p) != dropLoc)
     {
         printf("Tidak dapat pesanan yang dapat diantarkan!\n");
     }
