@@ -35,10 +35,13 @@ int main(){
     pickUpCommand(&tas, G, &to_do_list, &in_progress_list, &currTime);
     drop_OffCommand(&tas, &in_progress_list, N, &uang, currTime, &speedBoostTime, &speedBoostActive);
     printf("Current max tas capacity: %d\n", currMaxCapaxity(tas));
-    for (int i=1; i<=10;i++){
-        moveCommand(M, &currTime, tas, &P, &speedBoostActive, &speedBoostTime);
-        printf("Waktu: %d", currTime);
+    startWord(); // isi dengan 1
+    printf("\n");
+    for (int i=1; i<=12;i++){
+        moveCommand(M, &currTime, tas, &G, &speedBoostActive, &speedBoostTime);
+        printf("Waktu: %d\n", currTime);
     }
+    // speedboostactive akan berhenti pada interasi ke i=10
 }
 
 // to run: 

@@ -9,7 +9,7 @@ void CreateTas(Tas *s){
 	Tas st;
 	IDX_TAS(st)=INDEX_UNDEF;
 	currCAPACITY(st)=0;
-	currMaxCapaxity(st)=3;
+	currMaxCapacity(st)=3;
 	*s=st;
 }
 /* I.S. sembarang; */
