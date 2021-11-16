@@ -45,11 +45,19 @@ void insertToDo (List *to_do_list, Queue *queue_pesanan, int curr_time) {
    Prekondisi: variabel to_do_list dan queue_pesanan sudah dideklarasikan sebelum pemanggilan fungsi. */
     /* KAMUS LOKAL */
     ElType val;
+    boolean flag = true;
     /* ALGORITMA */
-    while (curr_time >= T_MASUK(HEAD(*queue_pesanan))) {
+    while (!isEmptyQ(*queue_pesanan) && flag) {
         // insert pesanan ke to do list kalau current_time >= waktu masuk pesanan
-        dequeue(queue_pesanan, &val);
-        insertLast(to_do_list, val);
+        if (curr_time >= T_MASUK(HEAD(*queue_pesanan))) {
+            dequeue(queue_pesanan, &val);
+            //displayPesanan(val); printf("\n");
+            //displayQueue(*queue_pesanan); printf("\n");
+            //printf("%d %d", IDX_HEAD(*queue_pesanan), IDX_TAIL(*queue_pesanan));
+            insertLast(to_do_list, val);
+        } else {
+            flag = false;
+        }
     }
 }
 

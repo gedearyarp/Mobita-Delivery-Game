@@ -71,7 +71,7 @@ void dequeue(Queue *q, ElType *val) {
     /* ALGORITMA */
     *val = HEAD(*q);
     if (IDX_HEAD(*q) == IDX_TAIL(*q)) {
-        IDX_TAIL(*q) = I_UNDEF;
+        IDX_HEAD(*q) = I_UNDEF;
         IDX_TAIL(*q) = I_UNDEF;
     } else {
         IDX_HEAD(*q) += 1;
@@ -84,10 +84,12 @@ void displayQueue(Queue q) {
     int i;
     /* ALGORITMA */
     printf("[");
-    for (i = IDX_HEAD(q); i <= IDX_TAIL(q); i++) {
-        displayPesanan((q).buffer[i]);
-        if (i != IDX_TAIL(q)) {
-            printf(",");
+    if (!isEmptyQ(q)) {
+        for (i = IDX_HEAD(q); i <= IDX_TAIL(q); i++) {
+            displayPesanan((q).buffer[i]);
+            if (i != IDX_TAIL(q)) {
+                printf(",");
+            }
         }
     }
     printf("]");
