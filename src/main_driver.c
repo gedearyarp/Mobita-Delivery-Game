@@ -27,7 +27,7 @@
 #include <stdlib.h>
 
 int main(){
-	int money=5000,waktu=0,cap_incr,uncompleted=0,speedBoostTime=0;
+	int money=0,waktu=0,cap_incr,uncompleted=0,speedBoostTime=0;
 	float time_incr;
 	Queue queue_pesanan;
 	List to_do_list,in_progress_list;
