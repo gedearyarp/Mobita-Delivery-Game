@@ -18,7 +18,7 @@ void to_doCommand(List to_do_list, int curr_time) {
     printf("Pesanan pada To Do List:\n");
     i = 0;
     p = FIRST(to_do_list);
-    if (p == NULL) printf("-Tidak ada pesanan-");
+    if (p == NULL) printf("-Tidak ada pesanan-\n");
     while (p != NULL) {   
         pickLoc = Label(PICK_P(INFO(p)));
         dropLoc = Label(DROP_P(INFO(p)));
