@@ -25,7 +25,7 @@ int main(){
     CreateTas(&tas);
     CreateList(&to_do_list);
     CreateList(&in_progress_list);
-
+    P = getUsersPoint(M);
     G=MakePOINT(3,8, 'G');
     N=MakePOINT(8,6, 'N');
     QueuePesanan(M, &queue_pesanan);
@@ -35,9 +35,13 @@ int main(){
     pickUpCommand(&tas, G, &to_do_list, &in_progress_list, &currTime);
     drop_OffCommand(&tas, &in_progress_list, N, &uang, currTime, &speedBoostTime, &speedBoostActive);
     printf("Current max tas capacity: %d\n", currMaxCapaxity(tas));
+
+    startWord();
     for (int i=1; i<=10;i++){
+        printf("%d\n", i);
+        advWord();
         moveCommand(M, &currTime, tas, &P, &speedBoostActive, &speedBoostTime);
-        printf("Waktu: %d", currTime);
+        printf("\nWaktu: %d", currTime);
     }
 }
 
