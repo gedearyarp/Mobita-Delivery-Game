@@ -23,7 +23,7 @@ boolean TasIsEmpty(Tas s){
 }
 /* Mengirim true jika s kosong: lihat definisi di atas */
 boolean TasIsFull(Tas s){
-	return IDX_TAS(s) == currCAPACITY(s)-1;
+	return IDX_TAS(s) == currMaxCapacity(s)-1;
 }
 /* Mengirim true jika tabel penampung nilai s stack penuh dengan kapasitas saat ini */
 boolean isMax(Tas s){

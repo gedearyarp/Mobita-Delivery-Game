@@ -27,7 +27,7 @@
 #include <stdlib.h>
 
 int main(){
-	int money=5000,waktu=0,cap_incr,uncompleted,speedBoostTime=0;
+	int money=0,waktu=0,cap_incr,uncompleted=0,speedBoostTime=0;
 	float time_incr;
 	Queue queue_pesanan;
 	List to_do_list,in_progress_list;
@@ -52,6 +52,7 @@ int main(){
 	}
 	CreateQueue(&queue_pesanan);
 	QueuePesanan(m, &queue_pesanan);
+	int jumlah_pesanan = lengthQ(queue_pesanan);
 	uncompleted = 0;
 	POINT lokasi = getUsersPoint(m);
 	CreateTas(&tas);
@@ -98,13 +99,21 @@ int main(){
 			in_progressCommand(in_progress_list, waktu);
 		}
 		else if(command == 7){
-			buyCommand(&money,&ivtr);
+			buyCommand(&money,&ivtr,m,lokasi);
 		}
 		else if (command == 8){
 			inventoryCommand(&ivtr, &waktu, &tas, &in_progress_list,m,&lokasi);
 		}
 		else if (command ==9){
 			helpCommand();
+		}
+		if(isEmptyList(to_do_list) && isEmptyList(in_progress_list) && waktu>0 && Label(lokasi) == Label(getUsersPoint(m))){
+			printf("Selamat Anda berhasil menyelesaikan permainan: \n");
+			printf("Jumlah item yang berhasil diantar: %d\n",jumlah_pesanan-uncompleted);
+			printf("Waktu yang dibutuhkan: %d\n",waktu);
+			printf("Sisa uang Anda: %d\n",money);
+			Finish = true;
+			break;
 		}
 	}
     
