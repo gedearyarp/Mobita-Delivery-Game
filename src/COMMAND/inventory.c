@@ -28,7 +28,7 @@ void inventoryCommand(Inventory *I, int *waktu, Tas *tas, List *in_progress_list
     if (numInv == 0) return;
 
     if(INV(*I, numInv) == 0){
-        printf("Tidak ada Gadget yang dapat digunakan!");
+        printf("Tidak ada Gadget yang dapat digunakan!\n");
         return;
     }
     else if(INV(*I, numInv) == 1){
@@ -41,7 +41,7 @@ void inventoryCommand(Inventory *I, int *waktu, Tas *tas, List *in_progress_list
             }
         }
         if(!ada){
-            printf("Tidak ada Kain Pembungkus Waktu dalam tas!");
+            printf("Tidak ada Kain Pembungkus Waktu dalam tas!\n");
             return;
         }
         (*tas).buffer[psnPerish].tPick = *waktu;
@@ -52,23 +52,23 @@ void inventoryCommand(Inventory *I, int *waktu, Tas *tas, List *in_progress_list
             now ++;
         }
         INFO(perish).tPick = *waktu;
-        printf("Kain Pembungkus Waktu berhasil digunakan!");
+        printf("Kain Pembungkus Waktu berhasil digunakan!\n");
     }
     else if(INV(*I, numInv) == 2){
         if(currMaxCapaxity(*tas) > 50) currCAPACITY(*tas) = 100;
         else currMaxCapaxity(*tas) *= 2;
-        printf("Senter Pembesar berhasil digunakan!");
+        printf("Senter Pembesar berhasil digunakan!\n");
     }
     else if(INV(*I, numInv) == 3){
-        printf("Pintu Kemana Saja berhasil digunakan!");
+        printf("Pintu Kemana Saja berhasil digunakan!\n");
     }
     else if(INV(*I, numInv) == 4){
         if(*waktu >= 50) *waktu -= 50;
         else *waktu = 0;
-        printf("Mesin Waktu digunakan!");
+        printf("Mesin Waktu digunakan!\n");
     }
     else{
-        printf("error detected.");
+        printf("error detected.\n");
     }
     INV(*I, numInv) = 0;
     removeGadget(I, numInv, &gadget);
