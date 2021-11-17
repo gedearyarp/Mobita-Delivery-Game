@@ -9,8 +9,8 @@
 #include "../ADT/point/point.h"
 #include "../pesanan/pesanan.h"
 #include "../pcolor/pcolor.h"
-#include "../command/map.h"
-#include "../command/to_do.h"
+#include "map.h"
+#include "to_do.h"
 #include <stdio.h>
 
 
