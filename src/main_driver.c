@@ -27,8 +27,7 @@
 #include <stdlib.h>
 
 int main(){
-	int money=8000,waktu=0,cap_incr,uncompleted=0,speedBoostTime=0;
-	float time_incr;
+	int money=8000, waktu=0, uncompleted=0, speedBoostTime=0;
 	Queue queue_pesanan;
 	List to_do_list,in_progress_list;
 	char item='0';
@@ -53,7 +52,6 @@ int main(){
 	CreateQueue(&queue_pesanan);
 	QueuePesanan(m, &queue_pesanan);
 	int jumlah_pesanan = lengthQ(queue_pesanan);
-	uncompleted = 0;
 	POINT lokasi = getUsersPoint(m);
 	CreateTas(&tas);
 	CreateList(&to_do_list);
@@ -107,13 +105,18 @@ int main(){
 		else if (command ==9){
 			helpCommand();
 		}
-		if(isEmptyList(to_do_list) && isEmptyList(in_progress_list) && waktu>0 && Label(lokasi) == Label(getUsersPoint(m))){
-			printf("Selamat Anda berhasil menyelesaikan permainan: \n");
-			printf("Jumlah item yang berhasil diantar: %d\n",jumlah_pesanan-uncompleted);
-			printf("Waktu yang dibutuhkan: %d\n",waktu);
-			printf("Sisa uang Anda: %d\n",money);
-			Finish = true;
-			break;
+		if(isEmptyList(to_do_list) && isEmptyList(in_progress_list) && isEmptyQ(queue_pesanan) && waktu>0){
+			printf("\n");
+			if (NEQ(lokasi, getUsersPoint(m))) {
+				printf("Silakan kembali ke Headquarter, tidak ada lagi pesanan yang bisa diantar\n");
+			} else {
+				printf("Selamat Anda berhasil menyelesaikan permainan: \n");
+				printf("Jumlah item yang berhasil diantar: %d\n",jumlah_pesanan-uncompleted);
+				printf("Waktu yang dibutuhkan: %d\n",waktu);
+				printf("Sisa uang Anda: %d\n",money);
+				Finish = true;
+				break;
+			}
 		}
 	}
     

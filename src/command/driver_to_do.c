@@ -3,7 +3,7 @@
 #include "to_do.h"
 
 // Compile: 
-// gcc to_do.c to_do_driver.c ../ADT/queue/queue.c ../ADT/list_linked/list_linked.c ../ADT/list_linked/node.c ../pesanan/pesanan.c ../ADT/point/point.c -o driver
+// gcc driver_to_do.c to_do.c ../ADT/queue/queue.c ../ADT/list_linked/list_linked.c ../ADT/list_linked/node.c ../pesanan/pesanan.c ../ADT/point/point.c -o driver_to_do
 
 int main() {
     /* KAMUS */

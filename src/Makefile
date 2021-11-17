@@ -35,15 +35,21 @@ tas.o: tas/tas.c
 inventory.o: inventory/inventory.c
 	gcc -c inventory/inventory.c
 
-driver_drop_off : command/driver_drop_off.c list_linked.o tas.o point.o pesanan.o to_do.o in_progress.o drop_off.o queue.o node.o ability.o
-	gcc command/driver_drop_off.c list_linked.o tas.o point.o pesanan.o to_do.o in_progress.o drop_off.o queue.o node.o ability.o -o driver_drop_off
 driver_ability: ability/driver_ability.c node.o charmachine.o wordmachine.o point.o pesanan.o list_linked.o stack.o queue.o matrix.o map.o buy.o drop_off.o help.o in_progress.o move.o pick_up.o to_do.o command_inventory.o inventory.o pcolor.o konfigurasi.o ability.o tas.o
 	gcc ability/driver_ability.c node.o charmachine.o wordmachine.o point.o pesanan.o list_linked.o stack.o queue.o matrix.o map.o buy.o drop_off.o help.o in_progress.o move.o pick_up.o to_do.o command_inventory.o inventory.o pcolor.o konfigurasi.o ability.o tas.o -o driver_ability
+driver_pesanan: pesanan/driver_pesanan.c pesanan.o point.o
+	gcc pesanan/driver_pesanan.c pesanan.o point.o -o driver_pesanan
+driver_drop_off : command/driver_drop_off.c list_linked.o tas.o point.o pesanan.o to_do.o in_progress.o drop_off.o queue.o node.o ability.o
+	gcc command/driver_drop_off.c list_linked.o tas.o point.o pesanan.o to_do.o in_progress.o drop_off.o queue.o node.o ability.o -o driver_drop_off
 driver_pick_up : command/driver_pick_up.c list_linked.o tas.o point.o pesanan.o to_do.o in_progress.o pick_up.o queue.o node.o
 	gcc command/driver_pick_up.c list_linked.o tas.o point.o pesanan.o to_do.o in_progress.o pick_up.o queue.o node.o -o driver_pick_up
 driver_konfigurasi: konfigurasi/driver_konfigurasi.c charmachine.o wordmachine.o point.o map.o node.o pcolor.o pesanan.o konfigurasi.o
 	gcc konfigurasi/driver_konfigurasi.c charmachine.o wordmachine.o point.o map.o node.o pcolor.o pesanan.o konfigurasi.o -o driver_konfigurasi
 driver_move: command/driver_move.c node.o charmachine.o wordmachine.o point.o pesanan.o list_linked.o stack.o queue.o matrix.o move.o konfigurasi.o ability.o tas.o
 	gcc command/driver_move.c node.o charmachine.o wordmachine.o point.o pesanan.o list_linked.o stack.o queue.o matrix.o move.o konfigurasi.o ability.o tas.o -o driver_move
+driver_in_progress: command/driver_in_progress.c in_progress.o queue.o node.o list_linked.o point.o pesanan.o tas.o to_do.o
+	gcc command/driver_in_progress.c in_progress.o queue.o node.o list_linked.o point.o pesanan.o tas.o to_do.o -o driver_in_progress
+driver_to_do: command/driver_to_do.c to_do.o queue.o list_linked.o node.o pesanan.o point.o
+	gcc command/driver_to_do.c to_do.o queue.o list_linked.o node.o pesanan.o point.o -o driver_to_do
 main_driver: main_driver.c node.o charmachine.o wordmachine.o point.o pesanan.o list_linked.o stack.o queue.o matrix.o map.o buy.o drop_off.o help.o in_progress.o move.o pick_up.o to_do.o command_inventory.o inventory.o pcolor.o konfigurasi.o ability.o tas.o
 	gcc main_driver.c node.o charmachine.o wordmachine.o point.o pesanan.o list_linked.o stack.o queue.o matrix.o map.o buy.o drop_off.o help.o in_progress.o move.o pick_up.o to_do.o command_inventory.o inventory.o pcolor.o konfigurasi.o ability.o tas.o -o main_driver
