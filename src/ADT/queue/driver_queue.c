@@ -2,7 +2,8 @@
 /* *** Driver ABSTRACT DATA TYPE Pesanan *** */
 
 /* Note:
-    Compile:    gcc queue.c queue_driver.c ../pesanan/pesanan.c ../point/point.c ../konfigurasi/konfigurasi.c ../wordmachine/wordmachine.c ../wordmachine/charmachine.c -o queue_d
+    Compile:
+    gcc driver_queue.c queue.c ../../pesanan/pesanan.c ../point/point.c ../../konfigurasi/konfigurasi.c ../wordmachine/wordmachine.c ../wordmachine/charmachine.c -o driver_queue
 */
 
 #include <stdio.h>
@@ -50,8 +51,12 @@ int main () {
     dequeue(&q1, &temp);    displayQueue(q1); printf("\n");
 
 
-    // CREATE QUEUE PESANAN
-//  QueuePesanan(M, &q_pesanan);
+    // CREATE QUEUE PESANAN dari list pesanan
+    readFile(&M);
+    CreateQueue(&q_pesanan);
+    displayQueue(q_pesanan); printf("\n");
+    QueuePesanan(M, &q_pesanan);
+    displayQueue(q_pesanan); printf("\n");
 
     return 0;
 }

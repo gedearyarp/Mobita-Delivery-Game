@@ -5,7 +5,7 @@
 #include "../ADT/queue/queue.h"
 
 // Compile
-// gcc in_progress.c in_progress_driver.c ../ADT/queue/queue.c ../ADT/list_linked/node.c ../ADT/list_linked/list_linked.c ../ADT/point/point.c ../pesanan/pesanan.c ../tas/tas.c to_do.c -o driver
+// gcc driver_in_progress.c in_progress.c ../ADT/queue/queue.c ../ADT/list_linked/node.c ../ADT/list_linked/list_linked.c ../ADT/point/point.c ../pesanan/pesanan.c ../tas/tas.c to_do.c -o driver_in_progress
 
 int main() {
     /* KAMUS */
