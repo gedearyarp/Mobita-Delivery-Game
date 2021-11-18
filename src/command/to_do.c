@@ -1,4 +1,4 @@
-/* File: to_do.h */
+/* File: to_do.c */
 /* Realisasi Fungsi/Prosedur untuk To Do List */
 
 #include <stdio.h>
@@ -51,9 +51,6 @@ void insertToDo (List *to_do_list, Queue *queue_pesanan, int curr_time) {
         // insert pesanan ke to do list kalau current_time >= waktu masuk pesanan
         if (curr_time >= T_MASUK(HEAD(*queue_pesanan))) {
             dequeue(queue_pesanan, &val);
-            //displayPesanan(val); printf("\n");
-            //displayQueue(*queue_pesanan); printf("\n");
-            //printf("%d %d", IDX_HEAD(*queue_pesanan), IDX_TAIL(*queue_pesanan));
             insertLast(to_do_list, val);
         } else {
             flag = false;
