@@ -24,10 +24,15 @@ Nama | Tugas
 --- | ---
 I Gede Arya Raditya P | 
 Hansel Valentino Tanoto |  
-Fitrah Ramadhani Nugroho | 
+Fitrah Ramadhani Nugroho | Konfigurasi, Fitur Map. <br> ADT: wordmachine <br> Laporan: Tambahan Spesifikasi Tugas |
 Addin Nabilal Huda | Fitur ability, pick up, help. <br> ADT: Tas <br> Laporan: Data test |
 Aji Andhika Falah | 
 Labib Muhammad Majdi |
+
+## How To Compile
+1. Clone this repository
+2. Open the folder directory and write 'cd src' in the terminal
+3. Write 'mingw32-make main_driver' to compile the game
 
 ## How To Run
 1. Clone this repository
