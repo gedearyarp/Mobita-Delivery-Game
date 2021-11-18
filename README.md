@@ -25,7 +25,7 @@ Nama | Tugas
 I Gede Arya Raditya P | Program dan driver: buy, inventory <br> ADT: Inventory <br> Laporan: Struktur data ADT <br> Lain-lain: Struktur folder dan file source code |
 
 Hansel Valentino Tanoto | Program dan driver: pesanan, to_do, in_progress <br> ADT: point, list_linked, queue <br> Laporan: Program Utama |
-Fitrah Ramadhani Nugroho | Program dan driver : konfigurasi, map, main_driver <br> Laporan : Penjelasan Tambahan Spesifikasi Tugas |
+Fitrah Ramadhani Nugroho | Program dan driver: konfigurasi, fitur Map, main program <br> ADT: wordmachine <br> Laporan: Tambahan Spesifikasi Tugas |
 Addin Nabilal Huda | Program dan driver: ability, pick up, help. <br> ADT: Tas <br> Laporan: Data test |
 Aji Andhika Falah | Program dan driver: drop_off <br> Laporan: Ringkasan dan Struktur data |
 Labib Muhammad Majdi | Program dan driver: move <br> Laporan: Test Script |
