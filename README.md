@@ -22,6 +22,7 @@ Drive General | https://drive.google.com/drive/folders/1F9ZMJkwp6CqOKKLyZvfg7MpT
 ## Pembagian Tugas
 Nama | Tugas
 --- | ---
+<<<<<<< HEAD
 I Gede Arya Raditya P | Program dan driver: buy, inventory <br> ADT: Inventory <br> Laporan: Struktur data ADT <br> Lain-lain: Struktur folder dan file source code |
 
 Hansel Valentino Tanoto | Program dan driver: pesanan, to_do, in_progress <br> ADT: point, list_linked, queue <br> Laporan: Program Utama |
@@ -31,6 +32,19 @@ Aji Andhika Falah | Program dan driver: drop_off <br> Laporan: Ringkasan dan Str
 Labib Muhammad Majdi | Program dan driver: move <br> Laporan: Test Script |
 
 
+=======
+I Gede Arya Raditya P | 
+Hansel Valentino Tanoto |  
+Fitrah Ramadhani Nugroho | Konfigurasi, Fitur Map. <br> ADT: wordmachine <br> Laporan: Tambahan Spesifikasi Tugas |
+Addin Nabilal Huda | Fitur ability, pick up, help. <br> ADT: Tas <br> Laporan: Data test |
+Aji Andhika Falah | 
+Labib Muhammad Majdi |
+>>>>>>> cac19ae06f579a3862c844f2e42034ec1840390f
+
+## How To Compile
+1. Clone this repository
+2. Open the folder directory and write 'cd src' in the terminal
+3. Write 'mingw32-make main_driver' to compile the game
 
 ## How To Run
 1. Clone this repository
