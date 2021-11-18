@@ -12,7 +12,6 @@
 void mapCommand(MAP m,POINT p,int waktu,char dropOff,List to_do_list){
 	//fungsi untuk menampilkan peta
 	int i=0,j=0,a,b,idxP,idxD;
-//	char dropOff;
 	char pickUp[nOrder(m)];
 	boolean found = false;
 	if(!isEmptyList(to_do_list)){
@@ -27,10 +26,8 @@ void mapCommand(MAP m,POINT p,int waktu,char dropOff,List to_do_list){
 	for(b=0;b<=nEff(m);b++){
 		if(Label(p)==NAMA(m,b))idxP = b;
 	}
-	printf("%d %d\n",PETA_Y(m),PETA_X(m));
 	for(i=0;i<=PETA_Y(m)+1;i++){
 		for(j=0;j<=PETA_X(m)+1;j++){
-//			printf("%c",PETA(m,i,j));
 			if(PETA(m,i,j)==' ') {
 				printf("%c",PETA(m,i,j));
 				continue;
@@ -61,7 +58,6 @@ void mapCommand(MAP m,POINT p,int waktu,char dropOff,List to_do_list){
 			else{
 				printf("%c",PETA(m,i,j));
 			}
-//			printf("%d %d",idxP,idxD);
 		}
 		printf("\n");
 	}
