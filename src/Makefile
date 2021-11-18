@@ -35,6 +35,10 @@ tas.o: tas/tas.c
 inventory.o: inventory/inventory.c
 	gcc -c inventory/inventory.c
 
+driver_command_inventory: command/driver_command_inventory.c node.o charmachine.o wordmachine.o point.o pesanan.o list_linked.o stack.o queue.o matrix.o map.o buy.o drop_off.o help.o in_progress.o move.o pick_up.o to_do.o command_inventory.o inventory.o pcolor.o konfigurasi.o ability.o tas.o
+	gcc command/driver_command_inventory.c node.o charmachine.o wordmachine.o point.o pesanan.o list_linked.o stack.o queue.o matrix.o map.o buy.o drop_off.o help.o in_progress.o move.o pick_up.o to_do.o command_inventory.o inventory.o pcolor.o konfigurasi.o ability.o tas.o -o driver_command_inventory
+driver_buy: command/driver_buy.c node.o charmachine.o wordmachine.o point.o pesanan.o list_linked.o stack.o queue.o matrix.o map.o buy.o drop_off.o help.o in_progress.o move.o pick_up.o to_do.o command_inventory.o inventory.o pcolor.o konfigurasi.o ability.o tas.o
+	gcc command/driver_buy.c node.o charmachine.o wordmachine.o point.o pesanan.o list_linked.o stack.o queue.o matrix.o map.o buy.o drop_off.o help.o in_progress.o move.o pick_up.o to_do.o command_inventory.o inventory.o pcolor.o konfigurasi.o ability.o tas.o -o driver_buy
 driver_ability: ability/driver_ability.c node.o charmachine.o wordmachine.o point.o pesanan.o list_linked.o stack.o queue.o matrix.o map.o buy.o drop_off.o help.o in_progress.o move.o pick_up.o to_do.o command_inventory.o inventory.o pcolor.o konfigurasi.o ability.o tas.o
 	gcc ability/driver_ability.c node.o charmachine.o wordmachine.o point.o pesanan.o list_linked.o stack.o queue.o matrix.o map.o buy.o drop_off.o help.o in_progress.o move.o pick_up.o to_do.o command_inventory.o inventory.o pcolor.o konfigurasi.o ability.o tas.o -o driver_ability
 driver_pesanan: pesanan/driver_pesanan.c pesanan.o point.o

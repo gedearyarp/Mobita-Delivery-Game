@@ -9,12 +9,7 @@
 #include "../ADT/wordmachine/charmachine.h"
 #include "../konfigurasi/konfigurasi.h"
 #include "../ability/ability.h"
-/*
-kain pembungkus waktu: perlu ADT tas
-senter pembesar: perlu ADT tas
-pintu kemana saja: perlu ADT map
-mesin waktu: gampang (done)
-*/
+
 
 void inventoryCommand(Inventory *I, int *waktu, Tas *tas, List *in_progress_list, MAP peta, POINT *user){
     printInventory(*I);
