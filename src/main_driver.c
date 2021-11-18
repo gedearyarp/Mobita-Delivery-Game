@@ -27,7 +27,7 @@
 #include <stdlib.h>
 
 int main(){
-	int money=8000, waktu=0, uncompleted=0, speedBoostTime=0;
+	int money=0, waktu=0, uncompleted=0, speedBoostTime=0;
 	Queue queue_pesanan;
 	List to_do_list,in_progress_list;
 	char item='0';

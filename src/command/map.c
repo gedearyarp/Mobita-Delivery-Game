@@ -15,7 +15,6 @@ void mapCommand(MAP m,POINT p,int waktu,char dropOff,List to_do_list){
 //	char dropOff;
 	char pickUp[nOrder(m)];
 	boolean found = false;
-//	displayList(to_do_list);
 	if(!isEmptyList(to_do_list)){
 		Address temp =FIRST(to_do_list);
 		a=0;

@@ -2,7 +2,6 @@
 #include <stdlib.h>
 #include "charmachine.h"
 #include "wordmachine.h"
-#include "boolean.h"
 
 Word currentWord;
 boolean endWord;
