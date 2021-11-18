@@ -80,8 +80,6 @@ void BacaKoordinat(MAP *m){
 	//kamus
 	int i,x,y;
 	//algoritma
-//	int val = ConvertInt();
-//	advWord();
 	int N = ConvertInt(currentWord.contents,currentWord.length);
 	PETA_Y(*m) = N;
 	advWord();
@@ -89,7 +87,6 @@ void BacaKoordinat(MAP *m){
 	PETA_X(*m) = M;
 	CreatePeta(m,N,M);
 	NAMA(*m,0) = '8';
-//	printf("%d %d\n",N,M);
 	advWord();
 	ABSIS(*m,0) = ConvertInt(currentWord.contents,currentWord.length);
 	x = ABSIS(*m,0);
@@ -97,12 +94,10 @@ void BacaKoordinat(MAP *m){
 	ORDINAT(*m,0) = ConvertInt(currentWord.contents,currentWord.length);
 	y= ORDINAT(*m,0);
 	PETA(*m,x,y) = '8';
-//	printf("%d %d\n",x,y);
 	advWord();
 	nEff(*m) = ConvertInt(currentWord.contents,currentWord.length);
 	ROWS_M(*m) = nEff(*m);
 	COLS_M(*m) = nEff(*m);
-//	printf("%d\n",ConvertInt(currentWord.contents,currentWord.length));
 	for(i=1;i<=nEff(*m);i++){
 		advWord();
 		NAMA(*m,i) = currentWord.contents[0];
@@ -113,7 +108,6 @@ void BacaKoordinat(MAP *m){
 		ORDINAT(*m,i) = ConvertInt(currentWord.contents,currentWord.length);
 		y= ORDINAT(*m,i);
 		PETA(*m,x,y) = NAMA(*m,i);
-//		printf("%d %d %c \n",x,y,NAMA(*m,i));
 	}
 }
 	
@@ -134,7 +128,6 @@ void BacaPesanan(MAP *m){
 	advWord();
 	int i,x,n = ConvertInt(currentWord.contents,currentWord.length);
 	nOrder(*m) =  n;
-//	printf("%d\n",n);
 	for(i=0;i<n;i++){
 		advWord();
 		O_MASUK(*m,i) = ConvertInt(currentWord.contents,currentWord.length);
@@ -161,8 +154,6 @@ void BacaPesanan(MAP *m){
 			O_T_PERISH(*m,i) = currentWord.contents[0];
 		}
 		O_tPick(*m,i) = -1;
-	//	printf("%c",currentWord.contents[0]);
-	//	printf("%d %c %c %c\n",O_MASUK(*m,i),O_PICK_LABEL(*m,i),O_DROP_LABEL(*m,i),O_TYPE(*m,i));
 	}
 	
 }
