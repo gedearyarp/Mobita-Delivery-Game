@@ -149,12 +149,13 @@ void BacaPesanan(MAP *m){
 		}
 		advWord();
 		O_TYPE(*m,i) =  currentWord.contents[0];
-		if(O_TYPE(*m,i)=='P'){
+		if(currentWord.contents[0]=='P'){
 			advWord();
-			O_T_PERISH(*m,i) = currentWord.contents[0];
+			O_T_PERISH(*m,i) = ConvertInt(currentWord.contents,currentWord.length);
 		}
 		O_tPick(*m,i) = -1;
 	}
+	
 	
 }
 	
